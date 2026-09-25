@@ -126,23 +126,242 @@ p{ text-wrap:pretty; orphans:3; widows:3; }
 .results-grid{margin-top:clamp(56px,7vw,96px)}
 @media(max-width:900px){.logo-strip{grid-template-columns:repeat(3,minmax(0,1fr))}.client-logo{min-height:76px}}
 @media(max-width:620px){.logo-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.client-logo{font-size:18px;min-height:68px}}
+
+
+/* Interactive portfolio preview: restrained editorial motion */
+:root{--ease:cubic-bezier(.22,.61,.36,1)}
+body{overflow-x:hidden}
+body.is-loading main,body.is-loading footer{opacity:0}
+main,footer{opacity:1;transition:opacity .65s var(--ease)}
+.scroll-progress{position:fixed;left:0;top:0;width:100%;height:2px;z-index:100;background:transparent;pointer-events:none}
+.scroll-progress__bar{height:100%;width:0;background:var(--ink);transform-origin:left center;transition:width .08s linear}
+.nav{transition:transform .35s var(--ease),background .35s ease}
+.section-copy>div:first-child{position:sticky;top:112px;align-self:start}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal.is-visible{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.08s}.reveal[data-delay="2"]{transition-delay:.16s}.reveal[data-delay="3"]{transition-delay:.24s}
+figure img,.guide-card img{transition:transform .65s var(--ease),filter .65s var(--ease)}
+figure[data-lightbox]{cursor:zoom-in}
+figure[data-lightbox]:hover img{transform:scale(1.012)}
+.case-index{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:20;display:grid;gap:8px;padding:10px 8px;background:rgba(244,243,240,.82);backdrop-filter:blur(10px);border:1px solid rgba(207,207,201,.75)}
+.case-index a{display:flex;align-items:center;justify-content:center;width:28px;height:28px;text-decoration:none;font-size:10px;letter-spacing:.08em;color:var(--muted);transition:background .25s ease,color .25s ease}
+.case-index a:hover,.case-index a.is-active{background:var(--ink);color:var(--paper)}
+.gallery-shell{margin-top:64px;position:relative}
+.gallery-head{display:flex;justify-content:flex-end;align-items:center;gap:14px;margin-bottom:14px}
+.gallery-count{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);min-width:52px;text-align:right}
+.gallery-btn{appearance:none;border:1px solid var(--line);background:transparent;color:var(--ink);width:38px;height:38px;display:grid;place-items:center;font-size:18px;line-height:1;cursor:pointer;transition:background .25s ease,color .25s ease,border-color .25s ease}
+.gallery-btn:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mosaic.is-gallery{display:flex;grid-template-columns:none;grid-auto-rows:auto;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 0 14px;cursor:grab;overscroll-behavior-inline:contain;scrollbar-width:none}
+.mosaic.is-gallery::-webkit-scrollbar{display:none}
+.mosaic.is-gallery.is-dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.mosaic.is-gallery figure{flex:0 0 clamp(520px,70vw,1040px);height:clamp(420px,56vw,760px);min-height:0;scroll-snap-align:start;position:relative}
+.mosaic.is-gallery .m2{flex-basis:clamp(340px,38vw,560px)}
+.mosaic.is-gallery figure img{width:100%;height:100%;object-fit:cover}
+.mosaic.is-gallery .phone-stage{height:100%;min-height:0;display:grid;place-items:center}
+.mosaic.is-gallery .phone-shell{max-height:92%;width:auto;aspect-ratio:9/19.5}
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(15,15,15,.94);display:grid;grid-template-rows:auto 1fr;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
+.lightbox.is-open{opacity:1;visibility:visible}
+.lightbox__top{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+.lightbox__close{appearance:none;border:1px solid rgba(255,255,255,.35);background:transparent;color:white;width:38px;height:38px;cursor:pointer;font-size:20px}
+.lightbox__stage{display:grid;place-items:center;padding:0 24px 28px;overflow:hidden}
+.lightbox__stage img{max-width:min(92vw,1600px);max-height:84vh;width:auto;height:auto;object-fit:contain;box-shadow:0 24px 70px rgba(0,0,0,.35)}
+.lightbox__caption{color:rgba(255,255,255,.72);max-width:60ch}
+@media(max-width:1100px){.case-index{display:none}}
+@media(max-width:850px){.section-copy>div:first-child{position:static}.reveal{transform:translateY(14px)}.mosaic.is-gallery figure{flex-basis:86vw;height:68vw;min-height:360px}.mosaic.is-gallery .m2{flex-basis:62vw}.gallery-head{justify-content:space-between}}
+@media(max-width:560px){.mosaic.is-gallery figure{flex-basis:92vw;height:78vw;min-height:320px}.mosaic.is-gallery .m2{flex-basis:78vw}.gallery-btn{width:36px;height:36px}}
+
+/* Interactive brand-guideline viewer */
+.section-copy>div:first-child{z-index:2}
+.device-wrap,.guides,.pack-grid,.ai-production-grid,.ai-visualisation,.gallery-shell,.before-grid,.shift-list,.trust-strip,.results-grid,.ai-image{position:relative;z-index:10}
+.nav{z-index:80}.case-index{z-index:70}
+.guidelines-device{isolation:isolate}
+.guidelines-screen{position:relative;overflow-y:auto;overflow-x:hidden;scroll-snap-type:y proximity;background:#e8e7e2;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#888 #d7d6d1}
+.guidelines-screen::-webkit-scrollbar{width:8px}.guidelines-screen::-webkit-scrollbar-track{background:#d7d6d1}.guidelines-screen::-webkit-scrollbar-thumb{background:#888}
+.guidelines-pages{display:grid;gap:2px;padding:0 0 38px}
+.guidelines-page{margin:0;background:#fff;scroll-snap-align:start;position:relative}
+.guidelines-page img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#fff}
+.guidelines-screen-meta{position:sticky;bottom:0;left:0;right:0;display:flex;justify-content:space-between;gap:16px;padding:10px 14px;background:rgba(17,17,17,.92);color:#fff;font-size:10px;letter-spacing:.12em;text-transform:uppercase;backdrop-filter:blur(8px);z-index:3}
+.guidelines-device-controls{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:22px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#555}
+.guidelines-expand{appearance:none;border:0;border-bottom:1px solid currentColor;background:transparent;padding:7px 0;color:#111;font:inherit;text-transform:uppercase;letter-spacing:.1em;cursor:pointer}
+.guidelines-expand:hover{opacity:.55}
+.guidelines-modal{position:fixed;inset:0;z-index:300;background:rgba(245,244,240,.98);display:grid;grid-template-rows:auto 1fr;opacity:0;visibility:hidden;transition:opacity .28s ease,visibility .28s ease}
+.guidelines-modal.is-open{opacity:1;visibility:visible}
+.guidelines-modal__bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px clamp(18px,3vw,42px);border-bottom:1px solid var(--line);background:rgba(245,244,240,.94);backdrop-filter:blur(12px);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.guidelines-modal__status{display:flex;gap:28px;align-items:center}
+.guidelines-modal__close{appearance:none;border:1px solid var(--line);background:transparent;width:40px;height:40px;cursor:pointer;font-size:20px;line-height:1}
+.guidelines-modal__viewport{overflow-y:auto;padding:clamp(24px,4vw,62px);scroll-snap-type:y proximity;overscroll-behavior:contain}
+.guidelines-modal__pages{width:min(100%,1280px);margin:auto;display:grid;gap:clamp(18px,2vw,30px)}
+.guidelines-modal__page{margin:0;background:#fff;box-shadow:0 12px 34px rgba(0,0,0,.08);scroll-snap-align:start}
+.guidelines-modal__page img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#fff}
+@media(max-width:850px){.guidelines-device-controls{align-items:flex-start;flex-direction:column;gap:10px}.guidelines-screen-meta{font-size:9px}.guidelines-modal__status span:first-child{display:none}}
+
+
+/* v3 outcome interactions + mobile comparison refinement */
+.logo-marquee{position:relative;overflow:hidden;margin-top:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.logo-marquee__track{display:flex;align-items:center;width:max-content;gap:clamp(38px,5vw,82px);animation:logoLoop 28s linear infinite;will-change:transform}
+.logo-marquee:hover .logo-marquee__track{animation-play-state:paused}
+.logo-marquee__set{display:flex;align-items:center;gap:clamp(38px,5vw,82px);padding-right:clamp(38px,5vw,82px)}
+.logo-word{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;color:var(--ink);font-size:clamp(22px,2.4vw,36px);line-height:1;letter-spacing:-.025em;opacity:.86}
+.logo-word.amazon{font-weight:700;text-transform:lowercase}.logo-word.tesla{letter-spacing:.16em;font-size:clamp(16px,1.7vw,24px)}.logo-word.stripe{font-weight:700;letter-spacing:-.06em}.logo-word.deloitte{font-weight:700}.logo-word.accenture{font-weight:700;letter-spacing:-.04em}.logo-word.sky{font-style:italic;font-weight:700}.logo-word.kelloggs{font-family:Georgia,serif;font-style:italic;font-weight:700}.logo-word.coca{font-family:Georgia,serif;font-style:italic}.logo-word.apple{font-weight:600}
+@keyframes logoLoop{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.result-card{position:relative;overflow:hidden;transition:transform .42s var(--ease),background .42s ease,color .42s ease;will-change:transform}
+.result-card:before{content:'';position:absolute;left:0;top:0;width:100%;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:left center;transition:transform .42s var(--ease)}
+.result-card:hover{transform:translateY(-5px);background:#efeee9}
+.result-card:hover:before{transform:scaleX(1)}
+.result-number{transition:transform .42s var(--ease),letter-spacing .42s var(--ease)}
+.result-card:hover .result-number{transform:translateY(-4px);letter-spacing:-.065em}
+.portfolio-footer{padding:clamp(72px,9vw,128px) 0 28px;border-top:1px solid var(--line);background:#efeee9}
+.portfolio-footer__top{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);align-items:end}
+.portfolio-footer__title{grid-column:span 6;font-size:clamp(38px,5.2vw,76px);line-height:.98;letter-spacing:-.05em;max-width:9ch}
+.portfolio-footer__note{grid-column:8/span 5;max-width:38ch;color:var(--muted);font-size:15px;line-height:1.55}
+.portfolio-footer__bottom{display:flex;justify-content:space-between;gap:24px;margin-top:clamp(64px,8vw,112px);padding-top:18px;border-top:1px solid var(--line);font-size:11px;text-transform:uppercase;letter-spacing:.11em}
+.portfolio-footer__bottom a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+@media(max-width:850px){
+  .shift-head{display:none}
+  .shift-row{grid-template-columns:1fr;gap:10px;padding:22px 0}
+  .shift-row>b:first-child{margin-bottom:3px;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink)}
+  .shift-row>span{display:grid;grid-template-columns:minmax(86px,.42fr) 1fr;gap:16px;align-items:start}
+  .shift-row>span:before{font-size:10px;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);padding-top:2px}
+  .shift-row>span:nth-of-type(1):before{content:'Previous'}
+  .shift-row>span:nth-of-type(2):before{content:'New direction'}
+  .portfolio-footer__top{grid-template-columns:1fr}.portfolio-footer__title,.portfolio-footer__note{grid-column:auto}.portfolio-footer__note{margin-top:26px}.portfolio-footer__bottom{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:560px){.logo-marquee{margin-inline:calc(var(--pad)*-1);padding-inline:var(--pad);mask-image:none;-webkit-mask-image:none}.logo-marquee__track{gap:34px}.logo-marquee__set{gap:34px;padding-right:34px}.logo-word{font-size:24px}}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}figure img,.guide-card img,.gallery-btn,.nav,main,footer{transition:none}.mosaic.is-gallery{scroll-behavior:auto}.scroll-progress__bar{transition:none}.logo-marquee__track{animation:none}.result-card{transition:none}}
+
 </style>
 </head>
 <body>
 <header class="nav"><div class="wrap navin"><div>Megan O’Connor</div><div>Case study / Riley.</div><div>2025</div></div></header>
 <main>
-<section class="hero"><div class="wrap"><div class="kicker">Brand transformation / Creative direction</div><h1>Riley.</h1><div class="hero-intro"><div class="hero-lead"><p class="lead">Repositioning a period care brand for a more mature, sustainability-conscious audience and the workplace market.</p></div><div class="hero-summary"><p>Strategy, visual direction, packaging, marketing direction and creative leadership, with AI and 3D integrated into production before the new packaging had gone to print.</p></div></div><div class="hero-meta"><div><b>Role</b>Brand strategist &amp; creative director</div><div><b>Scope</b>Identity, packaging, marketing</div><div><b>Team</b>3D, illustration, social, packaging</div><div><b>Approach</b>AI-enabled visualisation</div></div></div></section>
+<section class="hero" id="top"><div class="wrap"><div class="kicker">Brand transformation / Creative direction</div><h1>Riley.</h1><div class="hero-intro"><div class="hero-lead"><p class="lead">Repositioning a period care brand for a more mature, sustainability-conscious audience and the workplace market.</p></div><div class="hero-summary"><p>Strategy, visual direction, packaging, marketing direction and creative leadership, with AI and 3D integrated into production before the new packaging had gone to print.</p></div></div><div class="hero-meta"><div><b>Role</b>Brand strategist &amp; creative director</div><div><b>Scope</b>Identity, packaging, marketing</div><div><b>Team</b>3D, illustration, social, packaging</div><div><b>Approach</b>AI-enabled visualisation</div></div></div></section>
 <div class="fullbleed"><img alt="Riley packaging range presented in the refreshed brand system" decoding="async" fetchpriority="high" loading="eager" src="hero-packaging.webp"/></div>
 <section class="statement"><div class="wrap grid12"><p class="lead">The brief was less about making Riley. look different, and more about making the brand fit the audience and opportunities it was moving toward.</p></div></section>
 <section class="section"><div class="wrap"><div class="grid12 section-copy"><div class="col4"><div class="kicker">01 / The starting point</div><h2 style="margin-top:18px">A younger brand for a younger customer.</h2></div><div class="col7"><p class="lead">The existing identity leaned heavily on soft pastel pinks, greens and blues, giving the brand a youthful, playful feel.</p><p>That visual language no longer matched Riley.’s next stage. The business wanted to reach more mature consumers who were already conscious of ingredients, product safety and sustainability, while also becoming credible to corporate offices looking to provide period care at work.</p></div></div><div class="before-grid" style="margin-top:62px"><div class="before-main"><img alt="Riley previous pastel packaging range before the brand repositioning" decoding="async" loading="lazy" src="previous-packaging.webp"/><div class="caption">Before: pastel-led consumer packaging.</div></div><div class="before-side"><div><img alt="Riley previous brand photography and pastel packaging" decoding="async" loading="lazy" src="previous-brand-square.webp"/><div class="caption">Before: youthful colour and lifestyle direction.</div></div><div><img alt="Riley previous pale blue packaging" decoding="async" loading="lazy" src="previous-blue-packaging.webp"/><div class="caption">Before: earlier pale blue packaging.</div></div></div></div></div></section>
 <section class="section"><div class="wrap"><div class="grid12 section-copy"><div class="col4"><div class="kicker">02 / Repositioning</div><h2 style="margin-top:18px">From awareness-building to informed choice.</h2></div><div class="col7"><p class="lead">The new identity needed to speak to people who already understood the problem Riley. solves.</p><p>Rather than educating a younger audience from scratch, the refreshed brand was designed for customers more actively questioning what goes into conventional period products and making conscious choices around health, ingredients and sustainability.</p><p>At the same time, Riley. needed enough maturity and credibility to sit comfortably in workplace wellbeing programmes and corporate environments without losing the humanity of a personal care brand.</p></div></div><div class="shift-list"><div class="shift-row shift-head"><span></span><b>Previous positioning</b><b>New direction</b></div><div class="shift-row"><b>Audience</b><span class="muted">Younger, less informed consumer</span><span>Mature, conscious consumer + workplace buyer</span></div><div class="shift-row"><b>Brand role</b><span class="muted">Introduce the category problem</span><span>Make Riley. the considered choice</span></div><div class="shift-row"><b>Visual tone</b><span class="muted">Playful, pastel, youthful</span><span>Refined, confident, warm</span></div><div class="shift-row"><b>Commercial context</b><span class="muted">Primarily DTC consumer</span><span>Consumer + corporate wellbeing</span></div></div></div></section>
-<section class="section"><div class="wrap"><div class="grid12 section-copy"><div class="col4"><div class="kicker">03 / The system</div><h2 style="margin-top:18px">A visual language built to scale.</h2></div><div class="col7"><p class="lead">I developed the strategic and visual direction, then translated it into a practical brand system across logo use, colour, typography, illustration, photography and application.</p><p>The design direction became more editorial and restrained, with a deeper, more grown-up palette and clearer hierarchy. Warmer human details kept the system from becoming clinical or overly corporate.</p></div></div></div><div class="device-wrap" style="margin-top:64px"><div class="laptop"><div class="screen"><div class="screen-inner"><img alt="Riley brand guidelines page showing advertising and marketing considerations" decoding="async" loading="lazy" src="brand-guidelines-marketing.webp"/></div></div><div class="base"></div></div></div><div class="wrap"><div class="guides"><div class="guide-card"><img alt="Riley brand guidelines colour palette page" decoding="async" loading="lazy" src="brand-guidelines-colour.webp"/><div class="caption">Colour system</div></div><div class="guide-card"><img alt="Riley brand guidelines typography page" decoding="async" loading="lazy" src="brand-guidelines-typography.webp"/><div class="caption">Typography hierarchy</div></div></div></div></section>
+<section class="section"><div class="wrap"><div class="grid12 section-copy"><div class="col4"><div class="kicker">03 / The system</div><h2 style="margin-top:18px">A visual language built to scale.</h2></div><div class="col7"><p class="lead">I developed the strategic and visual direction, then translated it into a practical brand system across logo use, colour, typography, illustration, photography and application.</p><p>The design direction became more editorial and restrained, with a deeper, more grown-up palette and clearer hierarchy. Warmer human details kept the system from becoming clinical or overly corporate.</p></div></div></div><div class="device-wrap guidelines-device" style="margin-top:64px"><div class="laptop"><div class="screen"><div class="screen-inner guidelines-screen" id="guidelinesScreen" tabindex="0" aria-label="Scrollable Riley brand guidelines"><div class="guidelines-pages" id="guidelinesPages"></div><div class="guidelines-screen-meta"><span>Brand guidelines</span><span id="guidelinesPageCount">01 / 34</span></div></div></div><div class="base"></div><div class="guidelines-device-controls"><span>Scroll inside the screen to explore the full brand system</span><button class="guidelines-expand" type="button" id="guidelinesExpand">Expand guidelines <span aria-hidden="true">↗</span></button></div></div></div><div class="wrap"><div class="guides"><div class="guide-card"><img alt="Riley brand guidelines colour palette page" decoding="async" loading="lazy" src="brand-guidelines-colour.webp"/><div class="caption">Colour system</div></div><div class="guide-card"><img alt="Riley brand guidelines typography page" decoding="async" loading="lazy" src="brand-guidelines-typography.webp"/><div class="caption">Typography hierarchy</div></div></div></div></section>
 <section class="section"><div class="wrap"><div class="grid12 section-copy"><div class="col4"><div class="kicker">04 / Packaging</div><h2 style="margin-top:18px">Making the strategy tangible.</h2></div><div class="col7"><p class="lead">Packaging became the clearest expression of the repositioning.</p><p>The refreshed system moved away from the previous pastel-heavy world and introduced more confident colour, editorial typography and a calmer hierarchy. The aim was to feel considered and credible on a bathroom shelf, in retail and in an office supply cupboard.</p></div></div><div class="pack-grid" style="margin-top:64px"><figure class="wide" style="margin:0"><img alt="Riley packaging system in use, displayed in a warm interior setting" decoding="async" loading="lazy" src="packaging-system-in-use.webp"/><figcaption class="caption">Packaging system in use.</figcaption></figure><figure class="portrait" style="margin:0"><img alt="Riley boxes and wrapped period products in a green shopping basket" decoding="async" loading="lazy" src="shopping-basket.webp"/><figcaption class="caption">Final high-resolution packaging imagery.</figcaption></figure><figure class="portrait" style="margin:0"><img alt="Three Riley product boxes stacked on a hand" decoding="async" loading="lazy" src="stacked-boxes-hand.webp"/><figcaption class="caption">Product family across absorbencies and formats.</figcaption></figure></div></div></section>
 <div class="ai-block"><section class="section"><div class="wrap grid12 section-copy"><div class="col4"><div class="kicker">05 / AI + 3D workflow</div><h2 style="margin-top:18px">Bringing the brand to life before print.</h2></div><div class="col7"><p class="lead">The packaging was designed, but the physical packs did not yet exist. I used AI and 3D as part of the production workflow so the new brand could be visualised, tested and communicated immediately.</p><p>Rather than waiting for manufacturing and photography, I directed a 3D artist and used AI-assisted image workflows to create believable branded environments and product scenes. This gave the team a way to see the identity behaving in the real world while final production was still underway.</p><p>AI was not the creative strategy. It was the accelerator that helped turn an approved system into campaign-ready imagery faster.</p></div><div class="ai-production-grid"><figure><img alt="3D visualisation of Riley packaging and period products floating in space" decoding="async" loading="lazy" src="3d-floating-packaging.webp"/><figcaption class="caption">3D product visualisation developed before physical production.</figcaption></figure><figure><img alt="3D visualisation of Riley naked tampon packaging and product" decoding="async" loading="lazy" src="3d-naked-tampon.webp"/><figcaption class="caption">Product detail visualisation used to bring the packaging system to life before print.</figcaption></figure></div></div></section></div><section class="section ai-visualisation"><div class="wrap"><div class="ai-text-grid"><div><div class="kicker">Pre-production visualisation</div><h2>The brand could start working before the boxes existed.</h2></div><div class="ai-copy"><p>Before the refreshed packaging had gone to print, I used AI-supported image workflows alongside 3D production to visualise the new identity in context. This meant campaign thinking, social concepts and brand applications could develop in parallel with physical production rather than waiting for finished packs.</p></div></div><figure class="ai-image"><img alt="Pre-production Riley brand visualisation created before the refreshed packaging went to print" decoding="async" loading="lazy" src="preproduction-visualisation.webp"/></figure></div></section>
 <section class="section"><div class="wrap"><div class="grid12 section-copy"><div class="col4"><div class="kicker">06 / Brand in use</div><h2 style="margin-top:18px">From system to everyday context.</h2></div><div class="col7"><p class="lead">The visual direction was designed to move between product, lifestyle, education and workplace communications without becoming a different brand each time.</p></div></div><div class="mosaic" style="margin-top:64px"><figure class="m1"><img alt="Riley products styled in a calm interior" decoding="async" loading="lazy" src="brand-in-use-interior.webp"/></figure><figure class="m2"><div aria-label="Riley Instagram grid shown in a minimalist phone mockup" class="phone-stage"><div class="phone-shell"><div class="phone-screen"><img alt="Riley Instagram grid demonstrating the refreshed brand across social content" decoding="async" loading="lazy" src="instagram-grid.webp"/></div></div></div></figure><figure class="m3"><img alt="Riley Period Emergency Kit styled with travel essentials on an airport security tray" decoding="async" loading="lazy" src="travel-emergency-kit-tray.png"/></figure><figure class="m4"><img alt="Riley period products and pouch in natural light" decoding="async" loading="lazy" src="products-pouch-natural-light.webp"/></figure><figure class="m5"><img alt="Riley product sustainability information graphic" decoding="async" loading="lazy" src="sustainability-graphic.webp"/></figure></div></div></section>
 <section class="section"><div class="wrap grid12 section-copy"><div class="col4"><div class="kicker">07 / Creative leadership</div><h2 style="margin-top:18px">One direction, multiple specialists.</h2></div><div class="col7"><p class="lead">I owned the strategic and creative through-line, then brought in specialist talent where it would improve speed and execution.</p><p>I coordinated 3D designers, illustrators, social media specialists and packaging designers, setting the core system and giving each workstream a clear creative framework. This let multiple disciplines progress in parallel while keeping the end result coherent.</p><div class="role-table"><div class="role-row"><span>Owned</span><div>Brand strategy and positioning</div></div><div class="role-row"><span>Owned</span><div>Visual direction and identity system</div></div><div class="role-row"><span>Owned</span><div>Packaging and marketing direction</div></div><div class="role-row"><span>Directed</span><div>3D, illustration, social and specialist packaging support</div></div><div class="role-row"><span>Integrated</span><div>AI-enabled visualisation before physical production</div></div></div></div></div></section>
-<section class="section"><div class="wrap"><div class="grid12"><div class="col4"><div class="kicker">08 / Outcome</div></div><div class="col8"><h2>From young subscription start-up to a brand trusted in bigger spaces.</h2><p class="results-intro">Before the rebrand, Riley.’s youthful, pastel-led identity still reflected its origins as a digitally led subscription start-up. The new strategy was designed for the company Riley. was becoming: more mature, more credible and able to operate confidently across corporate workplaces, established retail, hospitality and large public environments.</p><p class="results-intro">Since the rebrand, Riley. has expanded into exactly those spaces. The identity did not create those commercial wins on its own, but it helped give the business a complete strategic and visual system that could represent Riley. with greater credibility when speaking to larger organisations, buyers and partners.</p></div></div><div class="trust-strip"><div class="kicker">New clients and partners since the rebrand include</div><div aria-label="Selected Riley clients and partners" class="logo-strip"><span class="client-logo apple">Apple</span><span class="client-logo amazon">amazon</span><span class="client-logo tesla">TESLA</span><span class="client-logo stripe">stripe</span><span class="client-logo deloitte">Deloitte.</span><span class="client-logo accenture">accenture</span><span class="client-logo sky">sky</span><span class="client-logo kelloggs">Kellogg's</span><span class="client-logo coca">Coca-Cola</span></div></div><div class="results-grid"><article class="result-card"><div class="result-number">500+</div><div><h3>Global organisations</h3><p>Riley. has scaled its B2B footprint to supply free, sustainable period care across more than 500 organisations spanning corporate, education and hospitality environments.</p></div></article><article class="result-card"><div class="result-number">Retail</div><div><h3>Premium brick-and-mortar expansion</h3><p>The brand moved into established physical retail through Holland &amp; Barrett stores in Ireland and John Bell &amp; Croyden in London, giving the new packaging system a credible presence beyond DTC.</p></div></article><article class="result-card"><div class="result-number">Travel</div><div><h3>WHSmith airport retail</h3><p>Riley.’s Period Emergency Kits launched through WHSmith locations across major European airports, extending the brand into a fast-moving, high-trust travel retail environment.</p></div></article><article class="result-card"><div class="result-number">5-star</div><div><h3>Luxury hospitality</h3><p>The Shelbourne Hotel in Dublin introduced Riley. period care for guests and staff, placing the brand within a premium hospitality setting.</p></div></article><article class="result-card"><div class="result-number">Venue</div><div><h3>Aviva Stadium</h3><p>Riley. secured a venue-wide partnership with Aviva Stadium, taking the brand into one of Ireland’s best-known national sports and entertainment environments.</p></div></article></div><p class="outcome-note">The strongest result of the repositioning is not simply that Riley. looks more grown-up. It is that the brand now has the visual credibility and strategic consistency to sit comfortably in places that would have felt disconnected from its earlier start-up identity: corporate offices, premium retailers, five-star hospitality, airports and national venues.</p></div></section>
-<section class="closing"><div class="wrap"><div class="kicker">Riley. / Brand transformation</div><h2 style="margin-top:16px">Strategy first. System second. Tools in service of both.</h2></div></section>
+<section class="section"><div class="wrap"><div class="grid12"><div class="col4"><div class="kicker">08 / Outcome</div></div><div class="col8"><h2>From young subscription start-up to a brand trusted in bigger spaces.</h2><p class="results-intro">Before the rebrand, Riley.’s youthful, pastel-led identity still reflected its origins as a digitally led subscription start-up. The new strategy was designed for the company Riley. was becoming: more mature, more credible and able to operate confidently across corporate workplaces, established retail, hospitality and large public environments.</p><p class="results-intro">Since the rebrand, Riley. has expanded into exactly those spaces. The identity did not create those commercial wins on its own, but it helped give the business a complete strategic and visual system that could represent Riley. with greater credibility when speaking to larger organisations, buyers and partners.</p></div></div><div class="trust-strip"><div class="kicker">New clients and partners since the rebrand include</div><div class="logo-marquee" aria-label="Selected Riley clients and partners"><div class="logo-marquee__track"><div class="logo-marquee__set"><span class="logo-word apple">Apple</span><span class="logo-word amazon">amazon</span><span class="logo-word tesla">TESLA</span><span class="logo-word stripe">stripe</span><span class="logo-word deloitte">Deloitte.</span><span class="logo-word accenture">accenture</span><span class="logo-word sky">sky</span><span class="logo-word kelloggs">Kellogg's</span><span class="logo-word coca">Coca-Cola</span></div><div class="logo-marquee__set" aria-hidden="true"><span class="logo-word apple">Apple</span><span class="logo-word amazon">amazon</span><span class="logo-word tesla">TESLA</span><span class="logo-word stripe">stripe</span><span class="logo-word deloitte">Deloitte.</span><span class="logo-word accenture">accenture</span><span class="logo-word sky">sky</span><span class="logo-word kelloggs">Kellogg's</span><span class="logo-word coca">Coca-Cola</span></div></div></div></div><div class="results-grid"><article class="result-card"><div class="result-number">500+</div><div><h3>Global organisations</h3><p>Riley. has scaled its B2B footprint to supply free, sustainable period care across more than 500 organisations spanning corporate, education and hospitality environments.</p></div></article><article class="result-card"><div class="result-number">Retail</div><div><h3>Premium brick-and-mortar expansion</h3><p>The brand moved into established physical retail through Holland &amp; Barrett stores in Ireland and John Bell &amp; Croyden in London, giving the new packaging system a credible presence beyond DTC.</p></div></article><article class="result-card"><div class="result-number">Travel</div><div><h3>WHSmith airport retail</h3><p>Riley.’s Period Emergency Kits launched through WHSmith locations across major European airports, extending the brand into a fast-moving, high-trust travel retail environment.</p></div></article><article class="result-card"><div class="result-number">5-star</div><div><h3>Luxury hospitality</h3><p>The Shelbourne Hotel in Dublin introduced Riley. period care for guests and staff, placing the brand within a premium hospitality setting.</p></div></article><article class="result-card"><div class="result-number">Venue</div><div><h3>Aviva Stadium</h3><p>Riley. secured a venue-wide partnership with Aviva Stadium, taking the brand into one of Ireland’s best-known national sports and entertainment environments.</p></div></article></div><p class="outcome-note">The strongest result of the repositioning is not simply that Riley. looks more grown-up. It is that the brand now has the visual credibility and strategic consistency to sit comfortably in places that would have felt disconnected from its earlier start-up identity: corporate offices, premium retailers, five-star hospitality, airports and national venues.</p></div></section>
+<section class="portfolio-footer"><div class="wrap"><div class="portfolio-footer__top"><div class="portfolio-footer__title">More selected work.</div><div class="portfolio-footer__note">Riley. is one part of a broader portfolio spanning brand and creative, systems and operations, and AI-enabled workflows. Additional case studies will be added here as the portfolio develops.</div></div><div class="portfolio-footer__bottom"><span>Megan O’Connor / Selected work</span><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a></div></div></section>
 </main>
 <footer class="footer"><div class="wrap"><div>Megan O’Connor</div><div>Brand strategy · Creative direction · AI-enabled workflows</div></div></footer>
+
+<script>
+(() => {
+  document.body.classList.add('is-loading');
+  window.addEventListener('load', () => requestAnimationFrame(() => document.body.classList.remove('is-loading')), {once:true});
+
+  // Scroll progress
+  const progress = document.createElement('div');
+  progress.className = 'scroll-progress';
+  progress.innerHTML = '<div class="scroll-progress__bar"></div>';
+  document.body.prepend(progress);
+  const bar = progress.firstElementChild;
+  const updateProgress = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.width = (max > 0 ? Math.min(100, scrollY / max * 100) : 0) + '%';
+  };
+  addEventListener('scroll', updateProgress, {passive:true}); updateProgress();
+
+  // Add section ids + compact case index
+  const sections = [...document.querySelectorAll('section.section')].filter(sec => /0[1-8]\s*\//.test(sec.textContent));
+  const index = document.createElement('nav');
+  index.className = 'case-index';
+  index.setAttribute('aria-label','Case study sections');
+  sections.forEach((sec,i) => {
+    const n = String(i+1).padStart(2,'0');
+    sec.id = sec.id || 'section-' + n;
+    const a = document.createElement('a');
+    a.href = '#' + sec.id; a.textContent = n; a.title = (sec.querySelector('.kicker')?.textContent || n).trim();
+    index.appendChild(a);
+  });
+  if (sections.length) document.body.appendChild(index);
+
+  // Reveal choreography, deliberately subtle
+  const revealTargets = [...document.querySelectorAll('.section-copy > div, .before-grid, .shift-list, .device-wrap, .guides, .pack-grid, .ai-production-grid, .ai-text-grid, .ai-image, .trust-strip, .results-grid, .outcome-note, .portfolio-footer .wrap')];
+  revealTargets.forEach((el,i) => { el.classList.add('reveal'); el.dataset.delay = String(i%3); });
+  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('is-visible'); revealObs.unobserve(e.target); } }), {threshold:.12,rootMargin:'0px 0px -7% 0px'});
+  revealTargets.forEach(el => revealObs.observe(el));
+
+  // Active section state
+  const links = [...index.querySelectorAll('a')];
+  const activeObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ links.forEach(a=>a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id)); } });
+  }, {rootMargin:'-35% 0px -55% 0px',threshold:0});
+  sections.forEach(sec => activeObs.observe(sec));
+
+  // Turn Brand in use into a drag/swipe gallery without changing its content
+  const brandSection = sections.find(sec => /06\s*\/\s*Brand in use/i.test(sec.textContent));
+  const mosaic = brandSection?.querySelector('.mosaic');
+  if(mosaic){
+    mosaic.classList.add('is-gallery');
+    const shell = document.createElement('div'); shell.className='gallery-shell';
+    const head = document.createElement('div'); head.className='gallery-head';
+    head.innerHTML = '<div class="gallery-count" aria-live="polite">01 / 05</div><button class="gallery-btn gallery-prev" aria-label="Previous image">←</button><button class="gallery-btn gallery-next" aria-label="Next image">→</button>';
+    mosaic.parentNode.insertBefore(shell,mosaic); shell.appendChild(head); shell.appendChild(mosaic);
+    const slides=[...mosaic.querySelectorAll('figure')], count=head.querySelector('.gallery-count');
+    const currentIndex=()=>{ const x=mosaic.scrollLeft; let best=0,d=Infinity; slides.forEach((s,i)=>{const nd=Math.abs(s.offsetLeft-x);if(nd<d){d=nd;best=i}}); return best; };
+    const updateCount=()=>{const i=currentIndex();count.textContent=String(i+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');};
+    const go=dir=>{const i=currentIndex(),next=Math.max(0,Math.min(slides.length-1,i+dir));slides[next].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});};
+    head.querySelector('.gallery-prev').onclick=()=>go(-1); head.querySelector('.gallery-next').onclick=()=>go(1);
+    mosaic.addEventListener('scroll',()=>requestAnimationFrame(updateCount),{passive:true}); updateCount();
+    let down=false,startX=0,startScroll=0;
+    mosaic.addEventListener('pointerdown',e=>{down=true;startX=e.clientX;startScroll=mosaic.scrollLeft;mosaic.classList.add('is-dragging');mosaic.setPointerCapture(e.pointerId)});
+    mosaic.addEventListener('pointermove',e=>{if(down)mosaic.scrollLeft=startScroll-(e.clientX-startX)});
+    const release=e=>{if(!down)return;down=false;mosaic.classList.remove('is-dragging');try{mosaic.releasePointerCapture(e.pointerId)}catch{}; const i=currentIndex();slides[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});};
+    mosaic.addEventListener('pointerup',release);mosaic.addEventListener('pointercancel',release);
+  }
+
+  // Lightbox: useful for guidelines/detail without forcing giant assets into the page
+  const lb=document.createElement('div'); lb.className='lightbox'; lb.setAttribute('role','dialog'); lb.setAttribute('aria-modal','true');
+  lb.innerHTML='<div class="lightbox__top"><div class="lightbox__caption"></div><button class="lightbox__close" aria-label="Close image">×</button></div><div class="lightbox__stage"><img alt=""></div>';
+  document.body.appendChild(lb); const lbImg=lb.querySelector('img'),lbCap=lb.querySelector('.lightbox__caption');
+  const close=()=>{lb.classList.remove('is-open');document.body.style.overflow='';};
+  lb.querySelector('.lightbox__close').onclick=close; lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('lightbox__stage'))close()}); addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+  [...document.querySelectorAll('figure')].forEach(fig=>{const img=fig.querySelector('img');if(!img)return;fig.dataset.lightbox='';fig.tabIndex=0;const open=()=>{lbImg.src=img.currentSrc||img.src;lbImg.alt=img.alt||'';lbCap.textContent=fig.querySelector('figcaption')?.textContent?.trim()||img.alt||'';lb.classList.add('is-open');document.body.style.overflow='hidden';};fig.addEventListener('click',open);fig.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
+
+
+  // Scrollable brand-guidelines document inside the laptop mockup + full-screen explorer
+  const guideScreen = document.getElementById('guidelinesScreen');
+  const guidePages = document.getElementById('guidelinesPages');
+  const guideCount = document.getElementById('guidelinesPageCount');
+  const totalGuidePages = 34;
+  const pageSrc = n => `guideline-page-${String(n).padStart(2,'0')}.webp`;
+  const makeGuidePage = (n, modal=false) => {
+    const fig=document.createElement('figure');
+    fig.className = modal ? 'guidelines-modal__page' : 'guidelines-page';
+    const img=document.createElement('img');
+    img.src=pageSrc(n); img.alt=`Riley brand guidelines, page ${n} of ${totalGuidePages}`; img.loading=n<3?'eager':'lazy'; img.decoding='async';
+    fig.appendChild(img); return fig;
+  };
+  if(guidePages){ for(let i=1;i<=totalGuidePages;i++) guidePages.appendChild(makeGuidePage(i)); }
+  const currentGuidePage = (viewport, selector) => {
+    const pages=[...viewport.querySelectorAll(selector)]; if(!pages.length) return 1;
+    const vr=viewport.getBoundingClientRect(); const target=vr.top + Math.min(vr.height*.35,220);
+    let best=1, dist=Infinity;
+    pages.forEach((pg,i)=>{const d=Math.abs(pg.getBoundingClientRect().top-target);if(d<dist){dist=d;best=i+1;}}); return best;
+  };
+  if(guideScreen && guideCount){
+    guideScreen.addEventListener('scroll',()=>{guideCount.textContent=`${String(currentGuidePage(guideScreen,'.guidelines-page')).padStart(2,'0')} / ${totalGuidePages}`},{passive:true});
+  }
+  const gm=document.createElement('div'); gm.className='guidelines-modal'; gm.setAttribute('role','dialog'); gm.setAttribute('aria-modal','true'); gm.setAttribute('aria-label','Riley brand guidelines');
+  gm.innerHTML=`<div class="guidelines-modal__bar"><div class="guidelines-modal__status"><span>Riley. brand guidelines</span><span id="guidelinesModalCount">01 / ${totalGuidePages}</span></div><button class="guidelines-modal__close" type="button" aria-label="Close brand guidelines">×</button></div><div class="guidelines-modal__viewport" tabindex="0"><div class="guidelines-modal__pages"></div></div>`;
+  document.body.appendChild(gm);
+  const gmViewport=gm.querySelector('.guidelines-modal__viewport'),gmPages=gm.querySelector('.guidelines-modal__pages'),gmCount=gm.querySelector('#guidelinesModalCount');
+  for(let i=1;i<=totalGuidePages;i++) gmPages.appendChild(makeGuidePage(i,true));
+  const openGuides=()=>{gm.classList.add('is-open');document.body.style.overflow='hidden';const p=currentGuidePage(guideScreen,'.guidelines-page');const target=gmPages.children[p-1];requestAnimationFrame(()=>target?.scrollIntoView({block:'start'}));gmViewport.focus({preventScroll:true});};
+  const closeGuides=()=>{gm.classList.remove('is-open');document.body.style.overflow='';};
+  document.getElementById('guidelinesExpand')?.addEventListener('click',openGuides);
+  gm.querySelector('.guidelines-modal__close').addEventListener('click',closeGuides);
+  gm.addEventListener('click',e=>{if(e.target===gm)closeGuides()});
+  gmViewport.addEventListener('scroll',()=>{gmCount.textContent=`${String(currentGuidePage(gmViewport,'.guidelines-modal__page')).padStart(2,'0')} / ${totalGuidePages}`},{passive:true});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&gm.classList.contains('is-open'))closeGuides()});
+
+})();
+</script>
+
 </body></html>

@@ -1,0 +1,13 @@
+GITHUB UPLOAD INSTRUCTIONS
+
+1. Open your existing GitHub repository: mocdesignco/portfolio.
+2. Choose Add file -> Upload files.
+3. Select ALL files inside this folder and upload them directly to the repository root.
+   - Do not upload the ZIP itself.
+   - Do not create folders.
+4. Commit the changes to main.
+5. GitHub Pages will redeploy automatically.
+6. After 1-2 minutes, hard-refresh:
+   https://mocdesignco.github.io/portfolio/
+
+The new index.html expects every image, including all 34 guideline pages, to sit beside it at the repository root.

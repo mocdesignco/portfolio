@@ -1,17 +1,14 @@
-# Riley case study portfolio page
+# Riley interactive preview v2
 
-GitHub Pages-ready static site.
+Preview-only version of the Riley case study. The written content remains unchanged.
 
-## Publish on GitHub Pages
+Interaction additions in this pass:
+- Smooth, restrained scroll reveals and section progress navigation
+- Foreground media layering so large imagery passes over sticky section headings cleanly
+- Horizontal drag/swipe gallery for Brand in use
+- Click-to-expand imagery
+- Brand Guidelines rendered from the actual 34-page PDF into a scrollable laptop viewport
+- Full-screen Brand Guidelines explorer with page counter
+- Responsive and reduced-motion behaviour
 
-1. Upload **the contents of this folder** to the root of your GitHub repository.
-   - `index.html`
-   - the `assets` folder
-   - `README.md`
-2. Commit the files to the `main` branch.
-3. Go to **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select **main** and **/(root)**, then click **Save**.
-6. Wait a minute or two for GitHub Pages to publish the site.
-
-Important: keep the `assets` folder structure exactly as supplied because `index.html` references those relative paths.
+Open `index.html` locally to preview. This is not intended to replace the current GitHub version until approved.
