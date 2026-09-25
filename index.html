@@ -1,376 +1,162 @@
 <!DOCTYPE html>
+<html class="js" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>VeUP Company Operating System | Megan O'Connor</title><meta content="A company operating system connecting strategy, ownership, knowledge and execution across VeUP." name="description"/><style>
+:root{--bg:#f4f3f0;--paper:#faf9f6;--ink:#111;--muted:#6f6f6b;--line:#cfcfc9;--soft:#e9e8e4;--dark:#151515;--max:1440px;--g:clamp(20px,3vw,44px);--ease:cubic-bezier(.22,.61,.36,1)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5;overflow-x:hidden}.wrap{width:min(calc(100% - 64px),var(--max));margin:auto}.progress{position:fixed;z-index:100;left:0;top:0;height:2px;background:var(--ink);width:0}.kicker{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(58px,8vw,118px);line-height:.88;letter-spacing:-.065em;font-weight:500;margin:36px 0 42px;max-width:12ch}h2{font-size:clamp(38px,5vw,70px);line-height:.98;letter-spacing:-.045em;font-weight:500;margin:10px 0 0;max-width:13ch}h3{font-size:20px;line-height:1.15;letter-spacing:-.025em}.lead{font-size:clamp(21px,2.3vw,34px);line-height:1.18;letter-spacing:-.025em;max-width:28ch}.bodycopy{font-size:17px;line-height:1.65;color:#383834;max-width:62ch}.hero{padding:110px 0 76px}.hero-grid{display:grid;grid-template-columns:7fr 5fr;gap:var(--g);align-items:end}.hero-side{padding-bottom:8px}.hero-side .bodycopy{margin-bottom:0}.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:72px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.fact{padding:24px 20px 24px 0}.fact+.fact{border-left:1px solid var(--line);padding-left:24px}.fact strong{display:block;font-size:clamp(30px,4vw,54px);font-weight:500;letter-spacing:-.045em;line-height:1}.fact span{display:block;color:var(--muted);font-size:13px;margin-top:8px}.system-line{margin-top:52px;padding:26px;background:var(--ink);color:#fff;display:grid;grid-template-columns:repeat(6,1fr);align-items:center}.system-line div{position:relative;padding:8px 16px 8px 0;font-size:13px}.system-line div:not(:last-child):after{content:'→';position:absolute;right:7px;color:#777}.section{padding:100px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:4fr 8fr;gap:var(--g);margin-bottom:58px}.section-head .intro{max-width:65ch}.section-head .intro .lead{margin-bottom:18px}.before{display:grid;grid-template-columns:1fr 1fr;gap:var(--g)}.scatter{background:var(--soft);min-height:430px;padding:40px;position:relative;overflow:hidden}.scatter span{position:absolute;border:1px solid var(--line);background:var(--paper);padding:12px 16px;font-size:14px}.scatter span:nth-child(1){left:8%;top:13%}.scatter span:nth-child(2){right:10%;top:20%}.scatter span:nth-child(3){left:33%;top:42%}.scatter span:nth-child(4){left:10%;bottom:16%}.scatter span:nth-child(5){right:11%;bottom:12%}.scatter span:nth-child(6){right:17%;top:57%}.pain-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}.pain{padding:24px 18px 24px 0;border-bottom:1px solid var(--line);min-height:145px}.pain:nth-child(even){padding-left:24px;border-left:1px solid var(--line)}.pain b{font-size:18px}.pain p{font-size:14px;color:var(--muted);margin:8px 0 0}.dark{background:var(--dark);color:#f6f5f1}.dark .kicker,.dark .muted{color:#9a9a95}.dark .bodycopy{color:#c7c7c1}.methods{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #3a3a38;margin:44px 0 70px}.method{padding:24px;border-right:1px solid #3a3a38}.method:last-child{border:0}.method b{font-size:20px}.method span{display:block;color:#9a9a95;font-size:13px;margin-top:5px}.architecture{display:grid;grid-template-columns:1fr 90px 1fr 90px 1fr;gap:0;align-items:stretch}.arch-node{border:1px solid #41413e;padding:30px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between}.arch-node strong{font-size:clamp(28px,3vw,46px);letter-spacing:-.04em;font-weight:500}.arch-node small{color:#9a9a95}.arch-arrow{display:grid;place-items:center;color:#777;font-size:24px}.architecture.second{margin-top:0;grid-template-columns:1fr 90px 1fr 90px 1fr}.model-note{margin-top:28px;color:#9a9a95;font-size:13px;max-width:70ch}.workshop{margin-top:54px;display:grid;grid-template-columns:1.2fr .8fr;gap:var(--g)}figure{margin:0}figure img{width:100%;height:auto;display:block;background:#fff}.caption{font-size:12px;color:var(--muted);margin-top:10px}.dark .caption{color:#999}.explorer{display:grid;grid-template-columns:4fr 8fr;gap:var(--g);align-items:start}.module-tabs{border-top:1px solid var(--line)}.module{appearance:none;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:transparent;padding:24px 4px;cursor:pointer;color:var(--muted);font:inherit}.module strong{display:block;color:inherit;font-size:20px;margin-bottom:6px}.module span{font-size:13px;line-height:1.45}.module.active{color:var(--ink)}.module.active strong:before{content:'●';font-size:8px;margin-right:10px;vertical-align:3px}.screen{background:var(--soft);padding:14px;min-height:520px;display:grid;place-items:center}.screen img{width:100%;max-height:650px;object-fit:contain;display:block}.screen-meta{display:flex;justify-content:space-between;margin-top:10px;color:var(--muted);font-size:12px}.rollout{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stage{padding:28px 24px 32px 0;min-height:210px}.stage+.stage{border-left:1px solid var(--line);padding-left:24px}.stage .num{font-size:12px;color:var(--muted);margin-bottom:36px}.stage p{font-size:14px;color:#4d4d48;margin:10px 0 0}.adoption{display:grid;grid-template-columns:1fr 1fr;gap:var(--g);margin-top:54px}.adoption figure img{aspect-ratio:16/9;object-fit:cover}.signal{background:var(--soft);padding:36px;display:flex;flex-direction:column;justify-content:space-between}.signal blockquote{font-size:clamp(24px,3vw,40px);line-height:1.15;letter-spacing:-.03em;margin:0}.signal small{color:var(--muted)}.results{display:grid;grid-template-columns:1fr 1fr;gap:var(--g)}.compare{border-top:1px solid var(--line)}.compare-row{display:grid;grid-template-columns:1fr 60px 1fr;padding:25px 0;border-bottom:1px solid var(--line);align-items:center}.compare-row strong{font-size:24px;letter-spacing:-.025em}.compare-row small{display:block;color:var(--muted);margin-bottom:5px}.compare-row .arrow{text-align:center}.metric-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}.metric{padding:28px;min-height:180px}.metric:nth-child(odd){border-right:1px solid var(--line)}.metric:nth-child(-n+2){border-bottom:1px solid var(--line)}.metric strong{font-size:clamp(42px,5vw,66px);line-height:1;letter-spacing:-.05em;font-weight:500}.metric span{display:block;color:var(--muted);font-size:13px;margin-top:10px}.role{margin-top:70px;padding-top:26px;border-top:1px solid var(--line);display:grid;grid-template-columns:4fr 8fr;gap:var(--g)}.role-tags{display:flex;flex-wrap:wrap;gap:8px}.role-tags span{border:1px solid var(--line);padding:9px 12px;font-size:12px}.footer{padding:70px 0 35px;border-top:1px solid var(--line)}.footer-row{display:flex;justify-content:space-between;gap:30px;color:var(--muted);font-size:12px}.js .reveal{opacity:0;transform:translateY(16px);transition:.65s var(--ease)}.js .reveal.in{opacity:1;transform:none}.zoom{cursor:zoom-in}.lightbox{position:fixed;inset:0;background:rgba(10,10,10,.94);z-index:200;display:none;place-items:center;padding:30px}.lightbox.open{display:grid}.lightbox img{max-width:94vw;max-height:90vh}.lightbox button{position:absolute;right:22px;top:18px;background:none;border:1px solid #666;color:white;width:40px;height:40px;font-size:22px;cursor:pointer}
+@media(max-width:850px){.wrap{width:min(calc(100% - 34px),var(--max))}.hero{padding-top:82px}.hero-grid,.section-head,.before,.explorer,.workshop,.adoption,.results,.role{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.fact:nth-child(3){border-left:0}.fact:nth-child(n+3){border-top:1px solid var(--line)}.system-line{grid-template-columns:1fr 1fr;gap:0}.system-line div:after{display:none}.section{padding:76px 0}.section-head{margin-bottom:38px}.methods,.rollout{grid-template-columns:1fr 1fr}.method:nth-child(2){border-right:0}.method:nth-child(-n+2){border-bottom:1px solid #3a3a38}.stage:nth-child(3){border-left:0;border-top:1px solid var(--line)}.stage:nth-child(4){border-top:1px solid var(--line)}.architecture,.architecture.second{grid-template-columns:1fr}.arch-arrow{height:54px;transform:rotate(90deg)}.screen{min-height:320px}.compare-row strong{font-size:19px}}@media(max-width:560px){.facts,.methods,.rollout,.metric-grid,.pain-grid{grid-template-columns:1fr}.fact+.fact,.pain:nth-child(even),.metric:nth-child(odd),.stage+.stage{border-left:0;padding-left:0}.fact:nth-child(n+2),.pain,.metric,.stage:nth-child(n+2){border-top:1px solid var(--line)}.method{border-right:0;border-bottom:1px solid #3a3a38}.method:last-child{border-bottom:0}.metric:nth-child(-n+2){border-bottom:0}.system-line{grid-template-columns:1fr}.scatter{min-height:360px}.compare-row{grid-template-columns:1fr 32px 1fr}.compare-row strong{font-size:17px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal{opacity:1;transform:none;transition:none}}
 
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Riley. Case Study — Megan O’Connor</title>
-<meta content="Riley. brand transformation case study by Megan O’Connor: strategy, creative direction, packaging, AI-enabled visualisation and multidisciplinary delivery." name="description"/>
-<style>
-:root{--bg:#f4f3f0;--paper:#faf9f6;--ink:#111;--muted:#6f6f6b;--line:#cfcfc9;--soft:#e9e8e4;--max:1440px;--g:clamp(20px,3vw,44px)}
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:Helvetica,Arial,sans-serif;line-height:1.45} img{display:block;width:100%;height:auto} a{color:inherit} .wrap{width:min(calc(100% - 48px),var(--max));margin:auto} .section{padding:clamp(72px,9vw,144px) 0;border-top:1px solid var(--line)}
-.kicker{font-size:12px;line-height:1;text-transform:uppercase;letter-spacing:.15em;font-weight:700} .mono{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-variant-numeric:tabular-nums} .muted{color:var(--muted)}
-h1{font-size:clamp(58px,11vw,160px);line-height:.86;letter-spacing:-.065em;margin:0;font-weight:500} h2{font-size:clamp(38px,5.4vw,78px);line-height:.96;letter-spacing:-.045em;margin:0;font-weight:500} h3{font-size:18px;line-height:1.15;margin:0 0 10px;font-weight:600} p{margin:0 0 1em;max-width:64ch} .lead{font-size:clamp(24px,3vw,42px);line-height:1.12;letter-spacing:-.028em;max-width:28ch} .small{font-size:14px;line-height:1.5} .caption{font-size:12px;color:var(--muted);margin-top:10px}
-.grid12{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g)} .col4{grid-column:span 4} .col5{grid-column:span 5} .col6{grid-column:span 6} .col7{grid-column:span 7} .col8{grid-column:span 8} .col12{grid-column:1/-1}
-.nav{padding:20px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(244,243,240,.94);backdrop-filter:blur(12px);z-index:5} .navin{display:flex;justify-content:space-between;gap:20px;font-size:12px;text-transform:uppercase;letter-spacing:.12em}
-.hero{padding:clamp(56px,8vw,120px) 0 26px} .hero-meta{margin-top:clamp(60px,8vw,110px);display:grid;grid-template-columns:repeat(4,1fr);gap:var(--g);border-top:1px solid var(--line);padding-top:16px} .hero-meta b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px}
-.fullbleed{width:100%;background:#ddd} .fullbleed img{width:100%;height:min(72vw,980px);object-fit:cover}
-.statement{padding:clamp(72px,8vw,120px) 0} .statement .lead{grid-column:4/span 7}
-.before-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--g);align-items:start} .before-main{background:var(--soft);padding:clamp(18px,3vw,38px)} .before-main img{aspect-ratio:1/1;object-fit:cover} .before-side{display:grid;gap:var(--g)} .before-side img{aspect-ratio:1/1;object-fit:cover}
-.shift-list{margin-top:56px;border-top:1px solid var(--line)} .shift-row{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:var(--g);padding:18px 0;border-bottom:1px solid var(--line);font-size:14px} .shift-row b{font-weight:600}
-.shift-head{padding:14px 0 12px;text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--muted)} .shift-head b{font-weight:600}
-.device-wrap{background:#deddd8;padding:clamp(36px,7vw,90px)} .laptop{max-width:1060px;margin:auto} .screen{background:#111;padding:12px 12px 0;border-radius:20px 20px 4px 4px;box-shadow:0 20px 50px rgba(0,0,0,.12)} .screen-inner{background:#fff;aspect-ratio:16/10;overflow:hidden} .screen-inner img{width:100%;height:100%;object-fit:contain;background:#fff} .base{height:18px;background:#bcbcb7;border-radius:0 0 50% 50%;margin:0 -5%;position:relative} .base:after{content:"";position:absolute;left:43%;right:43%;top:0;height:4px;background:#9c9c97;border-radius:0 0 4px 4px}
-.guides{margin-top:var(--g);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--g)} .guide-card{background:var(--paper);padding:14px;border:1px solid var(--line)} .guide-card img{aspect-ratio:1/1;object-fit:cover;object-position:top}
-.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--g)} .pack-grid .wide{grid-column:1/-1} .pack-grid img{height:100%;object-fit:cover} .pack-grid .wide img{aspect-ratio:2.25/1} .pack-grid .portrait img{aspect-ratio:4/5}
-.ai-block{background:#101010;color:white} .ai-block .section{border-top-color:#2c2c2c} .ai-callout{display:flex;align-items:flex-end;min-height:68vh;background-size:cover;background-position:center;padding:clamp(28px,4vw,64px);position:relative} .ai-callout:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.68),rgba(0,0,0,.04) 65%)} .ai-callout>div{position:relative;z-index:1;max-width:700px} .ai-callout .kicker{margin-bottom:16px} .ai-callout h2{color:white}
-.mosaic{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(120px,auto);gap:12px} .mosaic figure{margin:0;overflow:hidden;background:#ddd} .mosaic img{height:100%;object-fit:cover} .m1{grid-column:span 7;grid-row:span 2} .m2{grid-column:span 5;grid-row:span 2} .m3{grid-column:span 4;grid-row:span 2} .m4{grid-column:span 4;grid-row:span 2} .m5{grid-column:span 4;grid-row:span 2}
-.role-table{margin-top:48px;border-top:1px solid var(--line)} .role-row{display:grid;grid-template-columns:1fr 2fr;gap:var(--g);padding:14px 0;border-bottom:1px solid var(--line);font-size:14px} .role-row span:first-child{text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--muted)}
-.closing{padding:clamp(80px,12vw,180px) 0} .closing h2{max-width:14ch} .footer{padding:22px 0 42px;border-top:1px solid var(--line);font-size:12px;text-transform:uppercase;letter-spacing:.1em} .footer .wrap{display:flex;justify-content:space-between;gap:20px}
-@media(max-width:850px){.grid12{grid-template-columns:1fr} .col4,.col5,.col6,.col7,.col8,.col12,.statement .lead{grid-column:auto} .hero-meta{grid-template-columns:1fr 1fr} .before-grid,.pack-grid{grid-template-columns:1fr} .shift-row{grid-template-columns:1fr} .guides{grid-template-columns:1fr 1fr} .mosaic{grid-template-columns:1fr 1fr} .m1,.m2,.m3,.m4,.m5{grid-column:auto;grid-row:auto} .mosaic figure{min-height:320px}}
-@media(max-width:560px){.wrap{width:min(calc(100% - 28px),var(--max))} .hero-meta{grid-template-columns:1fr} .guides{grid-template-columns:1fr} .mosaic{grid-template-columns:1fr} .footer .wrap{display:block} .footer .wrap div+div{margin-top:8px}}
 
-/* v4 refinement: reusable neutral Swiss case-study system */
-h1,h2,h3,.lead,.kicker{ text-wrap:balance; }
-p{ text-wrap:pretty; orphans:3; widows:3; }
-.hero .kicker{margin-bottom:clamp(30px,3.2vw,52px)}
-.hero h1{max-width:8ch}
-.hero-intro{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,.75fr);gap:clamp(52px,8vw,150px);align-items:start;margin-top:clamp(52px,6vw,92px)}
-.hero-lead .lead{max-width:23ch}
-.hero-summary{max-width:36ch;font-size:17px;line-height:1.55;padding-top:4px}
-.hero-summary p{max-width:none}
-.before-main{padding:0;background:transparent}
-.before-main img{aspect-ratio:auto;object-fit:contain;background:var(--soft)}
-.guides{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3vw,44px)}
-.guide-card{padding:12px;background:var(--paper)}
-.guide-card img{aspect-ratio:16/9;object-fit:contain;object-position:center;background:#f7f6f2}
-.guide-card:nth-child(3){grid-column:1/-1}
-.guide-card:nth-child(3) img{max-height:760px}
-.ai-visualisation{background:var(--soft);color:var(--ink)}
-.ai-text-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.75fr);gap:clamp(52px,8vw,150px);align-items:end;margin-bottom:clamp(42px,6vw,88px)}
-.ai-text-grid h2{margin-top:20px;max-width:13ch}
-.ai-copy{font-size:17px;line-height:1.6;max-width:40ch}
-.ai-copy p{max-width:none}
-.ai-image{margin:0;background:#ddd}
-.ai-image img{width:100%;height:auto;max-height:none;object-fit:contain}
+/* v3 refinement: clearer information hierarchy and no single-word headline orphans */
+h1,h2,h3,.lead,.fact strong,.metric strong,.shift-card strong{ text-wrap:balance; }
+p,.bodycopy,.pain p,.module span,.embed-card p,.shift-card span{ text-wrap:pretty; }
+h1{max-width:14ch;}
+h2{max-width:15.5ch;}
+.hero{padding-bottom:92px;}
+.hero .lead{font-size:clamp(22px,2.25vw,32px);line-height:1.22;max-width:30ch;}
+.section-head{align-items:start;}
+.section-head .intro{padding-top:30px;max-width:62ch;}
+.section-head .intro .lead{font-size:18px;line-height:1.55;letter-spacing:-.01em;font-weight:600;max-width:58ch;margin-bottom:10px;}
+.section-head .intro .bodycopy{font-size:17px;line-height:1.62;}
+
+/* Simplified model */
+.model-flow{display:grid;grid-template-columns:1.05fr 42px 1.35fr 42px 1.05fr 42px 1.05fr 42px 1.2fr;border-top:1px solid #41413e;border-bottom:1px solid #41413e;align-items:stretch;margin-top:12px;}
+.flow-node{padding:30px 18px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;}
+.flow-node small{color:#969691;font-size:12px;}
+.flow-node strong{font-size:clamp(21px,2.15vw,34px);line-height:1.05;font-weight:500;letter-spacing:-.035em;text-wrap:balance;}
+.flow-arrow{display:grid;place-items:center;color:#666;font-size:20px;}
+.model-support{display:flex;gap:28px;padding:22px 0 0;color:#aaa;font-size:13px;}
+.model-support span{max-width:42ch;}
+
+/* Embedding/adoption, not a repeated project timeline */
+.embed-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.embed-card{padding:28px 28px 32px 0;min-height:225px;}
+.embed-card+.embed-card{padding-left:28px;border-left:1px solid var(--line);}
+.embed-stat{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:34px;}
+.embed-card h3{margin-bottom:10px;text-wrap:balance;}
+.embed-card p{font-size:14px;line-height:1.55;color:#4d4d48;margin:0;}
+
+/* Stronger outcomes */
+.results{grid-template-columns:1.18fr .82fr;align-items:start;}
+.visual-compare{border-top:0;display:grid;gap:12px;}
+.shift-card{background:var(--soft);padding:22px 24px 24px;border:1px solid transparent;transition:.25s ease;}
+.shift-card:hover{border-color:var(--line);transform:translateY(-2px);}
+.shift-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;}
+.shift-grid{display:grid;grid-template-columns:1fr 42px 1fr;align-items:center;gap:4px;}
+.shift-grid small{display:block;color:var(--muted);margin-bottom:4px;}
+.shift-grid strong{display:block;font-size:clamp(22px,2.2vw,34px);line-height:1.05;letter-spacing:-.035em;font-weight:500;}
+.shift-grid span{display:block;color:#55554f;font-size:13px;line-height:1.45;margin-top:8px;}
+.shift-arrow{text-align:center;color:#888;}
+.metric-grid{align-self:stretch;}
+.metric{min-height:170px;}
+
 @media(max-width:850px){
-  .hero-intro,.ai-text-grid{grid-template-columns:1fr;gap:28px}
-  .hero-summary,.ai-copy{max-width:58ch}
-  .guides{grid-template-columns:1fr}
-  .guide-card:nth-child(3){grid-column:auto}
+  .section-head .intro{padding-top:0;}
+  .model-flow{grid-template-columns:1fr;}
+  .flow-arrow{height:42px;transform:rotate(90deg);}
+  .model-support{flex-direction:column;gap:8px;}
+  .embed-grid{grid-template-columns:1fr;}
+  .embed-card+.embed-card{padding-left:0;border-left:0;border-top:1px solid var(--line);}
+  .results{grid-template-columns:1fr;}
+}
+@media(max-width:560px){
+  h1{max-width:none;font-size:clamp(50px,15vw,72px);}
+  h2{max-width:none;}
+  .shift-grid{grid-template-columns:1fr;gap:12px;}
+  .shift-arrow{transform:rotate(90deg);text-align:left;width:max-content;}
 }
 
+/* v4 art direction: interactive information-design moments */
+.fragment-map{position:relative;min-height:470px;background:var(--soft);overflow:hidden;border:1px solid transparent;isolation:isolate}
+.fragment-map:before,.fragment-map:after{content:"";position:absolute;border:1px solid #d3d2cc;border-radius:50%;inset:13% 18%;pointer-events:none;transition:transform .7s var(--ease),opacity .5s ease}
+.fragment-map:after{inset:22% 28%;border-style:dashed;opacity:.75}
+.fragment-core{position:absolute;left:50%;top:50%;width:132px;height:132px;border-radius:50%;transform:translate(-50%,-50%);border:1px solid var(--line);background:var(--paper);display:grid;place-items:center;text-align:center;padding:18px;z-index:2;font-size:13px;line-height:1.3;transition:.5s var(--ease)}
+.fragment-node{appearance:none;position:absolute;border:1px solid var(--line);background:var(--paper);padding:12px 16px;font:inherit;font-size:13px;cursor:pointer;z-index:3;transition:transform .35s var(--ease),background .25s,color .25s,border-color .25s}
+.fragment-node:hover,.fragment-node:focus-visible,.fragment-node.active{background:var(--ink);color:white;border-color:var(--ink);outline:none;transform:translateY(-3px)}
+.fragment-node:nth-of-type(1){left:7%;top:13%}.fragment-node:nth-of-type(2){right:8%;top:18%}.fragment-node:nth-of-type(3){left:23%;top:44%}.fragment-node:nth-of-type(4){left:9%;bottom:13%}.fragment-node:nth-of-type(5){right:9%;bottom:12%}.fragment-node:nth-of-type(6){right:15%;top:55%}
+.fragment-detail{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:4;width:min(72%,520px);background:rgba(250,249,246,.95);border-top:1px solid var(--line);padding:14px 4px 0;font-size:13px;color:var(--muted);text-align:center;min-height:54px}
+.fragment-map.focused:before{transform:scale(.9)}.fragment-map.focused:after{transform:scale(1.08)}
 
-/* v5 editorial refinements */
-.section-copy{
-  display:grid;
-  grid-template-columns:minmax(260px,.86fr) minmax(460px,1.14fr);
-  gap:clamp(56px,7vw,132px);
-  align-items:start;
-}
-.section-copy > .col4,.section-copy > .col5,.section-copy > .col6,.section-copy > .col7,.section-copy > .col8{
-  grid-column:auto !important;
-}
-.section-copy > div:first-child h2{margin-top:28px !important;max-width:12ch}
-.section-copy > div:last-child{max-width:760px}
-.section-copy > div:last-child .lead{max-width:25ch;margin-bottom:28px}
-.section-copy > div:last-child p:not(.lead){max-width:56ch;font-size:16px;line-height:1.68}
-.section-copy .kicker{margin-bottom:0}
-.guides{grid-template-columns:repeat(2,minmax(0,1fr))}
-.guide-card:nth-child(3){grid-column:auto}
-.pack-grid{align-items:start}
-.pack-grid .wide img{aspect-ratio:16/9;object-fit:cover}
-.ai-production-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--g);margin-top:clamp(52px,6vw,88px);align-items:start}
-.ai-production-grid figure{margin:0;background:var(--soft);padding:0}
-.ai-production-grid img{width:100%;height:auto;display:block;object-fit:contain;background:#eeeae3}
-.ai-production-grid .caption{padding-top:12px;background:var(--bg)}
-@media(max-width:850px){
-  .section-copy{grid-template-columns:1fr;gap:34px}
-  .section-copy > div:first-child h2{max-width:15ch}
-  .section-copy > div:last-child{max-width:62ch}
-  .section-copy > div:last-child .lead{max-width:34ch}
-  .ai-production-grid{grid-template-columns:1fr}
-}
+.model-journey{position:relative;margin-top:30px;padding:48px 0 22px;min-height:740px}
+.model-journey svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.model-path-base{fill:none;stroke:#383836;stroke-width:1.2}
+.model-path-progress{fill:none;stroke:#f6f5f1;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.journey-node{position:absolute;width:min(260px,24%);appearance:none;background:var(--dark);border:1px solid #41413e;color:#f6f5f1;text-align:left;padding:18px 20px;cursor:pointer;transition:width .35s var(--ease),padding .35s var(--ease),background .35s var(--ease),color .35s var(--ease),box-shadow .35s var(--ease);overflow:hidden;z-index:2}
+.journey-node small{display:block;color:#999;margin-bottom:8px;font-size:11px;text-transform:uppercase;letter-spacing:.08em}.journey-node strong{display:block;font-size:clamp(20px,2vw,30px);line-height:1.05;font-weight:500;letter-spacing:-.03em;text-wrap:balance}.journey-node .node-detail{display:grid;grid-template-rows:0fr;opacity:0;margin-top:0;color:#3f3f3b;font-size:13px;line-height:1.45;transition:grid-template-rows .35s var(--ease),opacity .25s ease,margin-top .35s var(--ease)}.journey-node .node-detail>span{overflow:hidden}.journey-node:hover,.journey-node:focus-visible,.journey-node.active{background:#f6f5f1;color:#111;outline:none;width:min(390px,34%);padding:22px 24px;z-index:8;box-shadow:0 16px 44px rgba(0,0,0,.24)}.journey-node:hover .node-detail,.journey-node:focus-visible .node-detail,.journey-node.active .node-detail{grid-template-rows:1fr;opacity:1;margin-top:14px}.journey-node.active small,.journey-node:hover small,.journey-node:focus-visible small{color:#666}
+.journey-node:nth-of-type(1){left:2%;top:5%}.journey-node:nth-of-type(2){right:4%;top:20%}.journey-node:nth-of-type(3){left:11%;top:42%}.journey-node:nth-of-type(4){right:12%;top:61%}.journey-node:nth-of-type(5){left:28%;bottom:2%}
+.journey-proof{position:absolute;right:2%;bottom:4%;width:min(400px,34%);padding:18px 0;border-top:1px solid #41413e;color:#b9b9b2;font-size:13px;line-height:1.55;min-height:92px}
+.journey-proof b{display:block;color:#fff;font-size:14px;margin-bottom:5px;font-weight:500}
 
-/* v6 refinements */
-.ai-production-grid{grid-template-columns:1fr;gap:clamp(42px,5vw,72px);width:100%;}
-.ai-production-grid figure{background:transparent;}
-.ai-production-grid img{width:100%;height:auto;max-height:none;object-fit:contain;background:transparent;}
-.ai-production-grid .caption{margin:0;padding:14px 0 0;color:#fff;background:transparent;font-size:13px;line-height:1.45;}
-.phone-stage{height:100%;min-height:560px;background:#e8e6e1;display:flex;align-items:center;justify-content:center;padding:clamp(24px,4vw,56px);box-sizing:border-box;}
-.phone-shell{height:min(90%,720px);aspect-ratio:9/19.5;background:#111;border:1px solid #2a2a2a;border-radius:38px;padding:10px;box-shadow:0 20px 55px rgba(0,0,0,.14);position:relative;overflow:hidden;}
-.phone-shell:before{content:'';position:absolute;z-index:2;top:16px;left:50%;transform:translateX(-50%);width:28%;height:22px;border-radius:14px;background:#111;}
-.phone-screen{width:100%;height:100%;border-radius:29px;overflow:hidden;background:#0c0f13;}
-.phone-screen img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
-.results-intro{max-width:64ch;margin-top:30px;font-size:18px;line-height:1.5;}
-.results-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);margin-top:clamp(48px,6vw,82px);border:1px solid var(--line);}
-.result-card{background:var(--bg);padding:clamp(26px,3vw,44px);min-height:220px;display:flex;flex-direction:column;justify-content:space-between;}
-.result-number{font-size:clamp(46px,6vw,82px);line-height:.9;letter-spacing:-.055em;font-weight:500;margin-bottom:38px;}
-.result-card h3{font-size:20px;margin-bottom:10px;}
-.result-card p{font-size:15px;line-height:1.55;color:var(--muted);margin:0;max-width:48ch;}
-.outcome-note{margin-top:32px;font-size:14px;line-height:1.55;color:var(--muted);max-width:68ch;}
-@media(max-width:850px){.phone-stage{min-height:520px}.results-grid{grid-template-columns:1fr}.result-card{min-height:190px}}
+.module-tabs{position:relative}.module-tabs:before{content:"";position:absolute;left:3px;top:24px;bottom:24px;width:1px;background:var(--line)}.module{position:relative;padding-left:26px}.module:before{content:"";position:absolute;left:-1px;top:31px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:1px solid var(--line);z-index:2;transition:.25s}.module.active:before{background:var(--ink);border-color:var(--ink)}.module.active strong:before{display:none}
 
-/* v8 brand-in-use composition refinement */
-@media(min-width:851px){
-  .mosaic .m1{grid-column:span 8;grid-row:span 2;background:transparent;align-self:start;}
-  .mosaic .m1 img{width:100%;height:auto;object-fit:contain;display:block;}
-  .mosaic .m2{grid-column:span 4;grid-row:span 2;align-self:stretch;background:transparent;}
-  .mosaic .m2 .phone-stage{height:100%;min-height:0;padding:clamp(20px,2.5vw,38px);}
-  .mosaic .m2 .phone-shell{height:82%;max-height:620px;width:auto;}
-}
+.adoption-path{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:10px;border-top:1px solid var(--line)}
+.adoption-path:before{content:"";position:absolute;left:0;right:0;top:56px;height:1px;background:var(--line)}
+.adoption-step{appearance:none;border:0;background:transparent;text-align:left;padding:28px 30px 30px 0;cursor:pointer;position:relative;font:inherit;color:var(--muted);min-height:170px}
+.adoption-step+.adoption-step{padding-left:28px}
+.adoption-step .dot{position:relative;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:var(--bg);margin:16px 0 26px;z-index:2;font-size:10px;color:var(--muted);transition:.25s}
+.adoption-step strong{display:block;color:var(--ink);font-size:20px;letter-spacing:-.02em;margin-bottom:8px}.adoption-step span{font-size:13px;line-height:1.45;display:block}.adoption-step.active .dot,.adoption-step:hover .dot{background:var(--ink);color:white;border-color:var(--ink)}
+.adoption-evidence{display:grid;grid-template-columns:1fr 1fr;gap:var(--g);margin-top:28px;align-items:stretch}.adoption-evidence .proof-panel{background:var(--soft);padding:34px;display:flex;flex-direction:column;justify-content:space-between;min-height:320px}.proof-panel .proof-stat{font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-.05em;font-weight:500}.proof-panel h3{margin:18px 0 10px}.proof-panel p{color:var(--muted);font-size:14px;max-width:46ch;margin:0}.proof-panel .proof-note{font-size:12px;color:var(--muted);margin-top:30px}.adoption-evidence figure img{height:100%;min-height:320px;object-fit:cover}
 
-.trust-strip{margin-top:clamp(56px,7vw,96px);padding-top:18px;border-top:1px solid var(--line)}
-.logo-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:center;gap:1px;margin-top:22px;background:var(--line);border:1px solid var(--line)}
-.client-logo{display:flex;align-items:center;justify-content:center;min-height:92px;padding:20px 16px;background:var(--bg);color:var(--ink);font-size:clamp(18px,2vw,30px);line-height:1;white-space:nowrap;letter-spacing:-.02em}
-.client-logo.amazon{font-weight:700;text-transform:lowercase}.client-logo.tesla{letter-spacing:.16em;font-size:clamp(15px,1.6vw,22px)}.client-logo.stripe{font-weight:700;letter-spacing:-.06em}.client-logo.deloitte{font-weight:700}.client-logo.accenture{font-weight:700;letter-spacing:-.04em}.client-logo.sky{font-style:italic;font-weight:700}.client-logo.kelloggs{font-family:Georgia,serif;font-style:italic;font-weight:700}.client-logo.coca{font-family:Georgia,serif;font-style:italic}.client-logo.apple{font-weight:600}
-.results-grid{margin-top:clamp(56px,7vw,96px)}
-@media(max-width:900px){.logo-strip{grid-template-columns:repeat(3,minmax(0,1fr))}.client-logo{min-height:76px}}
-@media(max-width:620px){.logo-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.client-logo{font-size:18px;min-height:68px}}
+.transform-board{border:1px solid var(--line);background:var(--paper);padding:26px 26px 30px;min-height:430px;position:relative;overflow:hidden}.transform-controls{display:flex;gap:8px;margin-bottom:24px}.transform-controls button{appearance:none;border:1px solid var(--line);background:transparent;padding:9px 14px;font:inherit;font-size:12px;cursor:pointer}.transform-controls button.active{background:var(--ink);color:white;border-color:var(--ink)}
+.transform-space{position:relative;height:300px}.t-node{position:absolute;border:1px solid var(--line);background:var(--bg);padding:10px 13px;font-size:12px;white-space:nowrap;transition:left .7s var(--ease),top .7s var(--ease),transform .7s var(--ease),background .35s,color .35s,border-color .35s}.transform-space.before .t-node:nth-child(1){left:3%;top:8%}.transform-space.before .t-node:nth-child(2){left:67%;top:12%}.transform-space.before .t-node:nth-child(3){left:28%;top:45%}.transform-space.before .t-node:nth-child(4){left:5%;top:77%}.transform-space.before .t-node:nth-child(5){left:72%;top:72%}.transform-space.before .t-node:nth-child(6){left:56%;top:43%}
+.transform-space.after .t-node{top:46%;background:var(--ink);color:white;border-color:var(--ink);transform:translate(-50%,-50%)}.transform-space.after .t-node:nth-child(1){left:8%}.transform-space.after .t-node:nth-child(2){left:25%}.transform-space.after .t-node:nth-child(3){left:42%}.transform-space.after .t-node:nth-child(4){left:59%}.transform-space.after .t-node:nth-child(5){left:76%}.transform-space.after .t-node:nth-child(6){left:92%}
+.transform-line{position:absolute;left:5%;right:8%;top:51%;height:1px;background:var(--line);opacity:0;transition:opacity .45s}.transform-space.after .transform-line{opacity:1}.transform-caption{position:absolute;left:0;bottom:0;color:var(--muted);font-size:12px;max-width:58ch}
+.results-v4{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--g);align-items:start}.metric-strip{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.metric-strip .metric{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+@media(max-width:850px){.model-journey{min-height:auto;padding:20px 0}.model-journey svg{display:none}.journey-node{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:100%!important;margin:0 0 12px}.journey-node:hover,.journey-node:focus-visible,.journey-node.active{width:100%!important}.journey-proof{position:relative;right:auto;bottom:auto;width:100%;margin-top:16px}.adoption-path,.adoption-evidence,.results-v4{grid-template-columns:1fr}.adoption-path:before{display:none}.adoption-step{padding:20px 0;border-bottom:1px solid var(--line);min-height:auto}.adoption-step+.adoption-step{padding-left:0}.adoption-step .dot{margin:0 0 14px}.transform-space{height:380px}.transform-space.after .t-node{left:8%!important;right:auto;transform:none!important}.transform-space.after .t-node:nth-child(1){top:6%}.transform-space.after .t-node:nth-child(2){top:22%}.transform-space.after .t-node:nth-child(3){top:38%}.transform-space.after .t-node:nth-child(4){top:54%}.transform-space.after .t-node:nth-child(5){top:70%}.transform-space.after .t-node:nth-child(6){top:86%}.transform-line{display:none}.fragment-map{min-height:420px}}
+@media(max-width:560px){.fragment-node{padding:9px 11px;font-size:11px}.fragment-core{width:108px;height:108px;font-size:11px}.fragment-detail{width:86%}.transform-board{padding:18px}.transform-space{height:410px}.metric-strip{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.model-path-progress,.fragment-map:before,.fragment-map:after,.t-node{transition:none!important}}
 
 
-/* Interactive portfolio preview: restrained editorial motion */
-:root{--ease:cubic-bezier(.22,.61,.36,1)}
-body{overflow-x:hidden}
-body.is-loading main,body.is-loading footer{opacity:0}
-main,footer{opacity:1;transition:opacity .65s var(--ease)}
-.scroll-progress{position:fixed;left:0;top:0;width:100%;height:2px;z-index:100;background:transparent;pointer-events:none}
-.scroll-progress__bar{height:100%;width:0;background:var(--ink);transform-origin:left center;transition:width .08s linear}
-.nav{transition:transform .35s var(--ease),background .35s ease}
-.section-copy>div:first-child{position:sticky;top:112px;align-self:start}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
-.reveal.is-visible{opacity:1;transform:none}
-.reveal[data-delay="1"]{transition-delay:.08s}.reveal[data-delay="2"]{transition-delay:.16s}.reveal[data-delay="3"]{transition-delay:.24s}
-figure img,.guide-card img{transition:transform .65s var(--ease),filter .65s var(--ease)}
-figure[data-lightbox]{cursor:zoom-in}
-figure[data-lightbox]:hover img{transform:scale(1.012)}
-.case-index{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:20;display:grid;gap:8px;padding:10px 8px;background:rgba(244,243,240,.82);backdrop-filter:blur(10px);border:1px solid rgba(207,207,201,.75)}
-.case-index a{display:flex;align-items:center;justify-content:center;width:28px;height:28px;text-decoration:none;font-size:10px;letter-spacing:.08em;color:var(--muted);transition:background .25s ease,color .25s ease}
-.case-index a:hover,.case-index a.is-active{background:var(--ink);color:var(--paper)}
-.gallery-shell{margin-top:64px;position:relative}
-.gallery-head{display:flex;justify-content:flex-end;align-items:center;gap:14px;margin-bottom:14px}
-.gallery-count{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);min-width:52px;text-align:right}
-.gallery-btn{appearance:none;border:1px solid var(--line);background:transparent;color:var(--ink);width:38px;height:38px;display:grid;place-items:center;font-size:18px;line-height:1;cursor:pointer;transition:background .25s ease,color .25s ease,border-color .25s ease}
-.gallery-btn:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.mosaic.is-gallery{display:flex;grid-template-columns:none;grid-auto-rows:auto;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 0 14px;cursor:grab;overscroll-behavior-inline:contain;scrollbar-width:none}
-.mosaic.is-gallery::-webkit-scrollbar{display:none}
-.mosaic.is-gallery.is-dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
-.mosaic.is-gallery figure{flex:0 0 clamp(520px,70vw,1040px);height:clamp(420px,56vw,760px);min-height:0;scroll-snap-align:start;position:relative}
-.mosaic.is-gallery .m2{flex-basis:clamp(340px,38vw,560px)}
-.mosaic.is-gallery figure img{width:100%;height:100%;object-fit:cover}
-.mosaic.is-gallery .phone-stage{height:100%;min-height:0;display:grid;place-items:center}
-.mosaic.is-gallery .phone-shell{max-height:92%;width:auto;aspect-ratio:9/19.5}
-.lightbox{position:fixed;inset:0;z-index:200;background:rgba(15,15,15,.94);display:grid;grid-template-rows:auto 1fr;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
-.lightbox.is-open{opacity:1;visibility:visible}
-.lightbox__top{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
-.lightbox__close{appearance:none;border:1px solid rgba(255,255,255,.35);background:transparent;color:white;width:38px;height:38px;cursor:pointer;font-size:20px}
-.lightbox__stage{display:grid;place-items:center;padding:0 24px 28px;overflow:hidden}
-.lightbox__stage img{max-width:min(92vw,1600px);max-height:84vh;width:auto;height:auto;object-fit:contain;box-shadow:0 24px 70px rgba(0,0,0,.35)}
-.lightbox__caption{color:rgba(255,255,255,.72);max-width:60ch}
-@media(max-width:1100px){.case-index{display:none}}
-@media(max-width:850px){.section-copy>div:first-child{position:static}.reveal{transform:translateY(14px)}.mosaic.is-gallery figure{flex-basis:86vw;height:68vw;min-height:360px}.mosaic.is-gallery .m2{flex-basis:62vw}.gallery-head{justify-content:space-between}}
-@media(max-width:560px){.mosaic.is-gallery figure{flex-basis:92vw;height:78vw;min-height:320px}.mosaic.is-gallery .m2{flex-basis:78vw}.gallery-btn{width:36px;height:36px}}
-
-/* Interactive brand-guideline viewer */
-.section-copy>div:first-child{z-index:2}
-.device-wrap,.guides,.pack-grid,.ai-production-grid,.ai-visualisation,.gallery-shell,.before-grid,.shift-list,.trust-strip,.results-grid,.ai-image{position:relative;z-index:10}
-.nav{z-index:80}.case-index{z-index:70}
-.guidelines-device{isolation:isolate}
-.guidelines-screen{position:relative;overflow-y:auto;overflow-x:hidden;scroll-snap-type:y proximity;background:#e8e7e2;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#888 #d7d6d1}
-.guidelines-screen::-webkit-scrollbar{width:8px}.guidelines-screen::-webkit-scrollbar-track{background:#d7d6d1}.guidelines-screen::-webkit-scrollbar-thumb{background:#888}
-.guidelines-pages{display:grid;gap:2px;padding:0 0 38px}
-.guidelines-page{margin:0;background:#fff;scroll-snap-align:start;position:relative}
-.guidelines-page img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#fff}
-.guidelines-screen-meta{position:sticky;bottom:0;left:0;right:0;display:flex;justify-content:space-between;gap:16px;padding:10px 14px;background:rgba(17,17,17,.92);color:#fff;font-size:10px;letter-spacing:.12em;text-transform:uppercase;backdrop-filter:blur(8px);z-index:3}
-.guidelines-device-controls{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:22px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#555}
-.guidelines-expand{appearance:none;border:0;border-bottom:1px solid currentColor;background:transparent;padding:7px 0;color:#111;font:inherit;text-transform:uppercase;letter-spacing:.1em;cursor:pointer}
-.guidelines-expand:hover{opacity:.55}
-.guidelines-modal{position:fixed;inset:0;z-index:300;background:rgba(245,244,240,.98);display:grid;grid-template-rows:auto 1fr;opacity:0;visibility:hidden;transition:opacity .28s ease,visibility .28s ease}
-.guidelines-modal.is-open{opacity:1;visibility:visible}
-.guidelines-modal__bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px clamp(18px,3vw,42px);border-bottom:1px solid var(--line);background:rgba(245,244,240,.94);backdrop-filter:blur(12px);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-.guidelines-modal__status{display:flex;gap:28px;align-items:center}
-.guidelines-modal__close{appearance:none;border:1px solid var(--line);background:transparent;width:40px;height:40px;cursor:pointer;font-size:20px;line-height:1}
-.guidelines-modal__viewport{overflow-y:auto;padding:clamp(24px,4vw,62px);scroll-snap-type:y proximity;overscroll-behavior:contain}
-.guidelines-modal__pages{width:min(100%,1280px);margin:auto;display:grid;gap:clamp(18px,2vw,30px)}
-.guidelines-modal__page{margin:0;background:#fff;box-shadow:0 12px 34px rgba(0,0,0,.08);scroll-snap-align:start}
-.guidelines-modal__page img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#fff}
-@media(max-width:850px){.guidelines-device-controls{align-items:flex-start;flex-direction:column;gap:10px}.guidelines-screen-meta{font-size:9px}.guidelines-modal__status span:first-child{display:none}}
-
-
-/* v3 outcome interactions + mobile comparison refinement */
-.logo-marquee{position:relative;overflow:hidden;margin-top:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
-.logo-marquee__track{display:flex;align-items:center;width:max-content;gap:clamp(38px,5vw,82px);animation:logoLoop 28s linear infinite;will-change:transform}
-.logo-marquee:hover .logo-marquee__track{animation-play-state:paused}
-.logo-marquee__set{display:flex;align-items:center;gap:clamp(38px,5vw,82px);padding-right:clamp(38px,5vw,82px)}
-.logo-word{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;color:var(--ink);font-size:clamp(22px,2.4vw,36px);line-height:1;letter-spacing:-.025em;opacity:.86}
-.logo-word.amazon{font-weight:700;text-transform:lowercase}.logo-word.tesla{letter-spacing:.16em;font-size:clamp(16px,1.7vw,24px)}.logo-word.stripe{font-weight:700;letter-spacing:-.06em}.logo-word.deloitte{font-weight:700}.logo-word.accenture{font-weight:700;letter-spacing:-.04em}.logo-word.sky{font-style:italic;font-weight:700}.logo-word.kelloggs{font-family:Georgia,serif;font-style:italic;font-weight:700}.logo-word.coca{font-family:Georgia,serif;font-style:italic}.logo-word.apple{font-weight:600}
-@keyframes logoLoop{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.result-card{position:relative;overflow:hidden;transition:transform .42s var(--ease),background .42s ease,color .42s ease;will-change:transform}
-.result-card:before{content:'';position:absolute;left:0;top:0;width:100%;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:left center;transition:transform .42s var(--ease)}
-.result-card:hover{transform:translateY(-5px);background:#efeee9}
-.result-card:hover:before{transform:scaleX(1)}
-.result-number{transition:transform .42s var(--ease),letter-spacing .42s var(--ease)}
-.result-card:hover .result-number{transform:translateY(-4px);letter-spacing:-.065em}
-.portfolio-footer{padding:clamp(72px,9vw,128px) 0 28px;border-top:1px solid var(--line);background:#efeee9}
-.portfolio-footer__top{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);align-items:end}
-.portfolio-footer__title{grid-column:span 6;font-size:clamp(38px,5.2vw,76px);line-height:.98;letter-spacing:-.05em;max-width:9ch}
-.portfolio-footer__note{grid-column:8/span 5;max-width:38ch;color:var(--muted);font-size:15px;line-height:1.55}
-.portfolio-footer__bottom{display:flex;justify-content:space-between;gap:24px;margin-top:clamp(64px,8vw,112px);padding-top:18px;border-top:1px solid var(--line);font-size:11px;text-transform:uppercase;letter-spacing:.11em}
-.portfolio-footer__bottom a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
-@media(max-width:850px){
-  .shift-head{display:none}
-  .shift-row{grid-template-columns:1fr;gap:10px;padding:22px 0}
-  .shift-row>b:first-child{margin-bottom:3px;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink)}
-  .shift-row>span{display:grid;grid-template-columns:minmax(86px,.42fr) 1fr;gap:16px;align-items:start}
-  .shift-row>span:before{font-size:10px;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);padding-top:2px}
-  .shift-row>span:nth-of-type(1):before{content:'Previous'}
-  .shift-row>span:nth-of-type(2):before{content:'New direction'}
-  .portfolio-footer__top{grid-template-columns:1fr}.portfolio-footer__title,.portfolio-footer__note{grid-column:auto}.portfolio-footer__note{margin-top:26px}.portfolio-footer__bottom{align-items:flex-start;flex-direction:column}
-}
-@media(max-width:560px){.logo-marquee{margin-inline:calc(var(--pad)*-1);padding-inline:var(--pad);mask-image:none;-webkit-mask-image:none}.logo-marquee__track{gap:34px}.logo-marquee__set{gap:34px;padding-right:34px}.logo-word{font-size:24px}}
-
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}figure img,.guide-card img,.gallery-btn,.nav,main,footer{transition:none}.mosaic.is-gallery{scroll-behavior:auto}.scroll-progress__bar{transition:none}.logo-marquee__track{animation:none}.result-card{transition:none}}
-
-
+/* Shared portfolio header, matched to Riley */
+.nav{padding:20px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(244,243,240,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:120}
+.navin{display:flex;justify-content:space-between;gap:20px;font-size:12px;text-transform:uppercase;letter-spacing:.12em}
+.navin a{color:inherit;text-decoration:none}
 /* Cross-case-study footer */
+.case-footer{padding:clamp(72px,9vw,128px) 0 28px;border-top:1px solid var(--line);background:#efeee9}
+.case-footer__top{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);align-items:end}
+.case-footer__title{grid-column:span 6;font-size:clamp(38px,5.2vw,76px);line-height:.98;letter-spacing:-.05em;max-width:9ch;font-weight:500;text-wrap:balance}
+.case-footer__note{grid-column:8/span 5;max-width:38ch;color:var(--muted);font-size:15px;line-height:1.55}
 .next-case{display:block;color:inherit;text-decoration:none;margin-top:clamp(34px,5vw,64px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(24px,3vw,40px) 0;transition:padding .28s ease}
 .next-case__eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:12px}
 .next-case__row{display:flex;align-items:flex-end;justify-content:space-between;gap:28px}
 .next-case__title{font-size:clamp(28px,4vw,54px);line-height:1;letter-spacing:-.045em;font-weight:500;text-wrap:balance;max-width:18ch}
 .next-case__arrow{font-size:clamp(28px,4vw,52px);line-height:1;transition:transform .28s ease}
 .next-case:hover{padding-left:10px;padding-right:10px}.next-case:hover .next-case__arrow{transform:translateX(8px)}
-@media(max-width:560px){.next-case__row{align-items:flex-start}.next-case__title{font-size:32px}.next-case:hover{padding-left:0;padding-right:0}}
-</style>
-</head>
-<body>
-<header class="nav"><div class="wrap navin"><div>Megan O’Connor</div><div>Case study / Riley.</div><div>2025</div></div></header>
-<main>
-<section class="hero" id="top"><div class="wrap"><div class="kicker">Brand transformation / Creative direction</div><h1>Riley.</h1><div class="hero-intro"><div class="hero-lead"><p class="lead">Repositioning a period care brand for a more mature, sustainability-conscious audience and the workplace market.</p></div><div class="hero-summary"><p>Strategy, visual direction, packaging, marketing direction and creative leadership, with AI and 3D integrated into production before the new packaging had gone to print.</p></div></div><div class="hero-meta"><div><b>Role</b>Brand strategist &amp; creative director</div><div><b>Scope</b>Identity, packaging, marketing</div><div><b>Team</b>3D, illustration, social, packaging</div><div><b>Approach</b>AI-enabled visualisation</div></div></div></section>
-<div class="fullbleed"><img alt="Riley packaging range presented in the refreshed brand system" decoding="async" fetchpriority="high" loading="eager" src="hero-packaging.webp"/></div>
-<section class="statement"><div class="wrap grid12"><p class="lead">The brief was less about making Riley. look different, and more about making the brand fit the audience and opportunities it was moving toward.</p></div></section>
-<section class="section"><div class="wrap"><div class="grid12 section-copy"><div class="col4"><div class="kicker">01 / The starting point</div><h2 style="margin-top:18px">A younger brand for a younger customer.</h2></div><div class="col7"><p class="lead">The existing identity leaned heavily on soft pastel pinks, greens and blues, giving the brand a youthful, playful feel.</p><p>That visual language no longer matched Riley.’s next stage. The business wanted to reach more mature consumers who were already conscious of ingredients, product safety and sustainability, while also becoming credible to corporate offices looking to provide period care at work.</p></div></div><div class="before-grid" style="margin-top:62px"><div class="before-main"><img alt="Riley previous pastel packaging range before the brand repositioning" decoding="async" loading="lazy" src="previous-packaging.webp"/><div class="caption">Before: pastel-led consumer packaging.</div></div><div class="before-side"><div><img alt="Riley previous brand photography and pastel packaging" decoding="async" loading="lazy" src="previous-brand-square.webp"/><div class="caption">Before: youthful colour and lifestyle direction.</div></div><div><img alt="Riley previous pale blue packaging" decoding="async" loading="lazy" src="previous-blue-packaging.webp"/><div class="caption">Before: earlier pale blue packaging.</div></div></div></div></div></section>
-<section class="section"><div class="wrap"><div class="grid12 section-copy"><div class="col4"><div class="kicker">02 / Repositioning</div><h2 style="margin-top:18px">From awareness-building to informed choice.</h2></div><div class="col7"><p class="lead">The new identity needed to speak to people who already understood the problem Riley. solves.</p><p>Rather than educating a younger audience from scratch, the refreshed brand was designed for customers more actively questioning what goes into conventional period products and making conscious choices around health, ingredients and sustainability.</p><p>At the same time, Riley. needed enough maturity and credibility to sit comfortably in workplace wellbeing programmes and corporate environments without losing the humanity of a personal care brand.</p></div></div><div class="shift-list"><div class="shift-row shift-head"><span></span><b>Previous positioning</b><b>New direction</b></div><div class="shift-row"><b>Audience</b><span class="muted">Younger, less informed consumer</span><span>Mature, conscious consumer + workplace buyer</span></div><div class="shift-row"><b>Brand role</b><span class="muted">Introduce the category problem</span><span>Make Riley. the considered choice</span></div><div class="shift-row"><b>Visual tone</b><span class="muted">Playful, pastel, youthful</span><span>Refined, confident, warm</span></div><div class="shift-row"><b>Commercial context</b><span class="muted">Primarily DTC consumer</span><span>Consumer + corporate wellbeing</span></div></div></div></section>
-<section class="section"><div class="wrap"><div class="grid12 section-copy"><div class="col4"><div class="kicker">03 / The system</div><h2 style="margin-top:18px">A visual language built to scale.</h2></div><div class="col7"><p class="lead">I developed the strategic and visual direction, then translated it into a practical brand system across logo use, colour, typography, illustration, photography and application.</p><p>The design direction became more editorial and restrained, with a deeper, more grown-up palette and clearer hierarchy. Warmer human details kept the system from becoming clinical or overly corporate.</p></div></div></div><div class="device-wrap guidelines-device" style="margin-top:64px"><div class="laptop"><div class="screen"><div class="screen-inner guidelines-screen" id="guidelinesScreen" tabindex="0" aria-label="Scrollable Riley brand guidelines"><div class="guidelines-pages" id="guidelinesPages"></div><div class="guidelines-screen-meta"><span>Brand guidelines</span><span id="guidelinesPageCount">01 / 34</span></div></div></div><div class="base"></div><div class="guidelines-device-controls"><span>Scroll inside the screen to explore the full brand system</span><button class="guidelines-expand" type="button" id="guidelinesExpand">Expand guidelines <span aria-hidden="true">↗</span></button></div></div></div><div class="wrap"><div class="guides"><div class="guide-card"><img alt="Riley brand guidelines colour palette page" decoding="async" loading="lazy" src="brand-guidelines-colour.webp"/><div class="caption">Colour system</div></div><div class="guide-card"><img alt="Riley brand guidelines typography page" decoding="async" loading="lazy" src="brand-guidelines-typography.webp"/><div class="caption">Typography hierarchy</div></div></div></div></section>
-<section class="section"><div class="wrap"><div class="grid12 section-copy"><div class="col4"><div class="kicker">04 / Packaging</div><h2 style="margin-top:18px">Making the strategy tangible.</h2></div><div class="col7"><p class="lead">Packaging became the clearest expression of the repositioning.</p><p>The refreshed system moved away from the previous pastel-heavy world and introduced more confident colour, editorial typography and a calmer hierarchy. The aim was to feel considered and credible on a bathroom shelf, in retail and in an office supply cupboard.</p></div></div><div class="pack-grid" style="margin-top:64px"><figure class="wide" style="margin:0"><img alt="Riley packaging system in use, displayed in a warm interior setting" decoding="async" loading="lazy" src="packaging-system-in-use.webp"/><figcaption class="caption">Packaging system in use.</figcaption></figure><figure class="portrait" style="margin:0"><img alt="Riley boxes and wrapped period products in a green shopping basket" decoding="async" loading="lazy" src="shopping-basket.webp"/><figcaption class="caption">Final high-resolution packaging imagery.</figcaption></figure><figure class="portrait" style="margin:0"><img alt="Three Riley product boxes stacked on a hand" decoding="async" loading="lazy" src="stacked-boxes-hand.webp"/><figcaption class="caption">Product family across absorbencies and formats.</figcaption></figure></div></div></section>
-<div class="ai-block"><section class="section"><div class="wrap grid12 section-copy"><div class="col4"><div class="kicker">05 / AI + 3D workflow</div><h2 style="margin-top:18px">Bringing the brand to life before print.</h2></div><div class="col7"><p class="lead">The packaging was designed, but the physical packs did not yet exist. I used AI and 3D as part of the production workflow so the new brand could be visualised, tested and communicated immediately.</p><p>Rather than waiting for manufacturing and photography, I directed a 3D artist and used AI-assisted image workflows to create believable branded environments and product scenes. This gave the team a way to see the identity behaving in the real world while final production was still underway.</p><p>AI was not the creative strategy. It was the accelerator that helped turn an approved system into campaign-ready imagery faster.</p></div><div class="ai-production-grid"><figure><img alt="3D visualisation of Riley packaging and period products floating in space" decoding="async" loading="lazy" src="3d-floating-packaging.webp"/><figcaption class="caption">3D product visualisation developed before physical production.</figcaption></figure><figure><img alt="3D visualisation of Riley naked tampon packaging and product" decoding="async" loading="lazy" src="3d-naked-tampon.webp"/><figcaption class="caption">Product detail visualisation used to bring the packaging system to life before print.</figcaption></figure></div></div></section></div><section class="section ai-visualisation"><div class="wrap"><div class="ai-text-grid"><div><div class="kicker">Pre-production visualisation</div><h2>The brand could start working before the boxes existed.</h2></div><div class="ai-copy"><p>Before the refreshed packaging had gone to print, I used AI-supported image workflows alongside 3D production to visualise the new identity in context. This meant campaign thinking, social concepts and brand applications could develop in parallel with physical production rather than waiting for finished packs.</p></div></div><figure class="ai-image"><img alt="Pre-production Riley brand visualisation created before the refreshed packaging went to print" decoding="async" loading="lazy" src="preproduction-visualisation.webp"/></figure></div></section>
-<section class="section"><div class="wrap"><div class="grid12 section-copy"><div class="col4"><div class="kicker">06 / Brand in use</div><h2 style="margin-top:18px">From system to everyday context.</h2></div><div class="col7"><p class="lead">The visual direction was designed to move between product, lifestyle, education and workplace communications without becoming a different brand each time.</p></div></div><div class="mosaic" style="margin-top:64px"><figure class="m1"><img alt="Riley products styled in a calm interior" decoding="async" loading="lazy" src="brand-in-use-interior.webp"/></figure><figure class="m2"><div aria-label="Riley Instagram grid shown in a minimalist phone mockup" class="phone-stage"><div class="phone-shell"><div class="phone-screen"><img alt="Riley Instagram grid demonstrating the refreshed brand across social content" decoding="async" loading="lazy" src="instagram-grid.webp"/></div></div></div></figure><figure class="m3"><img alt="Riley Period Emergency Kit styled with travel essentials on an airport security tray" decoding="async" loading="lazy" src="travel-emergency-kit-tray.png"/></figure><figure class="m4"><img alt="Riley period products and pouch in natural light" decoding="async" loading="lazy" src="products-pouch-natural-light.webp"/></figure><figure class="m5"><img alt="Riley product sustainability information graphic" decoding="async" loading="lazy" src="sustainability-graphic.webp"/></figure></div></div></section>
-<section class="section"><div class="wrap grid12 section-copy"><div class="col4"><div class="kicker">07 / Creative leadership</div><h2 style="margin-top:18px">One direction, multiple specialists.</h2></div><div class="col7"><p class="lead">I owned the strategic and creative through-line, then brought in specialist talent where it would improve speed and execution.</p><p>I coordinated 3D designers, illustrators, social media specialists and packaging designers, setting the core system and giving each workstream a clear creative framework. This let multiple disciplines progress in parallel while keeping the end result coherent.</p><div class="role-table"><div class="role-row"><span>Owned</span><div>Brand strategy and positioning</div></div><div class="role-row"><span>Owned</span><div>Visual direction and identity system</div></div><div class="role-row"><span>Owned</span><div>Packaging and marketing direction</div></div><div class="role-row"><span>Directed</span><div>3D, illustration, social and specialist packaging support</div></div><div class="role-row"><span>Integrated</span><div>AI-enabled visualisation before physical production</div></div></div></div></div></section>
-<section class="section"><div class="wrap"><div class="grid12"><div class="col4"><div class="kicker">08 / Outcome</div></div><div class="col8"><h2>From young subscription start-up to a brand trusted in bigger spaces.</h2><p class="results-intro">Before the rebrand, Riley.’s youthful, pastel-led identity still reflected its origins as a digitally led subscription start-up. The new strategy was designed for the company Riley. was becoming: more mature, more credible and able to operate confidently across corporate workplaces, established retail, hospitality and large public environments.</p><p class="results-intro">Since the rebrand, Riley. has expanded into exactly those spaces. The identity did not create those commercial wins on its own, but it helped give the business a complete strategic and visual system that could represent Riley. with greater credibility when speaking to larger organisations, buyers and partners.</p></div></div><div class="trust-strip"><div class="kicker">New clients and partners since the rebrand include</div><div class="logo-marquee" aria-label="Selected Riley clients and partners"><div class="logo-marquee__track"><div class="logo-marquee__set"><span class="logo-word apple">Apple</span><span class="logo-word amazon">amazon</span><span class="logo-word tesla">TESLA</span><span class="logo-word stripe">stripe</span><span class="logo-word deloitte">Deloitte.</span><span class="logo-word accenture">accenture</span><span class="logo-word sky">sky</span><span class="logo-word kelloggs">Kellogg's</span><span class="logo-word coca">Coca-Cola</span></div><div class="logo-marquee__set" aria-hidden="true"><span class="logo-word apple">Apple</span><span class="logo-word amazon">amazon</span><span class="logo-word tesla">TESLA</span><span class="logo-word stripe">stripe</span><span class="logo-word deloitte">Deloitte.</span><span class="logo-word accenture">accenture</span><span class="logo-word sky">sky</span><span class="logo-word kelloggs">Kellogg's</span><span class="logo-word coca">Coca-Cola</span></div></div></div></div><div class="results-grid"><article class="result-card"><div class="result-number">500+</div><div><h3>Global organisations</h3><p>Riley. has scaled its B2B footprint to supply free, sustainable period care across more than 500 organisations spanning corporate, education and hospitality environments.</p></div></article><article class="result-card"><div class="result-number">Retail</div><div><h3>Premium brick-and-mortar expansion</h3><p>The brand moved into established physical retail through Holland &amp; Barrett stores in Ireland and John Bell &amp; Croyden in London, giving the new packaging system a credible presence beyond DTC.</p></div></article><article class="result-card"><div class="result-number">Travel</div><div><h3>WHSmith airport retail</h3><p>Riley.’s Period Emergency Kits launched through WHSmith locations across major European airports, extending the brand into a fast-moving, high-trust travel retail environment.</p></div></article><article class="result-card"><div class="result-number">5-star</div><div><h3>Luxury hospitality</h3><p>The Shelbourne Hotel in Dublin introduced Riley. period care for guests and staff, placing the brand within a premium hospitality setting.</p></div></article><article class="result-card"><div class="result-number">Venue</div><div><h3>Aviva Stadium</h3><p>Riley. secured a venue-wide partnership with Aviva Stadium, taking the brand into one of Ireland’s best-known national sports and entertainment environments.</p></div></article></div><p class="outcome-note">The strongest result of the repositioning is not simply that Riley. looks more grown-up. It is that the brand now has the visual credibility and strategic consistency to sit comfortably in places that would have felt disconnected from its earlier start-up identity: corporate offices, premium retailers, five-star hospitality, airports and national venues.</p></div></section>
-<section class="portfolio-footer"><div class="wrap"><div class="portfolio-footer__top"><div class="portfolio-footer__title">More selected work.</div><div class="portfolio-footer__note">A second case study moves from brand transformation into systems and organisational design.</div></div><a class="next-case" href="veup-company-os/"><div class="next-case__eyebrow">Next case study / Systems &amp; operations</div><div class="next-case__row"><div class="next-case__title">VeUP: Building the Company Operating System</div><div class="next-case__arrow" aria-hidden="true">→</div></div></a><div class="portfolio-footer__bottom"><span>Megan O’Connor / Selected work</span><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a></div></div></section>
-</main>
-<footer class="footer"><div class="wrap"><div>Megan O’Connor</div><div>Brand strategy · Creative direction · AI-enabled workflows</div></div></footer>
+.case-footer__bottom{display:flex;justify-content:space-between;gap:24px;margin-top:clamp(64px,8vw,112px);padding-top:18px;border-top:1px solid var(--line);font-size:11px;text-transform:uppercase;letter-spacing:.11em}
+.case-footer__bottom a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+@media(max-width:850px){.case-footer__top{grid-template-columns:1fr}.case-footer__title,.case-footer__note{grid-column:auto}.case-footer__note{margin-top:26px}}
+@media(max-width:560px){.navin{font-size:10px;letter-spacing:.09em}.next-case__row{align-items:flex-start}.next-case__title{font-size:32px}.case-footer__bottom{align-items:flex-start;flex-direction:column}.next-case:hover{padding-left:0;padding-right:0}}
+</style></head><body><div class="progress" id="progress"></div><header class="nav"><div class="wrap navin"><div><a href="../">Megan O’Connor</a></div><div>Case study / VeUP Company OS</div><div>2025–26</div></div></header><main>
+<section class="hero" id="top"><div class="wrap"><div class="kicker">VeUP / Company operating system</div><div class="hero-grid"><div><h1>Turning fragmented work into a company operating system.</h1></div><div class="hero-side"><p class="lead">A connected model for strategy, ownership, knowledge and execution.</p><p class="bodycopy">I partnered with the CEO and senior leadership to define how company goals translated into team priorities, initiatives and projects, then built the digital infrastructure that made that model usable day to day.</p></div></div></div></section>
+<section class="section" id="before"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">01 / Before</div><h2>Work existed. The operating infrastructure didn't.</h2></div><div class="intro"><p class="lead">People were busy, but the work was difficult to connect to the bigger picture.</p><p class="bodycopy">Information lived across private folders, presentations, documents, Slack conversations and individual memory. Priorities largely stayed at leadership level, while employees had to reconstruct context for themselves.</p></div></div><div class="before"><div class="fragment-map reveal" id="fragmentMap" aria-label="Interactive view of the fragmented before state"><div class="fragment-core">No shared operating layer</div><button type="button" class="fragment-node" data-detail="Questions and updates were often routed through Slack, creating delays across time zones.">Slack</button><button type="button" class="fragment-node" data-detail="Drive folders were frequently team-specific or private, so useful information could be invisible outside its owner group.">Drive</button><button type="button" class="fragment-node" data-detail="Documents circulated as copies, making it difficult to know which version was current.">Docs</button><button type="button" class="fragment-node" data-detail="Important context often lived in meetings rather than in a reusable source of truth.">Meetings</button><button type="button" class="fragment-node" data-detail="Private folders made knowledge discoverable only if you already knew where to look.">Private folders</button><button type="button" class="fragment-node" data-detail="Critical context depended on individual memory, creating bottlenecks when the right person was unavailable.">People's memory</button><div class="fragment-detail" id="fragmentDetail" aria-live="polite">Tap a source to see the operational consequence.</div></div><div class="pain-grid reveal"><div class="pain"><b>No shared priorities</b><p>Daily work was not visibly connected to company goals.</p></div><div class="pain"><b>Knowledge depended on people</b><p>Finding context often meant asking around and waiting across time zones.</p></div><div class="pain"><b>Ownership was difficult to see</b><p>Projects and dependencies lacked one shared view.</p></div><div class="pain"><b>Work was reconstructed</b><p>Duplicate files, outdated versions and repeated effort were common.</p></div></div></div></div></section>
+<section class="section dark" id="model"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">02 / Designing the model</div><h2>Built from experience, not a template.</h2></div><div class="intro"><p class="lead">I designed the operating model before I designed the workspace.</p><p class="bodycopy">My approach drew on business-leadership study, experience running my own company, and principles from Lean, OKRs, EOS and Value Engines. I combined the parts that suited VeUP, then worked with leadership to turn them into a practical structure for decision-making and delivery.</p></div></div><div class="model-journey reveal" id="modelJourney"><svg viewBox="0 0 1200 760" preserveAspectRatio="none" aria-hidden="true"><path class="model-path-base" d="M120 90 C360 85 380 215 1020 210 S780 390 220 400 S620 560 950 560 S690 715 430 710" pathLength="1"/><path class="model-path-progress" id="modelPathProgress" d="M120 90 C360 85 380 215 1020 210 S780 390 220 400 S620 560 950 560 S690 715 430 710" pathLength="1"/></svg><button type="button" class="journey-node active" data-proof="It all starts with three annual company goals. Every layer beneath them was designed to trace back to those priorities, giving teams a visible reason for the work they were doing."><small>Company direction</small><strong>3 annual goals</strong><span class="node-detail"><span>It all starts with three annual company goals. Every layer beneath them traces back to those priorities, so day-to-day work has a visible reason for existing.</span></span></button><button type="button" class="journey-node" data-proof="Growth, Fulfilment and Innovation described how VeUP created value: bringing revenue in, delivering and retaining that value, and creating future revenue. Initiatives were expected to strengthen at least one engine, otherwise their priority was challenged."><small>Value creation</small><strong>Growth · Fulfilment · Innovation</strong><span class="node-detail"><span>These engines described how VeUP created value: bring revenue in, deliver and retain it, and create future revenue. Every meaningful initiative had to strengthen at least one engine.</span></span></button><button type="button" class="journey-node" data-proof="Ten teams operated inside the same model. Shared databases connected people, responsibilities, goals and work, while filtered views gave each team the context relevant to them without duplicating information."><small>Ownership</small><strong>10 teams</strong><span class="node-detail"><span>Ten teams operated inside the same connected model. Shared data created company-wide visibility, while filtered team views kept each function focused on its own responsibilities.</span></span></button><button type="button" class="journey-node" data-proof="Each team carried three key initiatives per month. Those initiatives translated annual priorities into a small set of accountable, visible commitments rather than allowing unlimited busy work to compete for attention."><small>Monthly focus</small><strong>~30 initiatives</strong><span class="node-detail"><span>Each team committed to three key initiatives per month. This turned broad annual goals into a finite set of accountable priorities and helped prevent disconnected busy work from taking over.</span></span></button><button type="button" class="journey-node" data-proof="Each initiative linked to roughly three concrete projects, creating a traceable route from annual goal to day-to-day execution. SOPs, owners and shared knowledge supported delivery without losing the strategic context."><small>Execution</small><strong>~90 projects + reusable processes</strong><span class="node-detail"><span>Each initiative linked to roughly three concrete projects. That created a traceable route from annual goal to practical delivery, supported by owners, SOPs and shared knowledge.</span></span></button><div class="journey-proof" id="journeyProof"><b>Company direction</b>Three annual company goals became the reference point for monthly priorities rather than remaining leadership-only context.</div></div><div class="workshop reveal"><figure><img alt="Leadership workshop presentation" class="zoom" src="workshop-3.png"/><figcaption class="caption">Workshop material used to frame the operational problem: making strategy executable without adding unnecessary admin.</figcaption></figure><figure><img alt="Value Engines leadership workshop" class="zoom" src="workshop-5.png"/><figcaption class="caption">Leadership worked through how Growth, Fulfilment and Innovation translated into priorities and decisions.</figcaption></figure></div></div></section>
+<section class="section" id="system"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">03 / Building the system</div><h2>One connected architecture. Different views for different needs.</h2></div><div class="intro"><p class="lead">The OS was built from interconnected databases rather than standalone pages.</p><p class="bodycopy">A new team, person, initiative or date could be added once and appear automatically wherever it was relevant. Company-wide information stayed connected while each team saw a focused view of the same underlying system.</p></div></div><div class="explorer reveal"><div class="module-tabs"><button class="module active" data-img="strategy-execution.png" data-title="Strategy &amp; execution"><strong>Strategy &amp; execution</strong><span>Goals → initiatives → projects → teams and owners.</span></button><button class="module" data-img="knowledge-hub.png" data-title="Knowledge"><strong>Knowledge</strong><span>A shared route to processes, resources and current information.</span></button><button class="module" data-img="teams-people.png" data-title="Teams &amp; people"><strong>Teams &amp; people</strong><span>10 team hubs, 34 employee pages and contextual calendar views.</span></button><button class="module" data-img="sop-template.png" data-title="Processes"><strong>Processes</strong><span>A governed SOP library and templates teams could maintain themselves.</span></button></div><div><div class="screen"><img alt="Strategy and execution view" class="zoom" id="explorerImg" src="strategy-execution.png"/></div><div class="screen-meta"><span id="explorerTitle">Strategy &amp; execution</span><span>Real system evidence</span></div></div></div></div></section>
+<section class="section" id="adoption"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">04 / Making it stick</div><h2>The system had to stop depending on me.</h2></div><div class="intro"><p class="lead">Adoption meant turning the model into shared management behaviour.</p><p class="bodycopy">I trained leadership, established governance and created enough reusable guidance for teams to manage their own priorities, views and processes after rollout.</p></div></div><div class="adoption-path reveal" id="adoptionPath"><button type="button" class="adoption-step active" data-title="Leadership enablement" data-stat="10 leaders" data-copy="Around five workshop and training sessions helped leadership use the same language for value creation, priorities, ownership and execution." data-note="Workshops + individual training" data-img="workshop-8.png"><span class="dot">01</span><strong>Align leadership</strong><span>Create a shared way to discuss goals, Value Engines and initiatives.</span></button><button type="button" class="adoption-step" data-title="Governance built in" data-stat="Monthly rhythm" data-copy="Goals, initiatives, projects and ownership were maintained through a repeatable monthly cadence, with templates and SOPs reducing ambiguity." data-note="Review cadence + ownership rules" data-img="initiative-detail.png"><span class="dot">02</span><strong>Establish governance</strong><span>Make ownership, review and maintenance part of the system itself.</span></button><button type="button" class="adoption-step" data-title="Self-service by design" data-stat="7+ starters" data-copy="Start Here guidance, team hubs, reusable templates and Loom training reduced the need for repeated explanations and helped new joiners orient themselves quickly." data-note="Onboarding + reusable guidance" data-img="os-7.png"><span class="dot">03</span><strong>Enable self-service</strong><span>Give people enough context to use and maintain the system without constant support.</span></button></div><div class="adoption-evidence reveal"><div class="proof-panel"><div><div class="proof-stat" id="adoptionStat">10 leaders</div><h3 id="adoptionTitle">Leadership enablement</h3><p id="adoptionCopy">Around five workshop and training sessions helped leadership use the same language for value creation, priorities, ownership and execution.</p></div><div class="proof-note" id="adoptionNote">Workshops + individual training</div></div><figure><img alt="Leadership enablement evidence" class="zoom" id="adoptionImg" src="workshop-8.png"/><figcaption class="caption">Select a stage above to explore the adoption evidence.</figcaption></figure></div><div class="signal reveal" style="margin-top:var(--g)"><blockquote>“This is so well organised, thanks so much. I really appreciate the onboarding info and everything in Notion.”</blockquote><small>Feedback from a new starter.</small></div></div></section>
+<section class="section" id="outcome"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">05 / What changed</div><h2>From person-dependent work to shared company infrastructure.</h2></div><div class="intro"><p class="lead">The biggest shift was not simply speed. It was visibility.</p><p class="bodycopy">People could find context, see ownership and check status without relying on repeated messages. Leadership gained a clearer line of sight from priorities to active work, while teams had a reusable structure that could scale without starting again each time.</p></div></div><div class="results-v4 reveal"><div class="transform-board"><div class="transform-controls" role="group" aria-label="Show before or after state"><button type="button" class="active" data-state="before">Before</button><button type="button" data-state="after">After</button></div><div class="transform-space before" id="transformSpace"><div class="transform-line"></div><div class="t-node">Slack</div><div class="t-node">Knowledge</div><div class="t-node">Goals</div><div class="t-node">Projects</div><div class="t-node">Owners</div><div class="t-node">Processes</div><div class="transform-caption" id="transformCaption">Context, ownership and priorities existed in separate places. Work could be busy and legitimate without a visible connection to the company's annual goals.</div></div></div><div><div class="metric-strip"><div class="metric"><strong>34+</strong><span>employees supported, plus contractors</span></div><div class="metric"><strong>10</strong><span>team hubs sharing connected company data</span></div><div class="metric"><strong>30–50</strong><span>processes within the shared SOP structure</span></div><div class="metric"><strong>~90</strong><span>projects connected to monthly initiatives at typical scale</span></div></div></div></div><div class="visual-compare reveal" style="margin-top:var(--g)"><div class="shift-card"><div class="shift-label">Finding information</div><div class="shift-grid"><div><small>Before</small><strong>1–2 days</strong><span>Ask in Slack, wait across time zones, then find the right person or version.</span></div><div class="shift-arrow">→</div><div><small>After</small><strong>Minutes</strong><span>Search documented, governed company knowledge directly.</span></div></div></div><div class="shift-card"><div class="shift-label">Understanding the company</div><div class="shift-grid"><div><small>Before</small><strong>2–3 months</strong><span>Work out teams, tools and ownership through informal conversations.</span></div><div class="shift-arrow">→</div><div><small>After</small><strong>Day-one structure</strong><span>Start Here, team hubs, directory and system guidance in one route.</span></div></div></div><div class="shift-card"><div class="shift-label">Getting status and context</div><div class="shift-grid"><div><small>Before</small><strong>Repeated interruptions</strong><span>Updates and context depended on asking individual people.</span></div><div class="shift-arrow">→</div><div><small>After</small><strong>Self-service by default</strong><span>Ownership, status and context were visible without repeated chasing.</span></div></div></div><div class="shift-card"><div class="shift-label">Connecting work to strategy</div><div class="shift-grid"><div><small>Before</small><strong>Unconnected busy work</strong><span>Tasks could be assigned and completed without a visible relationship to company priorities.</span></div><div class="shift-arrow">→</div><div><small>After</small><strong>Every project maps upward</strong><span>Projects linked to monthly initiatives, Value Engines and ultimately one of three annual company goals.</span></div></div></div></div><div class="role reveal"><div><div class="kicker">My role</div><h3>Operating-model design through implementation.</h3></div><div class="role-tags"><span>Organisational systems</span><span>Information architecture</span><span>Knowledge management</span><span>Governance</span><span>Leadership facilitation</span><span>Change enablement</span><span>Notion architecture</span><span>Cross-functional operations</span></div></div></div></section>
+</main><section class="case-footer"><div class="wrap"><div class="case-footer__top"><div class="case-footer__title">More selected work.</div><div class="case-footer__note">The companion case study shows my brand and creative direction work across strategy, identity, packaging and multidisciplinary production.</div></div><a class="next-case" href="../"><div class="next-case__eyebrow">Previous case study / Brand &amp; creative</div><div class="next-case__row"><div class="next-case__title">Riley: Brand Transformation</div><div class="next-case__arrow" aria-hidden="true">←</div></div></a><div class="case-footer__bottom"><span>Megan O’Connor / Selected work</span><a href="#top" id="veupBackTop">Back to top ↑</a></div></div></section><div class="lightbox" id="lightbox"><button aria-label="Close">×</button><img alt="Expanded case study evidence"/></div><script>
+const prog=document.getElementById('progress');
+addEventListener('scroll',()=>{const d=document.documentElement;const den=d.scrollHeight-d.clientHeight;prog.style.width=(den?d.scrollTop/den*100:0)+'%';updateModelPath();},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
 
-<script>
-(() => {
-  document.body.classList.add('is-loading');
-  window.addEventListener('load', () => requestAnimationFrame(() => document.body.classList.remove('is-loading')), {once:true});
+// Before: fragmented information map
+const fragmentMap=document.getElementById('fragmentMap'),fragmentDetail=document.getElementById('fragmentDetail');
+if(fragmentMap){fragmentMap.querySelectorAll('.fragment-node').forEach(b=>b.addEventListener('click',()=>{fragmentMap.querySelectorAll('.fragment-node').forEach(x=>x.classList.remove('active'));b.classList.add('active');fragmentMap.classList.add('focused');fragmentDetail.textContent=b.dataset.detail;}));}
 
-  // Scroll progress
-  const progress = document.createElement('div');
-  progress.className = 'scroll-progress';
-  progress.innerHTML = '<div class="scroll-progress__bar"></div>';
-  document.body.prepend(progress);
-  const bar = progress.firstElementChild;
-  const updateProgress = () => {
-    const max = document.documentElement.scrollHeight - innerHeight;
-    bar.style.width = (max > 0 ? Math.min(100, scrollY / max * 100) : 0) + '%';
-  };
-  addEventListener('scroll', updateProgress, {passive:true}); updateProgress();
+// Model: progressive path + selectable nodes
+const journey=document.getElementById('modelJourney'),path=document.getElementById('modelPathProgress'),proof=document.getElementById('journeyProof');
+function updateModelPath(){if(!journey||!path)return;const r=journey.getBoundingClientRect();const h=innerHeight||800;const p=Math.max(0,Math.min(1,(h-r.top)/(h+r.height*.55)));path.style.strokeDashoffset=String(1-p);}
+if(journey){journey.querySelectorAll('.journey-node').forEach((b,i)=>b.addEventListener('click',()=>{journey.querySelectorAll('.journey-node').forEach(x=>x.classList.remove('active'));b.classList.add('active');proof.innerHTML='<b>'+b.querySelector('small').textContent+'</b>'+b.dataset.proof;}));updateModelPath();}
 
-  // Add section ids + compact case index
-  const sections = [...document.querySelectorAll('section.section')].filter(sec => /0[1-8]\s*\//.test(sec.textContent));
-  const index = document.createElement('nav');
-  index.className = 'case-index';
-  index.setAttribute('aria-label','Case study sections');
-  sections.forEach((sec,i) => {
-    const n = String(i+1).padStart(2,'0');
-    sec.id = sec.id || 'section-' + n;
-    const a = document.createElement('a');
-    a.href = '#' + sec.id; a.textContent = n; a.title = (sec.querySelector('.kicker')?.textContent || n).trim();
-    index.appendChild(a);
-  });
-  if (sections.length) document.body.appendChild(index);
+// OS explorer
+const img=document.getElementById('explorerImg'),title=document.getElementById('explorerTitle');
+if(img){document.querySelectorAll('.module').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.module').forEach(x=>x.classList.remove('active'));b.classList.add('active');img.style.opacity=.2;setTimeout(()=>{img.src=b.dataset.img;img.alt=b.dataset.title+' system view';title.textContent=b.dataset.title;img.style.opacity=1},140)}));img.style.transition='opacity .2s ease';}
 
-  // Reveal choreography, deliberately subtle
-  const revealTargets = [...document.querySelectorAll('.section-copy > div, .before-grid, .shift-list, .device-wrap, .guides, .pack-grid, .ai-production-grid, .ai-text-grid, .ai-image, .trust-strip, .results-grid, .outcome-note, .portfolio-footer .wrap')];
-  revealTargets.forEach((el,i) => { el.classList.add('reveal'); el.dataset.delay = String(i%3); });
-  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('is-visible'); revealObs.unobserve(e.target); } }), {threshold:.12,rootMargin:'0px 0px -7% 0px'});
-  revealTargets.forEach(el => revealObs.observe(el));
+// Adoption stages
+const adoption=document.getElementById('adoptionPath');
+if(adoption){const aImg=document.getElementById('adoptionImg'),aTitle=document.getElementById('adoptionTitle'),aStat=document.getElementById('adoptionStat'),aCopy=document.getElementById('adoptionCopy'),aNote=document.getElementById('adoptionNote');adoption.querySelectorAll('.adoption-step').forEach(b=>b.addEventListener('click',()=>{adoption.querySelectorAll('.adoption-step').forEach(x=>x.classList.remove('active'));b.classList.add('active');aTitle.textContent=b.dataset.title;aStat.textContent=b.dataset.stat;aCopy.textContent=b.dataset.copy;aNote.textContent=b.dataset.note;aImg.style.opacity=.15;setTimeout(()=>{aImg.src=b.dataset.img;aImg.alt=b.dataset.title+' evidence';aImg.style.opacity=1},130)}));aImg.style.transition='opacity .2s ease';}
 
-  // Active section state
-  const links = [...index.querySelectorAll('a')];
-  const activeObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting){ links.forEach(a=>a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id)); } });
-  }, {rootMargin:'-35% 0px -55% 0px',threshold:0});
-  sections.forEach(sec => activeObs.observe(sec));
+// Outcome transformation toggle
+const transform=document.getElementById('transformSpace');
+if(transform){const caption=document.getElementById('transformCaption');document.querySelectorAll('.transform-controls button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.transform-controls button').forEach(x=>x.classList.remove('active'));b.classList.add('active');transform.classList.remove('before','after');transform.classList.add(b.dataset.state);caption.textContent=b.dataset.state==='after'?'Goals, owners, projects, processes and knowledge became connected parts of one shared operating model.':'Context, ownership and priorities existed in separate places. Work could be busy and legitimate without a visible connection to the company\'s annual goals.';}));}
 
-  // Turn Brand in use into a drag/swipe gallery without changing its content
-  const brandSection = sections.find(sec => /06\s*\/\s*Brand in use/i.test(sec.textContent));
-  const mosaic = brandSection?.querySelector('.mosaic');
-  if(mosaic){
-    mosaic.classList.add('is-gallery');
-    const shell = document.createElement('div'); shell.className='gallery-shell';
-    const head = document.createElement('div'); head.className='gallery-head';
-    head.innerHTML = '<div class="gallery-count" aria-live="polite">01 / 05</div><button class="gallery-btn gallery-prev" aria-label="Previous image">←</button><button class="gallery-btn gallery-next" aria-label="Next image">→</button>';
-    mosaic.parentNode.insertBefore(shell,mosaic); shell.appendChild(head); shell.appendChild(mosaic);
-    const slides=[...mosaic.querySelectorAll('figure')], count=head.querySelector('.gallery-count');
-    const currentIndex=()=>{ const x=mosaic.scrollLeft; let best=0,d=Infinity; slides.forEach((s,i)=>{const nd=Math.abs(s.offsetLeft-x);if(nd<d){d=nd;best=i}}); return best; };
-    const updateCount=()=>{const i=currentIndex();count.textContent=String(i+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');};
-    const go=dir=>{const i=currentIndex(),next=Math.max(0,Math.min(slides.length-1,i+dir));slides[next].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});};
-    head.querySelector('.gallery-prev').onclick=()=>go(-1); head.querySelector('.gallery-next').onclick=()=>go(1);
-    mosaic.addEventListener('scroll',()=>requestAnimationFrame(updateCount),{passive:true}); updateCount();
-    let down=false,startX=0,startScroll=0;
-    mosaic.addEventListener('pointerdown',e=>{down=true;startX=e.clientX;startScroll=mosaic.scrollLeft;mosaic.classList.add('is-dragging');mosaic.setPointerCapture(e.pointerId)});
-    mosaic.addEventListener('pointermove',e=>{if(down)mosaic.scrollLeft=startScroll-(e.clientX-startX)});
-    const release=e=>{if(!down)return;down=false;mosaic.classList.remove('is-dragging');try{mosaic.releasePointerCapture(e.pointerId)}catch{}; const i=currentIndex();slides[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});};
-    mosaic.addEventListener('pointerup',release);mosaic.addEventListener('pointercancel',release);
-  }
-
-  // Lightbox: useful for guidelines/detail without forcing giant assets into the page
-  const lb=document.createElement('div'); lb.className='lightbox'; lb.setAttribute('role','dialog'); lb.setAttribute('aria-modal','true');
-  lb.innerHTML='<div class="lightbox__top"><div class="lightbox__caption"></div><button class="lightbox__close" aria-label="Close image">×</button></div><div class="lightbox__stage"><img alt=""></div>';
-  document.body.appendChild(lb); const lbImg=lb.querySelector('img'),lbCap=lb.querySelector('.lightbox__caption');
-  const close=()=>{lb.classList.remove('is-open');document.body.style.overflow='';};
-  lb.querySelector('.lightbox__close').onclick=close; lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('lightbox__stage'))close()}); addEventListener('keydown',e=>{if(e.key==='Escape')close()});
-  [...document.querySelectorAll('figure')].forEach(fig=>{const img=fig.querySelector('img');if(!img)return;fig.dataset.lightbox='';fig.tabIndex=0;const open=()=>{lbImg.src=img.currentSrc||img.src;lbImg.alt=img.alt||'';lbCap.textContent=fig.querySelector('figcaption')?.textContent?.trim()||img.alt||'';lb.classList.add('is-open');document.body.style.overflow='hidden';};fig.addEventListener('click',open);fig.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
-
-
-  // Scrollable brand-guidelines document inside the laptop mockup + full-screen explorer
-  const guideScreen = document.getElementById('guidelinesScreen');
-  const guidePages = document.getElementById('guidelinesPages');
-  const guideCount = document.getElementById('guidelinesPageCount');
-  const totalGuidePages = 34;
-  const pageSrc = n => `guideline-page-${String(n).padStart(2,'0')}.webp`;
-  const makeGuidePage = (n, modal=false) => {
-    const fig=document.createElement('figure');
-    fig.className = modal ? 'guidelines-modal__page' : 'guidelines-page';
-    const img=document.createElement('img');
-    img.src=pageSrc(n); img.alt=`Riley brand guidelines, page ${n} of ${totalGuidePages}`; img.loading=n<3?'eager':'lazy'; img.decoding='async';
-    fig.appendChild(img); return fig;
-  };
-  if(guidePages){ for(let i=1;i<=totalGuidePages;i++) guidePages.appendChild(makeGuidePage(i)); }
-  const currentGuidePage = (viewport, selector) => {
-    const pages=[...viewport.querySelectorAll(selector)]; if(!pages.length) return 1;
-    const vr=viewport.getBoundingClientRect(); const target=vr.top + Math.min(vr.height*.35,220);
-    let best=1, dist=Infinity;
-    pages.forEach((pg,i)=>{const d=Math.abs(pg.getBoundingClientRect().top-target);if(d<dist){dist=d;best=i+1;}}); return best;
-  };
-  if(guideScreen && guideCount){
-    guideScreen.addEventListener('scroll',()=>{guideCount.textContent=`${String(currentGuidePage(guideScreen,'.guidelines-page')).padStart(2,'0')} / ${totalGuidePages}`},{passive:true});
-  }
-  const gm=document.createElement('div'); gm.className='guidelines-modal'; gm.setAttribute('role','dialog'); gm.setAttribute('aria-modal','true'); gm.setAttribute('aria-label','Riley brand guidelines');
-  gm.innerHTML=`<div class="guidelines-modal__bar"><div class="guidelines-modal__status"><span>Riley. brand guidelines</span><span id="guidelinesModalCount">01 / ${totalGuidePages}</span></div><button class="guidelines-modal__close" type="button" aria-label="Close brand guidelines">×</button></div><div class="guidelines-modal__viewport" tabindex="0"><div class="guidelines-modal__pages"></div></div>`;
-  document.body.appendChild(gm);
-  const gmViewport=gm.querySelector('.guidelines-modal__viewport'),gmPages=gm.querySelector('.guidelines-modal__pages'),gmCount=gm.querySelector('#guidelinesModalCount');
-  for(let i=1;i<=totalGuidePages;i++) gmPages.appendChild(makeGuidePage(i,true));
-  const openGuides=()=>{gm.classList.add('is-open');document.body.style.overflow='hidden';const p=currentGuidePage(guideScreen,'.guidelines-page');const target=gmPages.children[p-1];requestAnimationFrame(()=>target?.scrollIntoView({block:'start'}));gmViewport.focus({preventScroll:true});};
-  const closeGuides=()=>{gm.classList.remove('is-open');document.body.style.overflow='';};
-  document.getElementById('guidelinesExpand')?.addEventListener('click',openGuides);
-  gm.querySelector('.guidelines-modal__close').addEventListener('click',closeGuides);
-  gm.addEventListener('click',e=>{if(e.target===gm)closeGuides()});
-  gmViewport.addEventListener('scroll',()=>{gmCount.textContent=`${String(currentGuidePage(gmViewport,'.guidelines-modal__page')).padStart(2,'0')} / ${totalGuidePages}`},{passive:true});
-  addEventListener('keydown',e=>{if(e.key==='Escape'&&gm.classList.contains('is-open'))closeGuides()});
-
-})();
-</script>
-
-</body></html>
+// Lightbox
+const lb=document.getElementById('lightbox'),lbi=lb.querySelector('img');document.addEventListener('click',e=>{if(e.target.matches('.zoom')){lbi.src=e.target.src;lb.classList.add('open')}});lb.querySelector('button').onclick=()=>lb.classList.remove('open');lb.onclick=e=>{if(e.target===lb)lb.classList.remove('open')};addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')});
+</script></body></html>
