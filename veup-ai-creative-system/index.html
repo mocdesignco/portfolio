@@ -1,1 +1,412 @@
-placeholder
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Engineering an AI-Native Brand System | Megan O'Connor</title>
+<meta content="A case study in translating a visual design system into machine-readable design intelligence for governed AI-assisted creative production." name="description"/>
+<style>
+:root{
+  --bg:#f4f3ef;
+  --paper:#fbfaf7;
+  --ink:#101010;
+  --muted:#77746d;
+  --line:#d5d2cb;
+  --soft:#e9e7e1;
+  --purple:#5746cf;
+  --teal:#2eb1a1;
+  --blue:#3275e5;
+  --plum:#a34db6;
+  --max:1500px;
+  --g:clamp(18px,2vw,30px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.48;overflow-x:hidden}p{widows:2;orphans:2;text-wrap:pretty}h1,h2,h3,h4{overflow-wrap:normal;word-break:normal}
+a{color:inherit}
+img{max-width:100%}
+.wrap{width:min(calc(100% - 64px),var(--max));margin:auto}
+.progress{position:fixed;left:0;top:0;width:0;height:2px;background:var(--ink);z-index:100}
+.nav{padding:20px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(244,243,240,.94);backdrop-filter:blur(12px);z-index:80}.navin{display:flex;justify-content:space-between;gap:20px;font-size:12px;text-transform:uppercase;letter-spacing:.12em}
+.kicker{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero{padding:clamp(36px,4.2vw,58px) 0 clamp(34px,4vw,54px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(340px,5fr);gap:clamp(34px,5vw,82px);align-items:start;margin-top:18px}.hero h1{font-size:clamp(38px,4.15vw,62px);line-height:1.01;letter-spacing:-.045em;font-weight:500;max-width:19ch;margin:0;text-wrap:balance}
+.hero-copy{display:block;padding-top:4px}
+.hero-copy .lead{font-size:clamp(15px,1.15vw,17px);line-height:1.5;letter-spacing:-.01em;margin:14px 0 12px;max-width:54ch;text-wrap:pretty}
+.hero-copy .body{font-size:clamp(14px,1vw,15px);line-height:1.56;color:#44413c;margin:0;max-width:56ch;text-wrap:pretty}
+.hero-note{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:2px}
+.hero-output{padding:0 0 clamp(44px,5vw,66px)}
+.hero-system{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:var(--paper);overflow:hidden}
+.hero-system-panel{min-width:0;background:#efeeea;display:flex;flex-direction:column}
+.hero-system-panel+.hero-system-panel{border-left:1px solid var(--line)}
+.hero-system-panel figure{margin:0;padding:12px;display:flex;align-items:center;justify-content:center;min-height:330px;background:#efeeea}
+.hero-system-panel img{display:block;width:100%;height:auto;max-height:430px;object-fit:contain}
+.hero-system-label{display:flex;justify-content:space-between;gap:20px;padding:11px 14px;border-top:1px solid var(--line);background:var(--paper);font-size:10px;color:var(--muted)}
+.hero-system-label b{font-weight:500;color:var(--ink)}
+.hero-system-caption{grid-column:1/-1;display:flex;justify-content:space-between;gap:24px;padding:11px 14px;font-size:10px;color:var(--muted);border-top:1px solid var(--line);background:var(--paper)}
+.section{padding:clamp(56px,6vw,88px) 0;border-top:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);align-items:start;margin-bottom:clamp(36px,4.5vw,62px)}
+.section-head .left{grid-column:1/span 6;position:sticky;top:100px}
+.section-head .right{grid-column:8/span 5}
+.section h2{font-size:clamp(28px,2.7vw,42px);line-height:1.08;letter-spacing:-.036em;font-weight:500;margin:12px 0 0;max-width:24ch;text-wrap:balance}
+.section .right p{font-size:clamp(14px,1vw,15.5px);line-height:1.58;letter-spacing:-.006em;margin:0 0 14px;max-width:64ch;color:#34322f;text-wrap:pretty;widows:2;orphans:2}
+.section .right p:last-child{margin-bottom:0}
+.pull{font-size:15px;line-height:1.58;letter-spacing:-.006em;max-width:64ch;margin:0;color:#34322f}
+strong.pull{display:block}
+.visual-block{margin-top:56px}
+.compare-stage{display:grid;grid-template-columns:1fr 72px 1fr;gap:18px;align-items:stretch}
+.compare-card{background:var(--paper);border:1px solid var(--line);padding:clamp(22px,3vw,38px);min-height:460px;display:flex;flex-direction:column}
+.compare-card h3{font-size:clamp(20px,1.7vw,27px);font-weight:500;line-height:1.12;letter-spacing:-.028em;margin:8px 0 18px;max-width:24ch;text-wrap:balance}
+.compare-card .mini{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.ai-mock{margin:auto 0;background:#f0efe9;border:1px solid #ddd9d0;padding:28px;min-height:245px;display:grid;grid-template-rows:auto 1fr auto;gap:18px}
+.ai-mock .mock-bar{display:flex;gap:7px}.ai-mock .dot{width:7px;height:7px;border-radius:50%;background:#bbb6ad}.ai-mock .mock-title{font-size:34px;line-height:1;letter-spacing:-.045em;max-width:8ch}.ai-mock .mock-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-items:end}.ai-mock .mock-card{border-radius:22px;background:linear-gradient(145deg,#6f5ce2,#d1c9ff);height:86px}.ai-mock .mock-card:nth-child(2){height:118px;background:linear-gradient(145deg,#2eb1a1,#bff4ec)}.ai-mock .mock-card:nth-child(3){height:74px;background:linear-gradient(145deg,#3684ff,#b7d4ff)}
+.issue-list{display:grid;gap:9px;margin-top:24px}.issue{display:flex;gap:10px;font-size:13px;color:#5f5b55}.issue:before{content:'×';font-size:15px;color:#9c5b5b}
+.good-list .issue:before{content:'✓';color:#35785e}
+.arrow-mid{display:grid;place-items:center;color:var(--muted);font-size:30px}
+.proof-frame{margin:auto 0;background:#eceae4;border:1px solid #ddd9d0;padding:8px}.proof-frame img{display:block;width:100%;height:auto}
+.caption{font-size:11px;color:var(--muted);margin-top:10px}
+.insight-map{background:#111;color:#f5f4ef;padding:clamp(28px,4vw,58px)}
+.insight-core{text-align:center;font-size:clamp(20px,1.9vw,28px);letter-spacing:-.025em;margin-bottom:26px;text-wrap:balance}
+.insight-columns{display:grid;grid-template-columns:1fr 80px 1fr;align-items:stretch;gap:16px}.interface{border:1px solid #373737;padding:28px;min-height:190px;transition:.3s var(--ease);cursor:pointer;outline:none}.interface:hover,.interface:focus-visible,.interface.is-open{transform:translateY(-4px);border-color:#737373}.interface small{font-size:11px;color:#9c9992;text-transform:uppercase;letter-spacing:.12em}.interface h3{font-size:clamp(21px,1.9vw,28px);font-weight:500;letter-spacing:-.028em;margin:18px 0 4px;text-wrap:balance}.interface .reveal-detail{max-height:0;opacity:0;overflow:hidden;transform:translateY(6px);transition:max-height .35s var(--ease),opacity .25s ease,transform .35s var(--ease)}.interface:hover .reveal-detail,.interface:focus-visible .reveal-detail,.interface.is-open .reveal-detail{max-height:220px;opacity:1;transform:none}.interface ul{margin:14px 0 0;padding:0;list-style:none;color:#b8b5ae;font-size:13px;line-height:1.8}.interface .peek{font-size:10px;color:#77736e;margin-top:14px;letter-spacing:.08em;text-transform:uppercase}.interface.is-open .peek,.interface:hover .peek,.interface:focus-visible .peek{opacity:0}.interface + .bridge{}.bridge{display:grid;place-items:center;color:#777;font-size:26px}.human-band{margin-top:18px;border-top:1px solid #343434;padding-top:20px;display:flex;justify-content:space-between;gap:18px;font-size:12px;color:#aaa69f}
+.system-proof{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin-top:56px}.shot{background:var(--paper);border:1px solid var(--line);padding:12px}.shot img{display:block;width:100%;height:auto}.shot .caption{padding:0 2px}
+.collection-summary{background:#111;color:#f5f4ef;border:1px solid #111;padding:clamp(26px,3vw,38px);display:flex;flex-direction:column;justify-content:space-between;min-height:330px}.collection-summary .summary-kicker{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#9f9b93}.collection-summary h3{font-size:clamp(22px,2vw,30px);line-height:1.08;letter-spacing:-.03em;font-weight:500;margin:12px 0 28px;max-width:18ch}.collection-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #393939}.collection-stat{padding:18px 14px 16px 0;border-bottom:1px solid #393939}.collection-stat:nth-child(even){padding-left:18px;border-left:1px solid #393939}.collection-stat strong{display:block;font-size:clamp(28px,2.5vw,40px);font-weight:500;letter-spacing:-.04em;line-height:1}.collection-stat span{display:block;margin-top:6px;font-size:11px;color:#aaa69f}.collection-summary .caption{color:#9f9b93;margin-top:18px}
+.token-flow{margin-top:18px;border:1px solid var(--line);background:var(--paper);display:grid;grid-template-columns:repeat(4,1fr)}
+.token-step{padding:28px;min-height:138px;position:relative;cursor:pointer;outline:none}.token-step+.token-step{border-left:1px solid var(--line)}.token-step small{display:block;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}.token-step b{font-size:23px;font-weight:500;letter-spacing:-.03em}.token-step p{font-size:13px;color:var(--muted);margin:12px 0 0;max-height:0;opacity:0;overflow:hidden;transform:translateY(5px);transition:max-height .3s var(--ease),opacity .2s ease,transform .3s var(--ease)}.token-step:hover p,.token-step:focus-visible p,.token-step.is-open p{max-height:90px;opacity:1;transform:none}.token-step:not(:last-child):after{content:'→';position:absolute;right:-8px;top:50%;transform:translateY(-50%);z-index:2;background:var(--paper);padding:2px;color:var(--muted)}
+.token-step:before,.outcome:before{content:'+';position:absolute;right:16px;top:14px;font-size:15px;color:var(--muted);transition:transform .25s var(--ease),color .25s ease}
+.token-step.is-open:before,.outcome.is-open:before{transform:rotate(45deg)}
+.outcome{position:relative}.change .outcome:before{color:#77736d}
+
+.still-not-enough{margin:clamp(60px,7vw,92px) 0 30px;display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);align-items:start}.still-not-enough h3{grid-column:1/span 5;font-size:clamp(25px,2.35vw,36px);line-height:1.08;letter-spacing:-.034em;font-weight:500;margin:0;max-width:22ch;text-wrap:balance}.still-not-enough p{grid-column:7/span 5;font-size:14.5px;line-height:1.58;color:#3d3a35;margin:0;max-width:58ch;text-wrap:pretty}
+.output-explorer{margin-top:28px;border:1px solid var(--line);background:var(--paper)}
+.output-tabs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.output-tab{display:block;border-right:1px solid var(--line);background:transparent;color:var(--muted);padding:17px 18px;text-align:left;font:inherit;cursor:pointer;transition:.2s var(--ease);user-select:none}
+.output-tab:last-child{border-right:0}.output-tab small{display:block;font-size:9px;letter-spacing:.13em;text-transform:uppercase;margin-bottom:4px}.output-tab b{font-size:14px;font-weight:500;color:inherit}.output-tab:hover{background:#f0eee8;color:var(--ink)}.output-tab.is-active{background:var(--ink);color:#fff}.format-panel{display:none}.format-panel.is-active{display:grid}
+.output-panel{grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr);min-height:570px}
+.skill-system{background:#111;color:#eceae4;padding:clamp(24px,3vw,42px);display:flex;flex-direction:column;justify-content:space-between}
+.skill-system-top small{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:.04em;color:#99958e}.skill-system h4{font-size:clamp(20px,1.8vw,27px);line-height:1.08;letter-spacing:-.03em;font-weight:500;margin:12px 0 18px;max-width:22ch}.skill-proof-label{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#77736e;margin-bottom:12px}.rule-list{display:grid;gap:0;border-top:1px solid #343434}.rule{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:11px 0;border-bottom:1px solid #343434;font-size:11px;line-height:1.45}.rule span:first-child{color:#706d67;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:9px;padding-top:2px}
+.rule-list{border-top:1px solid #373737}.rule{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:13px 0;border-bottom:1px solid #2c2c2c;font-size:12px;line-height:1.45;color:#c7c4bd}.rule span:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#77736c;font-size:10px;padding-top:2px}
+.skill-system-foot{margin-top:30px;padding-top:18px;border-top:1px solid #373737;font-size:11px;line-height:1.5;color:#99958e}
+.rules-toggle{margin-top:18px;border:1px solid #4a4742;background:transparent;color:#eceae4;padding:9px 12px;font:inherit;font-size:10px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:.2s var(--ease)}
+.rules-toggle:hover,.rules-toggle:focus-visible{background:#eceae4;color:#111;outline:none}
+.skill-system .rule-list{max-height:0;opacity:0;overflow:hidden;border-top-color:transparent;margin-top:0;transition:max-height .35s var(--ease),opacity .25s ease,margin .35s var(--ease),border-color .2s ease}
+.skill-system .skill-system-foot{max-height:0;opacity:0;overflow:hidden;margin-top:0;padding-top:0;border-top-color:transparent;transition:max-height .35s var(--ease),opacity .25s ease,margin .35s var(--ease),padding .35s var(--ease),border-color .2s ease}
+.skill-system.is-open .rule-list{max-height:360px;opacity:1;margin-top:18px;border-top-color:#373737}
+.skill-system.is-open .skill-system-foot{max-height:100px;opacity:1;margin-top:22px;padding-top:16px;border-top-color:#373737}
+
+.output-stage{position:relative;background:#ebe9e3;min-width:0;overflow:hidden;padding:clamp(18px,2vw,28px);display:flex;align-items:center;justify-content:center}
+.output-stage figure{margin:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center}.output-stage img{display:block;max-width:100%;max-height:520px;width:auto;height:auto;object-fit:contain;box-shadow:0 10px 34px rgba(0,0,0,.08)}
+.output-stage[data-format="landing"]{align-items:flex-start}.output-stage[data-format="landing"] figure{height:520px;overflow:auto;align-items:flex-start;justify-content:center;scrollbar-width:thin}.output-stage[data-format="landing"] img{width:100%;max-height:none;box-shadow:none}
+.output-stage[data-format="onepager"] img{max-height:520px}.social-grid{width:100%;height:100%;display:grid;grid-template-columns:1.12fr .88fr;gap:10px;align-items:center}.social-grid .social-main{width:100%;max-height:500px}.social-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.social-thumbs img{width:100%;height:auto;max-height:235px;box-shadow:none}
+.output-meta{display:flex;justify-content:space-between;gap:20px;margin-top:12px;font-size:10px;color:var(--muted);letter-spacing:.04em}.output-meta span:last-child{text-align:right}
+.explorer-close{margin:22px 0 0;font-size:13px;line-height:1.55;color:#4a4742;max-width:68ch}
+.change{background:#111;color:#f7f5f0}.change .kicker,.change .right p{color:#aaa69f}.change .section-head{margin-bottom:34px}.econ-line{font-size:clamp(15px,1.2vw,17px)!important;line-height:1.55!important;letter-spacing:-.008em!important;max-width:56ch!important;margin:0 0 14px!important;color:#f7f5f0!important}
+.outcomes{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #393939;border-bottom:1px solid #393939;margin-top:24px}.outcome{padding:26px 22px 24px 0;min-height:132px;cursor:pointer;outline:none}.outcome+.outcome{border-left:1px solid #393939;padding-left:22px}.outcome strong{display:block;font-size:clamp(23px,2.1vw,32px);line-height:1.08;letter-spacing:-.035em;font-weight:500;margin-bottom:4px;text-wrap:balance}.outcome .outcome-label{display:block;font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:#77736d;margin-top:10px}.outcome span:not(.outcome-label){display:block;font-size:12px;line-height:1.5;color:#aaa69f;max-width:24ch;max-height:0;opacity:0;overflow:hidden;transform:translateY(5px);transition:max-height .3s var(--ease),opacity .2s ease,transform .3s var(--ease)}.outcome:hover span:not(.outcome-label),.outcome:focus-visible span:not(.outcome-label),.outcome.is-open span:not(.outcome-label){max-height:90px;opacity:1;transform:none;margin-top:9px}.outcome:hover .outcome-label,.outcome:focus-visible .outcome-label,.outcome.is-open .outcome-label{opacity:.35}.time-caption{font-size:10px;color:#777;margin-top:10px;max-width:90ch}.methodology{margin-top:12px;color:#777}.methodology summary{font-size:10px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;list-style:none}.methodology summary::-webkit-details-marker{display:none}.methodology summary:after{content:' +';}.methodology[open] summary:after{content:' −';}.methodology p{font-size:10px;line-height:1.5;max-width:90ch;margin:9px 0 0}
+.time-proof{display:none}.prompt-placeholder{margin:auto 0;background:#f0efe9;border:1px dashed #bdb8af;min-height:245px;display:grid;place-items:center;padding:28px;text-align:center;color:#77746d}.prompt-placeholder b{display:block;font-size:18px;font-weight:500;color:#35322e;margin-bottom:8px}.prompt-placeholder span{display:block;font-size:12px;max-width:32ch;line-height:1.5}.compare-image{margin:0;border:1px solid var(--line);background:#fff;overflow:hidden;aspect-ratio:16/9}.compare-image img{display:block;width:100%;height:100%;object-fit:contain}
+.role-strip{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);align-items:start}.role-strip h2{grid-column:1/span 6}.role-copy{grid-column:8/span 5;padding-top:8px}.role-copy p{font-size:15px;line-height:1.58;color:#3d3a36;max-width:54ch;text-wrap:pretty}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}.tags span{border:1px solid var(--line);padding:9px 12px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.35)}
+.footer{padding:clamp(64px,8vw,110px) 0 26px;border-top:1px solid var(--line);background:#eeece7}.footer-top{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--g);align-items:end}.footer-title{grid-column:1/span 6;font-size:clamp(42px,5.2vw,78px);line-height:.98;letter-spacing:-.055em;max-width:9ch}.footer-next{grid-column:8/span 5}.footer-next a{display:inline-block;margin-top:18px;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}.footer-bottom{display:flex;justify-content:space-between;gap:20px;margin-top:70px;padding-top:18px;border-top:1px solid var(--line);font-size:11px;text-transform:uppercase;letter-spacing:.11em;color:var(--muted)}
+.reveal{opacity:1;transform:none}
+.js .reveal{opacity:0;transform:translateY(18px);transition:.7s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+.zoom{cursor:zoom-in}.zoom-link{display:contents;color:inherit;text-decoration:none}.lightbox{position:fixed;inset:0;background:rgba(10,10,10,.96);z-index:200;display:grid;place-items:center;padding:30px;opacity:0;visibility:hidden;transition:.25s ease}.lightbox.open{opacity:1;visibility:visible}.lightbox img{max-width:94vw;max-height:88vh;box-shadow:0 24px 70px rgba(0,0,0,.35)}.lightbox button{position:absolute;top:20px;right:20px;width:42px;height:42px;border:1px solid #666;background:transparent;color:#fff;font-size:20px;cursor:pointer}
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr 1fr;gap:34px}
+  .section-head .left{grid-column:1/span 5}.section-head .right{grid-column:6/span 7}
+  .hero-system{grid-template-columns:1fr}.hero-system-panel+.hero-system-panel{border-left:0;border-top:1px solid var(--line)}.system-proof{grid-template-columns:1fr}.output-panel{grid-template-columns:1fr}.output-stage{min-height:460px}.loop,.outcomes{grid-template-columns:1fr 1fr}.loop-step:nth-child(3){border-left:0;border-top:1px solid #3b3b3b}.loop-step:nth-child(4),.loop-step:nth-child(5){border-top:1px solid #3b3b3b}.loop-step:after{display:none}
+}
+@media(max-width:720px){
+  .wrap{width:calc(100% - 34px)}.navin{font-size:10px;gap:10px}.hero{padding-top:48px}.hero-grid{display:block}.hero-copy{display:block;margin-top:26px}.hero-note{margin-bottom:4px}.hero-copy .lead{margin-bottom:12px}.hero h1{font-size:clamp(36px,9vw,50px);max-width:18ch}
+  .section-head{display:block}.section-head .left{position:static;margin-bottom:26px}.section h2{max-width:24ch;font-size:clamp(28px,7.5vw,38px)}.compare-stage{grid-template-columns:1fr}.arrow-mid{height:50px;transform:rotate(90deg)}.insight-columns{grid-template-columns:1fr}.bridge{height:48px;transform:rotate(90deg)}.system-proof{grid-template-columns:1fr}.token-flow{grid-template-columns:1fr}.token-step+.token-step{border-left:0;border-top:1px solid var(--line)}.token-step:after{display:none}.still-not-enough{display:block}.still-not-enough h3{margin-bottom:26px}.output-tabs{grid-template-columns:1fr 1fr}.output-tab:nth-child(2){border-right:0}.output-tab:nth-child(-n+2){border-bottom:1px solid var(--line)}.output-panel{grid-template-columns:1fr}.output-stage{min-height:380px}.social-grid{grid-template-columns:1fr}.social-thumbs{grid-template-columns:repeat(3,1fr)}.loop,.outcomes,.time-proof{grid-template-columns:1fr}.loop-step+.loop-step,.outcome+.outcome{border-left:0;border-top:1px solid #393939;padding-left:0}.time-col+.time-col{border-left:0;border-top:1px solid #393939}.role-strip{display:block}.role-strip h2{margin-bottom:30px}.footer-top{display:block}.footer-title{margin-bottom:34px}.footer-bottom{display:block}.footer-bottom span{display:block;margin-bottom:8px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header class="nav"><div class="wrap navin"><div>Megan O’Connor</div><div>Case study / AI-native design system.</div><div>2026</div></div></header>
+<main>
+<section class="hero">
+<div class="wrap">
+<div class="kicker">VeUP / AI-native design systems / 2026</div>
+<div class="hero-grid">
+<h1>AI made it possible for anyone to create branded content. It didn’t make everyone a designer.</h1>
+<div class="hero-copy reveal">
+<div class="hero-note">Engineering an AI-native brand system</div>
+<p class="lead">A brand is more than its logo, colours and typeface. A proper design system also defines the grids, spacing, hierarchy, components, behaviours and rules that make those ingredients work together.</p>
+<p class="body">Most of that system is designed to be interpreted visually by people, not structured for AI to use. Give AI a brand-guidelines PDF and it may recognise the visual identity, but it does not automatically receive the rules, relationships and constraints needed to design reliably with it.</p>
+</div>
+</div>
+</div>
+</section>
+<section aria-label="One design system, two interfaces" class="hero-output">
+<div class="wrap">
+<div class="hero-system reveal">
+<div class="hero-system-panel">
+<figure class="zoom" data-src="assets/presentation-system-figma.png"><a aria-label="Open image full size" class="zoom-link" href="assets/presentation-system-figma.png" rel="noopener" target="_blank">
+<img alt="VeUP Presentation System shown as an editable visual system in Figma Slides" src="assets/presentation-system-figma.png"/>
+</a></figure>
+<div class="hero-system-label"><b>Visual system</b><span>Figma presentation patterns</span></div>
+</div>
+<div class="hero-system-panel">
+<figure class="zoom" data-src="assets/amazon-quick-skills.png"><a aria-label="Open image full size" class="zoom-link" href="assets/amazon-quick-skills.png" rel="noopener" target="_blank">
+<img alt="VeUP output-specific design Skills installed in Amazon Quick and ready for use" src="assets/amazon-quick-skills.png"/>
+</a></figure>
+<div class="hero-system-label"><b>Executable system</b><span>Output-specific AI Skills</span></div>
+</div>
+<div class="hero-system-caption"><span>The same design intelligence made visible for people and usable by AI.</span><span>Figma + specialised Skills</span></div>
+</div>
+</div>
+</section>
+<section class="section" id="consequence">
+<div class="wrap">
+<div class="section-head reveal">
+<div class="left"><div class="kicker">01 / The consequence</div><h2>More access to creation didn’t mean more access to design judgement.</h2></div>
+<div class="right">
+<p>VeUP had one in-house designer: me, and design was only part of my remit. As demand grew, generative AI offered an obvious shortcut: why wait in the creative queue when you could make the asset yourself?</p>
+<p>The shortcut looked more convincing than it was. AI could reproduce the logo, colours and typography while improvising the decisions around hierarchy, composition, spacing, components and format.</p>
+<p>Some of that work reached customers without creative review. Instead of creating capacity, it created creative debt: time that should have gone into design was spent finding, correcting or rebuilding work already in the world. AI removed the wait for production, not the need for design judgement.</p>
+</div>
+</div>
+<div class="compare-stage reveal">
+<article class="compare-card">
+<span class="mini">Prompt-led output</span>
+<h3>Brand ingredients without the full design logic.</h3>
+<figure class="compare-image zoom" data-src="assets/prompt-led-ai.png"><a aria-label="Open image full size" class="zoom-link" href="assets/prompt-led-ai.png" rel="noopener" target="_blank"><img alt="Prompt-led AI version of a VeUP strategy slide using unapproved colour treatments and an altered logo" src="assets/prompt-led-ai.png"/></a></figure>
+<div class="issue-list">
+<div class="issue">Unapproved colour treatment</div>
+<div class="issue">Altered, AI-invented logo mark</div>
+<div class="issue">Glow and gradient effects outside the approved visual language</div>
+<div class="issue">Layout logic reinterpreted rather than followed</div>
+</div>
+</article>
+<div class="arrow-mid">→</div>
+<article class="compare-card">
+<span class="mini">Human-designed reference</span>
+<h3>The standard AI was being compared against.</h3>
+<figure class="compare-image zoom" data-src="assets/human-designed-reference.png"><a aria-label="Open image full size" class="zoom-link" href="assets/human-designed-reference.png" rel="noopener" target="_blank"><img alt="Human-designed VeUP strategy slide following the approved design system" src="assets/human-designed-reference.png"/></a></figure>
+<div class="issue-list good-list">
+<div class="issue">Approved logo and colour roles</div>
+<div class="issue">Established hierarchy and spacing</div>
+<div class="issue">Approved component and layout logic</div>
+<div class="issue">Human design judgement applied throughout</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="insight">
+<div class="wrap">
+<div class="section-head reveal">
+<div class="left"><div class="kicker">02 / Insight</div><h2>The design system needed another interface.</h2></div>
+<div class="right">
+<p>The answer was not tighter policing or better prompts. The underlying design knowledge needed to exist in a form AI could use.</p>
+<p>Designers infer relationships between tokens, components, layouts and hierarchy from the visual system. AI needs those relationships made explicit. The visual system did not need replacing; it needed a machine-readable counterpart.</p>
+</div>
+</div>
+<div class="insight-map reveal">
+<div class="insight-core">One design system. Two interfaces.</div>
+<div class="insight-columns">
+<article class="interface disclosure" tabindex="0" aria-expanded="false"><small>For people</small><h3>Visual interface</h3><div class="peek">Hover or tap to explore</div><div class="reveal-detail"><ul><li>Figma library</li><li>Variables and styles</li><li>Components and patterns</li><li>Reference implementations</li><li>Designer judgement</li></ul></div></article>
+<div class="bridge">+</div>
+<article class="interface disclosure" tabindex="0" aria-expanded="false"><small>For AI</small><h3>Structured interface</h3><div class="peek">Hover or tap to explore</div><div class="reveal-detail"><ul><li>Machine-readable documentation</li><li>Semantic rules</li><li>Relationships and constraints</li><li>Output-specific Skills</li><li>Explicit exceptions</li></ul></div></article>
+</div>
+<div class="human-band"><span>Shared core brand intelligence</span><span>Human creative direction remains the quality layer</span></div>
+</div>
+</div>
+</section>
+<section class="section" id="response">
+<div class="wrap">
+<div class="section-head reveal">
+<div class="left"><div class="kicker">03 / The response</div><h2>I made the design system readable by machines.</h2></div>
+<div class="right">
+<p>I translated VeUP’s visual system into structured documentation covering tokens, semantic roles, typography, spacing, grids, components, behaviours, exceptions and governance.</p>
+<p>Figma remained the visual reference for designers; the structured documentation exposed the same logic to AI. One design system, two ways to read it.</p>
+</div>
+</div>
+<div class="token-flow reveal">
+<div class="token-step disclosure" tabindex="0" aria-expanded="false"><small>01 / Foundation</small><b>Primitive tokens</b><p>Colour ramps, type scale, spacing, size, radius and breakpoints.</p></div>
+<div class="token-step disclosure" tabindex="0" aria-expanded="false"><small>02 / Meaning</small><b>Semantic roles</b><p>Text, surfaces, actions, borders, programme accents and feedback states.</p></div>
+<div class="token-step disclosure" tabindex="0" aria-expanded="false"><small>03 / Behaviour</small><b>Components</b><p>Reusable patterns that inherit the system rather than hardcoding decisions.</p></div>
+<div class="token-step disclosure" tabindex="0" aria-expanded="false"><small>04 / Application</small><b>Outputs</b><p>Presentation, landing page, one-pager and social formats.</p></div>
+</div>
+<div class="system-proof reveal">
+<figure class="shot zoom" data-src="assets/semantic.png"><a aria-label="Open image full size" class="zoom-link" href="assets/semantic.png" rel="noopener" target="_blank"><img alt="VeUP semantic colour variables" src="assets/semantic.png"/><figcaption class="caption">Semantic roles translate raw values into usable design meaning across light and dark modes.</figcaption></a></figure>
+<figure class="shot zoom" data-src="assets/design-system.png"><a aria-label="Open image full size" class="zoom-link" href="assets/design-system.png" rel="noopener" target="_blank"><img alt="VeUP colour primitives and programme nodes" src="assets/design-system.png"/><figcaption class="caption">Figma made the system visible. Structured documentation made the same logic usable by AI.</figcaption></a></figure>
+</div>
+<div class="system-proof reveal">
+<figure class="shot zoom" data-src="assets/semantic-sizes.png"><a aria-label="Open image full size" class="zoom-link" href="assets/semantic-sizes.png" rel="noopener" target="_blank"><img alt="VeUP semantic size variables in Figma, including border, component spacing, layout spacing, radius and grid groups" src="assets/semantic-sizes.png"/><figcaption class="caption">Semantic size roles alias primitive dimensions, so spacing, radius and layout behaviour stay consistent without hardcoding raw values.</figcaption></a></figure>
+<figure class="shot zoom" data-src="assets/components.png"><a aria-label="Open image full size" class="zoom-link" href="assets/components.png" rel="noopener" target="_blank"><img alt="VeUP reusable design components" src="assets/components.png"/><figcaption class="caption">Reusable components and programme motifs built from the system.</figcaption></a></figure>
+</div>
+<div class="still-not-enough reveal">
+<h3>But the core system still wasn’t enough.</h3>
+<p>Knowing the core brand system still does not tell AI how to build a strong presentation, one-pager or landing page. Each format adds its own layout, density and behaviour rules.</p>
+</div>
+<div class="output-explorer reveal" id="outputExplorer">
+<div aria-label="Output-specific systems" class="output-tabs" role="tablist">
+<button class="output-tab is-active" data-target="presentation" type="button"><small>01 / Output system</small><b>Presentation</b></button>
+<button class="output-tab" data-target="landing" type="button"><small>02 / Output system</small><b>Landing page</b></button>
+<button class="output-tab" data-target="onepager" type="button"><small>03 / Output system</small><b>One-pager</b></button>
+<button class="output-tab" data-target="social" type="button"><small>04 / Output system</small><b>Social</b></button>
+</div>
+<div class="output-panels">
+<div class="output-panel format-panel panel-presentation is-active" data-panel="presentation">
+<article class="skill-system">
+<div class="skill-system-top">
+<div class="skill-proof-label">Actual Skill excerpt</div>
+<small>veup-slide-deck / SKILL.md</small>
+<h4>Presentation Skill</h4>
+<button class="rules-toggle" type="button" aria-expanded="false">View rules</button>
+<div class="rule-list">
+<div class="rule"><span>01</span><span>Content slide: one idea per slide. Two headlines means two slides.</span></div>
+<div class="rule"><span>02</span><span>Title/Hero: no body paragraph text. That belongs on a content slide.</span></div>
+<div class="rule"><span>03</span><span>Data/Stat: 1-4 stat callouts. Beyond 4, none register.</span></div>
+<div class="rule"><span>04</span><span>Programme diagram: exactly one programme palette per slide, never mixed.</span></div>
+</div>
+</div>
+<div class="skill-system-foot">Real rules taken from the VeUP Slide Deck Skill, not a reconstructed summary.</div>
+</article>
+<div>
+<div class="output-stage" data-format="presentation"><figure class="zoom" data-src="assets/presentation.png"><a aria-label="Open image full size" class="zoom-link" href="assets/presentation.png" rel="noopener" target="_blank"><img alt="VeUP presentation output created from the presentation system" src="assets/presentation.png"/></a></figure></div>
+<div class="output-meta"><span>Presentation / representative output</span><span>Choose another format above</span></div>
+</div>
+</div>
+<div class="output-panel format-panel panel-landing" data-panel="landing">
+<article class="skill-system">
+<div class="skill-system-top">
+<div class="skill-proof-label">Actual Skill excerpt</div>
+<small>veup-landing-page / SKILL.md</small>
+<h4>Landing Page Skill</h4>
+<button class="rules-toggle" type="button" aria-expanded="false">View rules</button>
+<div class="rule-list">
+<div class="rule"><span>01</span><span>Always use the Responsive grid system across Compact, Medium and Desktop.</span></div>
+<div class="rule"><span>02</span><span>Desktop content is capped and centred at 1200px, never stretched edge to edge.</span></div>
+<div class="rule"><span>03</span><span>Hero: one dominant CTA. Do not stack two equally weighted primary CTAs.</span></div>
+<div class="rule"><span>04</span><span>Contact section is the page's single dominant conversion point.</span></div>
+</div>
+</div>
+<div class="skill-system-foot">Real rules taken from the VeUP Landing Page Skill.</div>
+</article>
+<div>
+<div class="output-stage" data-format="landing"><figure class="zoom" data-src="assets/landing-page-hires.png"><a aria-label="Open image full size" class="zoom-link" href="assets/landing-page-hires.png" rel="noopener" target="_blank"><img alt="VeUP landing page built from the responsive design system" src="assets/landing-page-hires.png"/></a></figure></div>
+<div class="output-meta"><span>Landing page / full-page system output</span><span>Scroll the preview or click to enlarge</span></div>
+</div>
+</div>
+<div class="output-panel format-panel panel-onepager" data-panel="onepager">
+<article class="skill-system">
+<div class="skill-system-top">
+<div class="skill-proof-label">Output-specific specification</div>
+<small>VeUP one-pager system</small>
+<h4>One-pager system</h4>
+<button class="rules-toggle" type="button" aria-expanded="false">View rules</button>
+<div class="rule-list">
+<div class="rule"><span>01</span><span>Uses the same core tokens, typography and spacing logic as the wider VeUP system.</span></div>
+<div class="rule"><span>02</span><span>Dense commercial information is organised into repeatable metrics, cards and comparisons.</span></div>
+<div class="rule"><span>03</span><span>Hierarchy is designed for scanning without removing supporting detail.</span></div>
+<div class="rule"><span>04</span><span>The output remains a finite document rather than inheriting responsive web behaviour.</span></div>
+</div>
+</div>
+<div class="skill-system-foot">This was an output-specific system rather than a separate packaged Skill.</div>
+</article>
+<div>
+<div class="output-stage" data-format="onepager"><figure class="zoom" data-src="assets/one-pager-hires.png"><a aria-label="Open image full size" class="zoom-link" href="assets/one-pager-hires.png" rel="noopener" target="_blank"><img alt="VeUP Ignite commercial one-pager" src="assets/one-pager-hires.png"/></a></figure></div>
+<div class="output-meta"><span>One-pager / Ignite overview</span><span>High-resolution PDF render</span></div>
+</div>
+</div>
+<div class="output-panel format-panel panel-social" data-panel="social">
+<article class="skill-system">
+<div class="skill-system-top">
+<div class="skill-proof-label">Carousel rules used here</div>
+<small>Sell programme blog carousel</small>
+<h4>LinkedIn document carousel</h4>
+<button class="rules-toggle" type="button" aria-expanded="false">View rules</button>
+<div class="rule-list">
+<div class="rule"><span>01</span><span>LinkedIn document carousel: 1080 × 1350 portrait pages, assembled and published as a PDF carousel.</span></div>
+<div class="rule"><span>02</span><span>One idea per page: each frame isolates a single claim, proof point or step from the Sell programme blog.</span></div>
+<div class="rule"><span>03</span><span>Narrative progression: opening hook → problem → evidence → programme relevance → CTA.</span></div>
+<div class="rule"><span>04</span><span>Programme consistency: Sell branding, graphic language and Powered by treatment stay consistent across the carousel.</span></div>
+</div>
+</div>
+<div class="skill-system-foot">Rules shown here match the Sell programme blog carousel displayed alongside them.</div>
+</article>
+<div>
+<div class="output-stage" data-format="social"><div class="social-grid"><figure class="zoom" data-src="assets/linkedin-1.png"><a aria-label="Open image full size" class="zoom-link" href="assets/linkedin-1.png" rel="noopener" target="_blank"><img alt="LinkedIn carousel cover" class="social-main" src="assets/linkedin-1.png"/></a></figure><div class="social-thumbs"><img alt="LinkedIn carousel frame 2" src="assets/linkedin-2.png"/><img alt="LinkedIn carousel frame 3" src="assets/linkedin-3.png"/><img alt="LinkedIn carousel frame 4" src="assets/linkedin-4.png"/><img alt="LinkedIn carousel frame 5" src="assets/linkedin-5.png"/><img alt="LinkedIn carousel frame 6" src="assets/linkedin-6.png"/></div></div></div>
+<div class="output-meta"><span>Social / six-frame LinkedIn carousel</span><span>Choose another format above</span></div>
+</div>
+</div>
+</div>
+</div>
+<p class="explorer-close reveal">The core system stayed shared. What changed was the additional context each medium needed, so AI could make decisions appropriate to the job instead of falling back on generic design patterns.</p>
+</div>
+</section>
+<section class="section change" id="change">
+<div class="wrap">
+<div class="section-head reveal">
+<div class="left"><div class="kicker">04 / The change</div><h2>A leaner creative function with more capacity.</h2></div>
+<div class="right">
+<p class="econ-line">The value was not simply better AI output. It was changing the economics of creative production.</p>
+<p>Repeatable work moved into a governed system, reducing external design dependency and cleanup while shifting senior creative time toward direction, review and improving the system itself.</p>
+</div>
+</div>
+<div class="outcomes reveal">
+<div class="outcome disclosure" tabindex="0" aria-expanded="false"><strong>$5K → $800/mo</strong><span class="outcome-label">Freelance spend</span><span>External freelance design spend cut to about $800 per month, on the way toward full removal.</span></div>
+<div class="outcome disclosure" tabindex="0" aria-expanded="false"><strong>15 → 3 hrs/week</strong><span class="outcome-label">Creative cleanup</span><span>Weekly time spent finding, reviewing, correcting and rebuilding AI-assisted work.</span></div>
+<div class="outcome disclosure" tabindex="0" aria-expanded="false"><strong>Higher capacity</strong><span class="outcome-label">Same core team</span><span>More repeatable production handled without scaling designer hours linearly.</span></div>
+<div class="outcome disclosure" tabindex="0" aria-expanded="false"><strong>Stronger control</strong><span class="outcome-label">Governed self-service</span><span>The wider team could create inside approved constraints instead of generating new off-brand AI debt.</span></div>
+</div>
+<details class="methodology reveal"><summary>Measurement notes</summary><p>Time comparison uses the same weekly period, comparable asset volume and complexity, and the same tracking rules. Before includes AI-made work outside the governed system; after includes AI-created work within it.</p></details>
+</div>
+</section>
+<section class="section" id="role">
+<div class="wrap role-strip reveal">
+<h2>Designing the system, not just the output.</h2>
+<div class="role-copy">
+<div class="kicker">05 / My role</div>
+<p>I defined the design-system architecture, translated visual judgement into machine-readable rules, created output-specific systems and AI Skills, and designed the governance that kept human- and machine-created work aligned.</p>
+<p>The work moved creative expertise out of repeated manual correction and into reusable systems that improved quality, capacity and commercial efficiency.</p>
+<div class="tags"><span>Creative direction</span><span>Design systems</span><span>AI enablement</span><span>Creative systems</span><span>Governance</span><span>Human-in-the-loop design</span></div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><div class="footer-top"><div class="footer-title">Next problem.</div><div class="footer-next"><div class="kicker">Selected work</div><p>Explore another case study from the portfolio.</p><a href="../veup-company-os-github/">VeUP Company Operating System →</a></div></div><div class="footer-bottom"><span>Megan O'Connor / Selected work</span><span>AI-Native Brand System / VeUP</span></div></div></footer>
+<div aria-hidden="true" class="lightbox" id="lightbox"><button aria-label="Close">×</button><img alt="Expanded project visual"/></div>
+<script>
+document.documentElement.classList.add('js');
+const progress=document.getElementById('progress');
+addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max?scrollY/max*100:0)+'%'});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const box=document.getElementById('lightbox'), boxImg=box.querySelector('img');
+
+const tabButtons=[...document.querySelectorAll('.output-tab[data-target]')];
+const panels=[...document.querySelectorAll('.format-panel[data-panel]')];
+tabButtons.forEach(btn=>btn.addEventListener('click',()=>{
+  const target=btn.dataset.target;
+  tabButtons.forEach(b=>b.classList.toggle('is-active',b===btn));
+  panels.forEach(p=>p.classList.toggle('is-active',p.dataset.panel===target));
+}));
+
+document.querySelectorAll('.disclosure').forEach(el=>{
+  const toggle=()=>{const open=!el.classList.contains('is-open');el.classList.toggle('is-open',open);el.setAttribute('aria-expanded',String(open));};
+  el.addEventListener('click',e=>{if(e.target.closest('a,button'))return;toggle()});
+  el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+});
+
+document.querySelectorAll('.rules-toggle').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const card=btn.closest('.skill-system');
+    const open=!card.classList.contains('is-open');
+    card.classList.toggle('is-open',open);
+    btn.setAttribute('aria-expanded',String(open));
+    btn.textContent=open?'Hide rules':'View rules';
+  });
+});
+
+function bindZoom(root=document){root.querySelectorAll('.zoom').forEach(el=>{if(el.dataset.bound)return;el.dataset.bound='1';el.addEventListener('click',(e)=>{e.preventDefault();const src=el.dataset.src||el.querySelector('img')?.src;if(!src)return;boxImg.src=src;box.classList.add('open');box.setAttribute('aria-hidden','false')})})}
+bindZoom();
+const closeBox=()=>{box.classList.remove('open');box.setAttribute('aria-hidden','true')};
+box.querySelector('button').addEventListener('click',closeBox);box.addEventListener('click',e=>{if(e.target===box)closeBox()});addEventListener('keydown',e=>{if(e.key==='Escape')closeBox()});
+</script>
+</body>
+</html>
