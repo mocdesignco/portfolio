@@ -1,1 +1,0 @@
-Selected Visual Work
