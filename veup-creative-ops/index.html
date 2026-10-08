@@ -35,10 +35,21 @@ p{widows:2;orphans:2;text-wrap:pretty} h1,h2,h3,h4{overflow-wrap:normal;word-bre
 @media(max-width:620px){.navin{font-size:9px;gap:8px;letter-spacing:.08em}.hero{padding-top:28px}.hero h1{font-size:36px}.flow-step{min-width:120px}.evidence-tabs{grid-template-columns:1fr}.evidence-tab+.evidence-tab{border-left:0;border-top:1px solid var(--line)}.evidence-tab:nth-child(3),.evidence-tab:nth-child(4){border-left:0}.workback-copy .mini-row{grid-template-columns:repeat(3,1fr);row-gap:12px}.result,.impact-card{min-height:145px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
 </style>
+<link rel="stylesheet" href="../shared/navbar.css">
+<link rel="stylesheet" href="../shared/footer.css">
+<script src="../shared/navbar.js" defer></script>
+<script src="../shared/footer.js" defer></script>
 </head>
 <body>
-<div class="progress" id="progress"></div>
-<header class="nav"><div class="wrap navin"><span>Megan O'Connor</span><span>Case study / Creative operations.</span><span>2026</span></div></header>
+
+<header class="portfolio-navbar">
+  <a class="portfolio-navbar__name" href="../" aria-label="Megan O’Connor, homepage">Megan O’Connor</a>
+  <nav class="portfolio-navbar__links" aria-label="Main navigation">
+    <a class="portfolio-navbar__work" href="#portfolio-work">Work</a>
+    <a class="portfolio-navbar__contact" href="mailto:mocdesignco@gmail.com">Contact <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
 <main>
 <section class="hero"><div class="wrap"><div class="kicker">Creative operations / Marketing operations / Workflow design</div><div class="hero-grid"><h1>Building a creative operating system for planned delivery.</h1><div class="hero-copy"><p class="lead">The creative work was not always the slow part. Everything around it was.</p><p>Requests arrived reactively, often without the information needed to act on them. I redesigned the system around the work, from intake and planning through production, approval and publishing.</p><p><strong>We did not need to get faster at reacting. We needed to stop working reactively.</strong></p></div></div></div></section>
 <section class="hero-system"><div class="wrap"><div class="impact-intro reveal"><h2>The operational shift.</h2><p>For comparable ad hoc collateral, measured from a complete request entering the workflow.</p></div><div class="results reveal"><div class="result disclosure" tabindex="0" aria-expanded="false"><strong>2–3 weeks → 1–2 days</strong><span class="label">Comparable turnaround</span><p>Once the request entered the structured workflow, depending on urgency.</p></div><div class="result disclosure" tabindex="0" aria-expanded="false"><strong>11–12 hrs → 2–3 hrs</strong><span class="label">Hands-on effort</span><p>A conservative comparison across coordination, copy, routine design, review routing, status updates and publishing.</p></div><div class="result disclosure" tabindex="0" aria-expanded="false"><strong>~75–80%</strong><span class="label">Estimated reduction</span><p>Internal handling time for comparable routine collateral, with human oversight retained at quality-critical points.</p></div></div><div class="workstreams reveal" style="margin-top:28px"><article class="workstream disclosure" tabindex="0" aria-expanded="false"><small>Ad hoc creative</small><h3>Fast, structured delivery when a request appeared.</h3><p>Service overviews, sales collateral and immediate business needs moved through structured intake, prioritisation, production and approval.</p></article><article class="workstream disclosure" tabindex="0" aria-expanded="false"><small>Planned marketing content</small><h3>A repeatable cadence for blogs and LinkedIn.</h3><p>Recurring content worked backwards from publication, with lead time for writing, SME review, design and scheduling.</p></article></div><p class="streams-note reveal">Two types of demand. One operating system. Hover, focus or tap for detail.</p></div></section>
@@ -92,12 +103,29 @@ p{widows:2;orphans:2;text-wrap:pretty} h1,h2,h3,h4{overflow-wrap:normal;word-bre
 </div></section>
 <section class="section" id="role"><div class="wrap role-strip reveal"><h2>I identified the problem, then designed the system around it.</h2><div class="role-copy"><div class="kicker">05 / My role</div><p>This was not a Creative Ops transformation brief handed to me. I was experiencing the friction from inside the process and started redesigning it.</p><p>I mapped the operating model, built the intake and production workflows, introduced forward planning and capacity logic, defined SOPs and ownership, managed external-resource routing, and connected the surrounding tools through automation, APIs and AI.</p><p>It shifted my role from keeping individual requests moving to designing how a creative and marketing function could move work reliably at scale.</p><div class="tags"><span>Creative operations</span><span>Marketing operations</span><span>Workflow design</span><span>Capacity planning</span><span>Automation</span><span>Cross-functional delivery</span></div></div></div></section>
 </main>
-<footer class="footer"><div class="wrap"><div class="footer-top"><div class="footer-title">More work.</div><div class="footer-projects"><a class="footer-project" href="../riley/"><small>Brand transformation</small><strong>Riley</strong><span>Brand strategy · Creative direction →</span></a><a class="footer-project" href="../veup-company-os/"><small>Company systems</small><strong>VeUP Company OS</strong><span>Operating model · Governance →</span></a><a class="footer-project" href="../veup-ai-creative-system/"><small>AI + design systems</small><strong>VeUP AI Creative System</strong><span>Design intelligence · AI enablement →</span></a></div></div><div class="footer-bottom"><a href="../">Megan O'Connor / Selected work</a><span>Creative Operations / VeUP</span></div></div></footer>
+<footer class="portfolio-shared-footer" id="contact" data-portfolio-footer="" aria-label="More work and contact">
+  <div class="portfolio-shared-footer__top">
+    <h2 class="portfolio-shared-footer__heading">Explore more work.</h2>
+    <a class="portfolio-shared-footer__contact" href="mailto:mocdesignco@gmail.com">Email me <span aria-hidden="true">→</span></a>
+  </div>
+  <nav id="portfolio-work" aria-label="Explore other work">
+    <ul class="portfolio-shared-footer__links">
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/riley./"><span>Brand direction</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/ashen-cloud/"><span>Customer insight and brand strategy</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/veup-company-os/"><span>Company operating system</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/veup-ai-creative-system/"><span>AI design system</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/selected-visual-work/"><span>Visual design and craft</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+    </ul>
+  </nav>
+  <div class="portfolio-shared-footer__bottom">
+    <p class="portfolio-shared-footer__identity"><a class="portfolio-shared-footer__name" href="../" aria-label="Megan O’Connor, homepage">Megan O’Connor</a><span>Creative · Operations · Systems</span></p>
+    <p class="portfolio-shared-footer__copyright">© 2026</p>
+  </div>
+</footer>
 <div class="lightbox" id="lightbox" aria-hidden="true"><button aria-label="Close">×</button><img alt="Expanded project visual"/></div>
 <script>
 document.documentElement.classList.add('js');
-const progress=document.getElementById('progress');
-addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max?scrollY/max*100:0)+'%'});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.querySelectorAll('.disclosure').forEach(el=>{const toggle=()=>{const open=!el.classList.contains('is-open');el.classList.toggle('is-open',open);el.setAttribute('aria-expanded',String(open));};el.addEventListener('click',e=>{if(e.target.closest('a,button'))return;toggle()});el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}})});
@@ -106,3 +134,4 @@ const box=document.getElementById('lightbox'),boxImg=box.querySelector('img');do
 </script>
 </body>
 </html>
+

@@ -7,15 +7,21 @@
   <meta name="theme-color" content="#f5f4f0">
   <title>Megan O’Connor | Creative · Operations · Systems</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="shared/navbar.css">
   <script src="script.js" defer></script>
   <noscript><style>.inline-preview{display:block}.inline-preview>img{display:none}.preview-stage{display:none}.work-grid{grid-template-columns:1fr}.work-item{padding-bottom:32px}</style></noscript>
+<script src="shared/navbar.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <a class="site-name" href="#top" aria-label="Megan O’Connor, back to top">Megan O’Connor</a>
-  <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#contact">Contact</a></nav>
+<header class="portfolio-navbar">
+  <a class="portfolio-navbar__name" href="#top" aria-label="Megan O’Connor, homepage">Megan O’Connor</a>
+  <nav class="portfolio-navbar__links" aria-label="Main navigation">
+    <a class="portfolio-navbar__work" href="#work">Work</a>
+    <a class="portfolio-navbar__contact" href="mailto:mocdesignco@gmail.com">Contact <span aria-hidden="true">↗</span></a>
+  </nav>
 </header>
+
 <main id="main">
   <section class="hero section-shell" id="top" aria-labelledby="hero-heading">
     <h1 id="hero-heading"><span>Marketing has changed.</span> <span>Most marketing systems haven’t.</span></h1>
@@ -100,5 +106,7 @@
   <div class="contact-layout"><h2 id="contact-heading">Something not working<br>quite as well as it should?</h2><div class="contact-copy"><p>Could be the brand. Could be the workflow. Could be the AI someone confidently promised would solve both. Either way, I’d like to hear about it.</p><a class="email-link" href="mailto:mocdesignco@gmail.com">Email me <span aria-hidden="true">→</span></a></div></div>
   <div class="footer-bottom"><div class="footer-identity"><p>Megan O'Connor</p><p>Creative · Operations · Systems</p></div><nav aria-label="Footer navigation"><a href="#work">Work</a><a href="#contact">Contact</a></nav><p class="copyright">© 2026</p></div>
 </footer>
+
+
 </body>
 </html>

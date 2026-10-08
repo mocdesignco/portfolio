@@ -26,9 +26,20 @@
 @media(max-width:580px){.wrap{width:min(calc(100% - 28px),var(--max))}.hero-meta{grid-template-columns:1fr}.logic-row,.role-row{grid-template-columns:1fr;gap:10px}.gallery{grid-template-columns:1fr;padding:0 8px 8px;gap:8px}.gallery .wide,.gallery .portrait,.gallery .half,.gallery .full{grid-column:auto;aspect-ratio:auto}.gallery figure img{height:auto}.hover-note{position:static;opacity:1;transform:none;background:#111}.footer-bottom{display:block}.footer-bottom div+div{margin-top:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.research-card .reveal-copy,.gallery img,.hover-note{transition:none}}
 </style>
+<link rel="stylesheet" href="../shared/navbar.css">
+<link rel="stylesheet" href="../shared/footer.css">
+<script src="../shared/navbar.js" defer></script>
+<script src="../shared/footer.js" defer></script>
 </head>
 <body>
-<nav class="nav"><div class="wrap navin"><a href="../">Megan O'Connor</a><span>Case Study / Ashen & Cloud / 2024</span></div></nav>
+<header class="portfolio-navbar">
+  <a class="portfolio-navbar__name" href="../" aria-label="Megan O’Connor, homepage">Megan O’Connor</a>
+  <nav class="portfolio-navbar__links" aria-label="Main navigation">
+    <a class="portfolio-navbar__work" href="#portfolio-work">Work</a>
+    <a class="portfolio-navbar__contact" href="mailto:mocdesignco@gmail.com">Contact <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
 <header class="hero"><div class="wrap"><div class="kicker">Brand strategy · Customer insight · Creative direction · Web design</div><div class="hero-grid"><h1>Ashen & Cloud</h1><div class="hero-copy"><p><strong>Designing a luxury brand around the client's taste, not the designer's.</strong></p><p>Ashen & Cloud needed a distinctive position in a crowded premium interiors market. I used competitor and customer research to find the opportunity, then carried it through positioning, voice, identity, website and client experience.</p></div></div><div class="hero-meta"><div><b>Client</b>Ashen & Cloud</div><div><b>Role</b>Brand strategist & designer</div><div><b>Scope</b>Strategy → identity → digital</div><div><b>Question</b>Can insight change the work?</div></div></div></header>
 <div class="hero-image"><img src="assets/magazine-table.jpg" alt="Ashen and Cloud editorial brand application on a table"></div>
 
@@ -55,8 +66,28 @@
 
 <div class="outcome"><section class="section" id="outcome"><div class="wrap"><div class="outcome-grid"><div><div class="kicker">08 / The outcome</div><h2>Insight that changed the work.</h2></div><div><p class="lead">The result was more than a distinctive identity. It was a clearer position for Ashen & Cloud, built around what its customer valued: expertise without prescription, and a highly considered service that still felt personal.</p><div class="role"><div class="role-row"><span>My role</span><span>Brand strategy, customer and competitor research, positioning, tone of voice, creative direction, identity design and Webflow website.</span></div><div class="role-row"><span>Strategic thread</span><span>Market → customer → insight → positioning → creative direction → identity → digital and client experience.</span></div><div class="role-row"><span>What it proves</span><span>Customer insight only becomes useful when it changes what you do.</span></div></div></div></div></div></section></div>
 
-<footer class="footer"><div class="wrap"><div class="kicker">Selected work</div><h2 style="margin-top:26px">Different problem. Same question: what needs to change for the work to get better?</h2><div class="footer-bottom"><div>© Megan O'Connor</div><div><a href="../riley/">Riley</a> &nbsp; <a href="../veup-company-os/">VeUP Company OS</a> &nbsp; <a href="../veup-ai-creative-system/">AI Creative System</a> &nbsp; <a href="../veup-creative-ops/">Creative Ops</a></div></div></div></footer>
+<footer class="portfolio-shared-footer" id="contact" data-portfolio-footer="" aria-label="More work and contact">
+  <div class="portfolio-shared-footer__top">
+    <h2 class="portfolio-shared-footer__heading">Explore more work.</h2>
+    <a class="portfolio-shared-footer__contact" href="mailto:mocdesignco@gmail.com">Email me <span aria-hidden="true">→</span></a>
+  </div>
+  <nav id="portfolio-work" aria-label="Explore other work">
+    <ul class="portfolio-shared-footer__links">
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/riley./"><span>Brand direction</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/veup-company-os/"><span>Company operating system</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/veup-creative-ops/"><span>Marketing and creative operating system</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/veup-ai-creative-system/"><span>AI design system</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/selected-visual-work/"><span>Visual design and craft</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+    </ul>
+  </nav>
+  <div class="portfolio-shared-footer__bottom">
+    <p class="portfolio-shared-footer__identity"><a class="portfolio-shared-footer__name" href="../" aria-label="Megan O’Connor, homepage">Megan O’Connor</a><span>Creative · Operations · Systems</span></p>
+    <p class="portfolio-shared-footer__copyright">© 2026</p>
+  </div>
+</footer>
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body></html>
+

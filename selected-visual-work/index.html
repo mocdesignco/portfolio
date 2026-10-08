@@ -52,8 +52,20 @@ button{font:inherit} img{display:block;max-width:100%} figure{margin:0}
 .case-study-link:hover{text-decoration-color:var(--ink)}
 .case-study-link:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
 </style>
+<link rel="stylesheet" href="../shared/navbar.css">
+<link rel="stylesheet" href="../shared/footer.css">
+<script src="../shared/navbar.js" defer></script>
+<script src="../shared/footer.js" defer></script>
 </head>
 <body>
+<header class="portfolio-navbar">
+  <a class="portfolio-navbar__name" href="../" aria-label="Megan O’Connor, homepage">Megan O’Connor</a>
+  <nav class="portfolio-navbar__links" aria-label="Main navigation">
+    <a class="portfolio-navbar__work" href="#portfolio-work">Work</a>
+    <a class="portfolio-navbar__contact" href="mailto:mocdesignco@gmail.com">Contact <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
 <nav class="project-nav" aria-label="Project navigation"><a href="#kinvara" aria-label="01 Kinvara" aria-current="location">01</a><a href="#david-ho" aria-label="02 David Ho">02</a><a href="#ashen-cloud" aria-label="03 Ashen &amp; Cloud">03</a><a href="#hair-space" aria-label="04 The Hair Space">04</a><a href="#veup" aria-label="05 VeUP">05</a></nav>
 <header class="hero">
   <div class="hero-top"><p class="hero-kicker">Portfolio / Selected Visual Work</p><div class="hero-index">05 PROJECTS<br>BRAND · DIGITAL · CAMPAIGN · SYSTEMS</div></div>
@@ -129,7 +141,26 @@ button{font:inherit} img{display:block;max-width:100%} figure{margin:0}
 </div><div class="gallery-controls"><button class="gallery-arrow" data-prev>←</button><button class="gallery-arrow" data-next>→</button></div><p class="gallery-note">Scroll, drag or use the arrows to browse. Click the website and presentation comparison to explore.</p></div>
 </section>
 
-<footer class="footer"><strong>Selected Visual Work</strong><small>Megan O'Connor<br>Brand · Digital · Creative Direction</small></footer>
+<footer class="portfolio-shared-footer" id="contact" data-portfolio-footer="" aria-label="More work and contact">
+  <div class="portfolio-shared-footer__top">
+    <h2 class="portfolio-shared-footer__heading">Explore more work.</h2>
+    <a class="portfolio-shared-footer__contact" href="mailto:mocdesignco@gmail.com">Email me <span aria-hidden="true">→</span></a>
+  </div>
+  <nav id="portfolio-work" aria-label="Explore other work">
+    <ul class="portfolio-shared-footer__links">
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/riley./"><span>Brand direction</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/ashen-cloud/"><span>Customer insight and brand strategy</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/veup-company-os/"><span>Company operating system</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/veup-creative-ops/"><span>Marketing and creative operating system</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      <li><a class="portfolio-shared-footer__link" data-project-link="" href="https://mocdesignco.github.io/portfolio/veup-ai-creative-system/"><span>AI design system</span><span class="portfolio-shared-footer__arrow" aria-hidden="true">↗</span></a></li>
+      
+    </ul>
+  </nav>
+  <div class="portfolio-shared-footer__bottom">
+    <p class="portfolio-shared-footer__identity"><a class="portfolio-shared-footer__name" href="../" aria-label="Megan O’Connor, homepage">Megan O’Connor</a><span>Creative · Operations · Systems</span></p>
+    <p class="portfolio-shared-footer__copyright">© 2026</p>
+  </div>
+</footer>
 
 <!-- Kinvara modals -->
 <div class="modal" id="kinvaraDeck"><button class="close">×</button><div class="modal-inner"><div class="modal-title">Kinvara · Presentation Deck Design · Selected slides</div><div class="vertical-viewer" id="kinvaraDeckPages"></div></div></div>
@@ -205,3 +236,4 @@ document.addEventListener('keydown',e=>{const modal=document.querySelector('.mod
 </script>
 </body>
 </html>
+
