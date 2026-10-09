@@ -9,7 +9,8 @@
  const nav=document.createElement('nav');nav.className='portfolio-section-nav';nav.setAttribute('aria-label','Page sections');
  const links=targets.map((target,i)=>{
    if(!target.id){let id='page-section-'+String(i+1).padStart(2,'0');while(document.getElementById(id))id+='-nav';target.id=id;}
-   const title=target.querySelector('h1,h2')?.textContent.replace(/\s+/g,' ').trim()||'Overview';
+   const heading=target.querySelector('h1,h2');
+   const title=(heading?.innerText||heading?.textContent||'Overview').replace(/\s+/g,' ').trim();
    const a=document.createElement('a');a.href='#'+target.id;a.textContent=String(i+1).padStart(2,'0');a.setAttribute('aria-label',a.textContent+' '+title);nav.appendChild(a);return a;
  });
  if(header)header.insertAdjacentElement('afterend',nav);else document.body.prepend(nav);
