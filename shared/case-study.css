@@ -64,3 +64,4 @@ body.portfolio-case{margin:0;background:var(--ds-bg);color:var(--ds-ink);font-fa
 @media(min-width:801px){.portfolio-case .ds-shell{padding-right:max(var(--ds-gutter),90px)}}
 @media(max-width:800px){.case-image-pair,.case-route-pair{grid-template-columns:1fr;gap:32px}.case-wide,.case-image-pair,.case-route-pair{margin-top:32px}.case-document .ds-doc-pages{height:420px;padding:8px}.ds-gallery .case-image-link img{height:280px}.case-social-pages{grid-template-columns:1fr}.case-contributions>div{grid-template-columns:1fr;gap:8px}.case-lightbox{padding:16px}.case-lightbox-toolbar{align-items:flex-start}.case-table th,.case-table td{font-size:16px;min-width:140px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.case-image-link img{transition:none}}
+@media(max-width:600px){.case-mobile-group{white-space:nowrap}}
