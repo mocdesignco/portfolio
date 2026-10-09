@@ -28,3 +28,14 @@
 .spec-footer-example nav{grid-template-columns:1fr;}
 }
 @media(max-width:600px){.spec-footer,.spec-actions{align-items:flex-start;flex-direction:column;}.spec-footer-example{grid-template-columns:1fr;}.spec-swatches>div{padding:16px;}}
+
+.spec-pattern-gap,.spec-colour-plan{margin-top:64px;}
+.spec-colour-plan>.ds-copy{margin-top:24px;}
+.spec-chapter-map{list-style:none;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin:32px 0 16px;border:1px solid var(--ds-line);}
+.spec-chapter-map li{padding:20px 16px;display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.6;}
+.spec-chapter-map li+li{border-left:1px solid var(--ds-line);}
+.spec-image-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;}
+.spec-image-pair img{width:100%;height:auto;display:block;}
+.spec-image-pair figcaption{margin-top:12px;}
+@media(max-width:800px){.spec-chapter-map{grid-template-columns:repeat(2,minmax(0,1fr));}.spec-chapter-map li{border-bottom:1px solid var(--ds-line);}.spec-image-pair{grid-template-columns:1fr;}}
+@media(max-width:360px){.spec-nav{gap:4px;}.spec-nav a{width:40px;}}

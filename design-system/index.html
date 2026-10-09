@@ -5,8 +5,8 @@
 <meta name="robots" content="noindex">
 <title>Portfolio design system | Megan O’Connor</title>
 <link rel="stylesheet" href="../shared/navbar.css">
-<link rel="stylesheet" href="tokens.css"><link rel="stylesheet" href="specimen.css">
-<script src="../shared/navbar.js" defer></script><script src="specimen.js" defer></script>
+<link rel="stylesheet" href="tokens.css?v=2"><link rel="stylesheet" href="specimen.css?v=2">
+<script src="../shared/navbar.js" defer></script><script src="specimen.js?v=2" defer></script>
 </head>
 <body class="ds-page">
 <a class="ds-skip" href="#main">Skip to content</a>
@@ -21,21 +21,34 @@
 <a href="#typography" aria-label="02 Typography">02</a>
 <a href="#layouts" aria-label="03 Section layouts">03</a>
 <a href="#summary" aria-label="04 At a glance">04</a>
-<a href="#components" aria-label="05 Components">05</a>
+<a href="#components" aria-label="05 Interactions">05</a>
+<a href="#media-patterns" aria-label="06 Media patterns">06</a>
 </nav>
 <main id="main">
 <section class="ds-hero ds-anchor" id="foundations">
 <div class="ds-shell">
-<p class="ds-label">Portfolio design system / Version 1</p>
+<p class="ds-label">Portfolio design system / Version 2</p>
 <h1 class="ds-h1">Clear thinking.<br>Consistent design.</h1>
 <div class="ds-copy"><p>A shared reference for Megan O’Connor’s portfolio. One typography hierarchy, two reading layouts and a small family of surfaces. The system supports page-by-page revisions.</p></div>
-<p class="ds-caption spec-note">Reference page only. Existing case studies have not been migrated. All summary examples below are copy prompts, not project facts.</p>
+<p class="ds-caption spec-note">Reference page only. Existing case studies have not been migrated. Summary fields are copy prompts; the interaction examples reuse existing work and clearly identify their source.</p>
 <div class="spec-swatches" aria-label="Surface palette">
 <div style="background:var(--ds-bg)"><b>Background</b><span>#f5f4f0</span></div>
 <div style="background:var(--ds-paper)"><b>Paper</b><span>#faf9f6</span></div>
 <div style="background:var(--ds-soft)"><b>Soft</b><span>#e9e8e4</span></div>
 <div style="background:var(--ds-warm)"><b>Warm</b><span>#eeeae3</span></div>
 <div class="spec-swatch-dark"><b>Dark</b><span>#151515</span></div>
+</div>
+<div class="spec-colour-plan">
+<h3 class="ds-h3">A rhythm for section backgrounds</h3>
+<p class="ds-copy">Use a light surface change when a new chapter begins. Keep related subsections on that chapter’s surface. Black marks one major conclusion or result, rather than every card or comparison.</p>
+<ol class="spec-chapter-map" aria-label="Example section colour sequence">
+<li style="background:var(--ds-bg)"><span class="ds-label">Introduction</span><span>Background</span></li>
+<li style="background:var(--ds-paper)"><span class="ds-label">Context</span><span>Paper</span></li>
+<li style="background:var(--ds-bg)"><span class="ds-label">Strategy</span><span>Background</span></li>
+<li style="background:var(--ds-warm)"><span class="ds-label">Execution</span><span>Warm</span></li>
+<li class="ds-surface-dark"><span class="ds-label">Major result</span><span>Dark</span></li>
+<li style="background:var(--ds-bg)"><span class="ds-label">Reflection</span><span>Background</span></li>
+</ol><p class="ds-caption">Example sequence, not an automatic stripe pattern. Soft is for a supporting panel or a quieter chapter. Paper cards sit on Background, Soft or Warm; cards inside a Paper section can stay transparent.</p>
 </div>
 </div></section>
 <section class="ds-section ds-surface-paper ds-anchor" id="typography"><div class="ds-shell">
@@ -47,7 +60,7 @@
 <div><span class="ds-label">H3 / 18px</span><p class="ds-h3">A genuine subsection</p></div>
 <div><span class="ds-label">Paragraph / 16px</span><div class="ds-copy"><p>Use regular paragraph text for the narrative. Emphasise <strong>a specific responsibility or result</strong> when it helps someone skim. A new paragraph does not need a new size, weight or colour.</p></div></div>
 <div><span class="ds-label">Caption / 14px</span><p class="ds-caption">Supporting context belongs close to its image or evidence.</p></div>
-<div><span class="ds-label">Label / 11px</span><p class="ds-label">My role</p></div>
+<div><span class="ds-label">Label / 11px · regular, muted</span><p class="ds-label">My role</p></div>
 </div>
 </div></section>
 <section class="ds-section ds-anchor" id="layouts"><div class="ds-shell">
@@ -59,14 +72,14 @@
 </div></section>
 <section class="ds-section ds-surface-warm ds-anchor" id="summary"><div class="ds-shell">
 <p class="ds-label">03 / At a glance</p><h2 class="ds-h2">Make the contribution visible.</h2>
-<div class="ds-copy spec-copy-gap"><p>The summary replaces the existing four-field band at the bottom of a case-study hero. It keeps the thin rule and compact labels, with more room for the challenge and outcomes.</p></div>
+<div class="ds-copy spec-copy-gap"><p>The summary replaces the existing four-field band at the bottom of a case-study hero. It keeps the thin rule and compact labels, with five aligned columns on desktop. The row grows in height to fit the approved copy, rather than splitting into mismatched rows.</p></div>
 <p class="ds-caption spec-note">Layout example. Replace these prompts with Megan’s approved project copy before using the band on a case study.</p>
 <dl class="ds-summary">
 <div class="ds-summary__item"><dt class="ds-label">My role</dt><dd>What I owned, led and decided.</dd></div>
-<div class="ds-summary__item"><dt class="ds-label">Scope</dt><dd>The disciplines, deliverables and parts of the business involved.</dd></div>
+<div class="ds-summary__item"><dt class="ds-label">Challenge</dt><dd>The business problem and audience need the project addressed.</dd></div>
+<div class="ds-summary__item"><dt class="ds-label">Scope</dt><dd>The disciplines and deliverables involved.</dd></div>
 <div class="ds-summary__item"><dt class="ds-label">Team and stakeholders</dt><dd>Who I collaborated with, directed or reported to.</dd></div>
-<div class="ds-summary__item ds-summary__item--wide"><dt class="ds-label">Challenge</dt><dd>The business problem, audience need or delivery constraint the project had to address.</dd></div>
-<div class="ds-summary__item ds-summary__item--wide"><dt class="ds-label">Key outcomes</dt><dd>What changed, supported by evidence. Include metrics only where they can be substantiated.</dd></div>
+<div class="ds-summary__item"><dt class="ds-label">Key outcomes</dt><dd>What changed, supported by evidence.</dd></div>
 </dl>
 </div></section>
 <section class="ds-section ds-surface-dark"><div class="ds-shell ds-split">
@@ -74,26 +87,69 @@
 <div class="ds-copy"><p>A dark surface can mark a substantial change in subject or highlight an important conclusion. It does not create a new text hierarchy. The same heading, paragraph and spacing rules still apply.</p><p>Project imagery and diagrams retain their own colours. Neutralising the portfolio interface does not mean removing the identity from the work.</p></div>
 </div></section>
 <section class="ds-section ds-anchor" id="components"><div class="ds-shell">
-<p class="ds-label">04 / Components</p><h2 class="ds-h2">Fewer treatments. Clearer choices.</h2>
-<div class="ds-copy spec-copy-gap"><p>Use the existing shared navbar and progress line. Use a slim numbered navigator for moving through sections, with a black active state and keyboard access. Keep artwork unframed unless the composition needs a frame.</p></div>
-<div class="spec-actions">
-<a class="ds-button" href="README.md">Read the design guide <span aria-hidden="true">↗</span></a>
-<a class="ds-link" href="../ashen-cloud/">Explore the creation of this brand <span aria-hidden="true">↗</span></a>
+<p class="ds-label">04 / Cards and interactions</p><h2 class="ds-h2">Reveal depth without hiding the point.</h2>
+<div class="ds-copy spec-copy-gap"><p>Keep the result or short explanation visible. Offer supporting detail through one clear disclosure. Hover previews it on a mouse, focus previews it for keyboard users, and a click or tap keeps it open.</p></div>
+<p class="ds-caption spec-note">Alternative treatment for the supplied “Operational shift” screenshot. These figures and qualifications come from the existing creative operations case study; they are not new claims.</p>
+<div class="ds-cards">
+<article class="ds-card ds-enter"><p class="ds-label">Comparable turnaround</p><p class="ds-metric">2–3 weeks → 1–2 days</p><p class="ds-caption">Comparable ad hoc collateral, from a complete request entering the workflow.</p>
+<details class="ds-disclosure" data-preview><summary>What this includes</summary><div class="ds-copy"><p>Once the request entered the structured workflow, depending on urgency.</p></div></details></article>
+<article class="ds-card ds-enter"><p class="ds-label">Hands-on effort</p><p class="ds-metric">11–12 hrs → 2–3 hrs</p><p class="ds-caption">A conservative comparison of internal handling time.</p>
+<details class="ds-disclosure" data-preview><summary>What this includes</summary><div class="ds-copy"><p>Coordination, copy, routine design, review routing, status updates and publishing.</p></div></details></article>
+<article class="ds-card ds-enter"><p class="ds-label">Estimated reduction</p><p class="ds-metric">~75–80%</p><p class="ds-caption">Estimate for comparable routine collateral.</p>
+<details class="ds-disclosure" data-preview><summary>What this includes</summary><div class="ds-copy"><p>Internal handling time, with human oversight retained at quality-critical points.</p></div></details></article>
 </div>
-<div class="spec-frame-demo">
-<div class="spec-motion-frame" aria-label="Illustration of the rounded media frame"><span class="ds-label">Media frame / 16px radius</span><p class="ds-caption">Only where the composition requires it, such as the Kinvara motion inset.</p></div>
+<div class="spec-pattern-gap">
+<h3 class="ds-h3">A quieter before-and-after comparison</h3>
+<p class="ds-copy spec-copy-gap">The current route uses a frame around a frame, eight narrow cells and a separate dark version. This alternative uses two open columns, clear step names and small disclosures. Longer workflows can use the same structure with a horizontal step rail.</p>
+<div class="ds-workflow">
+<div><p class="ds-label">Before / Reactive route</p><h3 class="ds-h3">Context gathered after the request.</h3><ol class="ds-step-list">
+<li><details class="ds-disclosure" data-preview><summary>Request</summary><div class="ds-copy"><p>Often arrived through Slack or conversation without complete inputs.</p></div></details></li>
+<li><details class="ds-disclosure" data-preview><summary>Find context · ~6 hrs</summary><div class="ds-copy"><p>Chasing audience, objective, technical information and answers across people and time zones.</p></div></details></li>
+<li><details class="ds-disclosure" data-preview><summary>Brief</summary><div class="ds-copy"><p>The usable brief emerged through the information-gathering process.</p></div></details></li>
+</ol></div>
+<div><p class="ds-label">After / Structured route</p><h3 class="ds-h3">Required inputs before production.</h3><p class="ds-copy">The case study explains how required inputs entered the workflow before ad hoc work reached creative. Recurring marketing content followed a separate planned cadence.</p><p class="ds-caption spec-note">This is a condensed layout example. It does not replace the full workflow or its evidence.</p></div>
+</div></div>
+<div class="spec-pattern-gap">
+<h3 class="ds-h3">Evidence tabs with one shared image stage</h3>
+<p class="ds-copy spec-copy-gap">Underline the selected tab instead of filling an entire box black. Each point gets its own image and regular paragraph text. Switching happens on click or keyboard selection, not hover.</p>
+<div class="ds-tabs" data-tabs>
+<div class="ds-tablist" role="tablist" aria-label="Evidence examples">
+<button class="ds-tab" id="tab-tracker" type="button" role="tab" aria-selected="true" aria-controls="panel-tracker">Content tracker</button>
+<button class="ds-tab" id="tab-brief" type="button" role="tab" aria-selected="false" aria-controls="panel-brief">Brief template</button>
+<button class="ds-tab" id="tab-sop" type="button" role="tab" aria-selected="false" aria-controls="panel-sop">Production SOP</button>
 </div>
-<div class="spec-footer-example">
-<div><p class="ds-label">Case-study footer / Structure example</p><h3 class="ds-h3">Explore other work</h3></div>
-<a class="ds-button" href="mailto:mocdesignco@gmail.com">Email me <span aria-hidden="true">↗</span></a>
-<nav aria-label="Example case-study footer">
-<a class="ds-link" href="../riley./">Brand direction</a>
-<a class="ds-link" href="../veup-company-os/">Company operating system</a>
-<a class="ds-link" href="../selected-visual-work/">Visual design and craft</a>
-</nav>
-<p class="ds-caption">Actual case-study footers include the other projects and omit the current one. The homepage keeps its contact invitation.</p>
+<div class="ds-tabpanel" id="panel-tracker" role="tabpanel" aria-labelledby="tab-tracker" tabindex="0"><div class="ds-proof"><div><p class="ds-label">Live operation</p><h3 class="ds-h3">Production became visible.</h3><p class="ds-copy">Publication targets, production stage, dependencies, content pillars, industry and SME reviewers lived in one operational view.</p></div><figure><a href="../veup-creative-ops/assets/marketing-content-tracker.png" target="_blank" rel="noopener"><img src="../veup-creative-ops/assets/marketing-content-tracker.png" loading="lazy" alt="VeUP content tracker showing stages, targets and reviewers"></a><figcaption class="ds-caption">Existing case-study evidence. Select the image to inspect the original.</figcaption></figure></div></div>
+<div class="ds-tabpanel" id="panel-brief" role="tabpanel" aria-labelledby="tab-brief" tabindex="0"><div class="ds-proof"><div><p class="ds-label">Better inputs</p><h3 class="ds-h3">Better inputs before production.</h3><p class="ds-copy">The brief captured audience, purpose, message, problem, VeUP point of view, technical notes, supporting material, deliverable, CTA and timeline.</p></div><figure><a href="../veup-creative-ops/assets/brief-template.png" target="_blank" rel="noopener"><img src="../veup-creative-ops/assets/brief-template.png" loading="lazy" alt="VeUP structured brief template"></a><figcaption class="ds-caption">Existing brief template.</figcaption></figure></div></div>
+<div class="ds-tabpanel" id="panel-sop" role="tabpanel" aria-labelledby="tab-sop" tabindex="0"><div class="ds-proof"><div><p class="ds-label">Clear handoffs</p><h3 class="ds-h3">A shared production reference.</h3><p class="ds-copy">Production SOP evidence from the creative operations case study.</p></div><figure><a href="../veup-creative-ops/assets/marketing-content-sop.png" target="_blank" rel="noopener"><img src="../veup-creative-ops/assets/marketing-content-sop.png" loading="lazy" alt="VeUP marketing production SOP"></a><figcaption class="ds-caption">Existing production SOP.</figcaption></figure></div></div>
+</div></div>
+</div></section>
+<section class="ds-section ds-surface-paper ds-anchor" id="media-patterns"><div class="ds-shell">
+<p class="ds-label">05 / Media patterns</p><h2 class="ds-h2">Choose the viewer for the evidence.</h2>
+<div class="ds-copy spec-copy-gap"><p>Use a horizontal gallery for a series, a small static arrangement for one clear point, tabs for different ideas, and a document viewer for material that needs to be read in order.</p></div>
+<div class="spec-pattern-gap"><h3 class="ds-h3">A horizontal image series</h3><p class="ds-caption spec-note">Existing Riley imagery, in a gallery pattern informed by Selected Visual Work. Swipe, drag, use the arrows, or focus the gallery and use Left/Right.</p>
+<div class="ds-gallery-shell" data-gallery-demo>
+<div class="ds-gallery-tools"><span class="ds-caption" aria-live="polite" data-gallery-count>1 / 3</span><div class="ds-gallery-actions"><button type="button" class="ds-button" data-gallery-prev aria-label="Previous gallery image">←</button><button type="button" class="ds-button" data-gallery-next aria-label="Next gallery image">→</button></div></div>
+<div class="ds-gallery" tabindex="0" role="region" aria-label="Riley image gallery">
+<figure><img src="../riley./packaging-system-in-use.webp" loading="lazy" draggable="false" alt="Riley packaging system in a warm interior"><figcaption class="ds-caption">Packaging system in use.</figcaption></figure>
+<figure><img src="../riley./shopping-basket.webp" loading="lazy" draggable="false" alt="Riley packaging in a green shopping basket"><figcaption class="ds-caption">Packaging family in context.</figcaption></figure>
+<figure><img src="../riley./stacked-boxes-hand.webp" loading="lazy" draggable="false" alt="Three Riley product boxes stacked on a hand"><figcaption class="ds-caption">Product formats shown together.</figcaption></figure>
+</div></div></div>
+<div class="spec-pattern-gap"><h3 class="ds-h3">Fewer images for one point</h3><p class="ds-copy spec-copy-gap">When two images explain the design decision, keep them visible together. Do not add a carousel simply because the component exists.</p>
+<div class="spec-image-pair">
+<figure><img src="../riley./brand-guidelines-colour.webp" loading="lazy" alt="Riley colour guidelines"><figcaption class="ds-caption">Colour system.</figcaption></figure>
+<figure><img src="../riley./brand-guidelines-typography.webp" loading="lazy" alt="Riley typography guidelines"><figcaption class="ds-caption">Typography hierarchy.</figcaption></figure>
+</div></div>
+<div class="spec-pattern-gap"><h3 class="ds-h3">An inline document viewer</h3><p class="ds-copy spec-copy-gap">Riley’s viewer displays rendered guideline pages, rather than embedding a PDF. Keep that readable page sequence, visible scrolling and an option to expand. This demonstration uses its first three pages.</p>
+<div class="ds-doc">
+<div class="ds-doc-head"><span class="ds-label">Riley brand guidelines / 3-page sample</span><button class="ds-button" type="button" data-document-expand aria-expanded="false" aria-controls="document-pages">Expand pages</button></div>
+<div class="ds-doc-pages" id="document-pages" tabindex="0" role="region" aria-label="Scrollable guideline pages">
+<figure><img src="../riley./guideline-page-01.webp" loading="lazy" alt="Riley brand guidelines page 1"><figcaption class="ds-caption">Page 1 / 3 in this sample.</figcaption></figure>
+<figure><img src="../riley./guideline-page-02.webp" loading="lazy" alt="Riley brand guidelines page 2"><figcaption class="ds-caption">Page 2 / 3 in this sample.</figcaption></figure>
+<figure><img src="../riley./guideline-page-03.webp" loading="lazy" alt="Riley brand guidelines page 3"><figcaption class="ds-caption">Page 3 / 3 in this sample.</figcaption></figure>
+</div></div>
+<details class="ds-disclosure"><summary>Show a native PDF preview</summary><p class="ds-caption spec-note">The existing VeUP board deck from Selected Visual Work. The browser provides the PDF’s scrolling and zoom controls.</p><p><a class="ds-link" href="../selected-visual-work/assets/veup/board-deck.pdf" target="_blank" rel="noopener">Open the PDF in a new tab</a></p><button class="ds-button" type="button" data-load-pdf>Load PDF preview</button><iframe class="ds-doc-embed" data-pdf-frame hidden title="VeUP board deck PDF preview"></iframe></details>
 </div>
 </div></section>
 </main>
-<footer class="spec-footer ds-shell"><a class="ds-link" href="../">Megan O’Connor</a><p class="ds-caption">Portfolio design system · Version 1 · October 2026</p></footer>
+<footer class="spec-footer ds-shell"><a class="ds-link" href="../">Megan O’Connor</a><p class="ds-caption">Portfolio design system · Version 2 · October 2026</p></footer>
 </body></html>
