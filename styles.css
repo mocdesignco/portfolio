@@ -11,9 +11,8 @@ p,h1,h2,h3,figure{margin:0}
 .skip-link{position:fixed;top:12px;left:var(--pad);z-index:100;padding:12px 16px;background:var(--ink);color:var(--bg);transform:translateY(-180%)}
 .skip-link:focus{transform:none;outline:2px solid var(--bg)}
 .hero{padding-top:clamp(56px,6vw,96px);padding-bottom:var(--section-space);border-bottom:1px solid var(--line)}
-.hero h1{font-size:clamp(46px,5.8vw,94px);font-weight:500;letter-spacing:-.065em;line-height:1.03;text-wrap:balance}
-.hero h1 span{display:block}
-.hero-subtext{max-width:80ch;margin-top:clamp(32px,4vw,56px);font-size:clamp(17px,1.35vw,21px);line-height:1.55;color:#45423d;text-wrap:pretty}
+.hero h1{max-width:20ch;font-size:clamp(46px,5.8vw,94px);font-weight:500;letter-spacing:-.065em;line-height:1.03;text-wrap:balance}
+.hero-subtext{max-width:64ch;margin-top:clamp(32px,4vw,56px);font-size:clamp(17px,1.35vw,21px);line-height:1.55;color:#45423d;text-wrap:pretty}
 .eyebrow{font:10px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
 .point-of-view{padding-top:var(--section-space);padding-bottom:var(--section-space);display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(32px,7vw,112px);row-gap:0;border-bottom:1px solid var(--line)}
 .point-of-view>.eyebrow{grid-column:1;grid-row:1}
@@ -56,7 +55,6 @@ p,h1,h2,h3,figure{margin:0}
  :root{--header-height:65px;--section-space:64px}
  .hero{padding-top:48px}
  .hero h1{font-size:clamp(39px,8.6vw,58px);letter-spacing:-.055em;line-height:1.07}
- .hero h1 span+span{margin-top:10px}
  .work-heading{grid-template-columns:1fr;gap:28px}
  .hero-subtext{margin-top:30px;font-size:17px}
  .point-of-view{grid-template-columns:1fr}
@@ -90,8 +88,4 @@ p,h1,h2,h3,figure{margin:0}
 .footer-bottom nav a:hover{text-decoration-color:var(--ink)}
 @media(max-width:700px){.contact-layout{grid-template-columns:1fr;gap:28px}.contact-layout h2{font-size:clamp(34px,7.5vw,47px)}.contact-copy{font-size:17px}.email-link{font-size:25px;margin-top:24px}.footer-bottom{grid-template-columns:1fr auto;gap:24px;margin-top:60px;font-size:9px}.footer-bottom nav{grid-column:1;grid-row:2;gap:24px}.copyright{grid-column:2;grid-row:2;align-self:center}}
 
-/* Homepage introduction: identity and availability, before the main point of view. */
-.homepage-introduction{padding-top:clamp(28px,3.5vw,52px)}
-.homepage-introduction__bio{max-width:72ch;font-size:clamp(16px,1.2vw,19px);font-weight:400;line-height:1.6;color:#45423d;text-wrap:pretty}
-.homepage-introduction__roles{max-width:90ch;margin-top:16px;font-size:13px;font-weight:400;line-height:1.6;color:#65615b;text-wrap:pretty}
-.homepage-introduction+.hero{padding-top:clamp(36px,4vw,64px)}
+.contact-availability{margin-top:24px;font-size:14px;line-height:1.6;color:#65615b;text-wrap:pretty}
