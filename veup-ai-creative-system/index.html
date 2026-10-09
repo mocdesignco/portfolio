@@ -120,6 +120,21 @@ strong.pull{display:block}
   .section-head{display:block}.section-head .left{position:static;margin-bottom:26px}.section h2{max-width:24ch;font-size:clamp(28px,7.5vw,38px)}.compare-stage{grid-template-columns:1fr}.arrow-mid{height:50px;transform:rotate(90deg)}.insight-columns{grid-template-columns:1fr}.bridge{height:48px;transform:rotate(90deg)}.system-proof{grid-template-columns:1fr}.token-flow{grid-template-columns:1fr}.token-step+.token-step{border-left:0;border-top:1px solid var(--line)}.token-step:after{display:none}.still-not-enough{display:block}.still-not-enough h3{margin-bottom:26px}.output-tabs{grid-template-columns:1fr 1fr}.output-tab:nth-child(2){border-right:0}.output-tab:nth-child(-n+2){border-bottom:1px solid var(--line)}.output-panel{grid-template-columns:1fr}.output-stage{min-height:380px}.social-grid{grid-template-columns:1fr}.social-thumbs{grid-template-columns:repeat(3,1fr)}.loop,.outcomes,.time-proof{grid-template-columns:1fr}.loop-step+.loop-step,.outcome+.outcome{border-left:0;border-top:1px solid #393939;padding-left:0}.time-col+.time-col{border-left:0;border-top:1px solid #393939}.role-strip{display:block}.role-strip h2{margin-bottom:30px}.footer-top{display:block}.footer-title{margin-bottom:34px}.footer-bottom{display:block}.footer-bottom span{display:block;margin-bottom:8px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+
+/* Editorial hierarchy and responsive at-a-glance summaries */
+.editorial-glance{width:min(calc(100% - 64px),1440px);margin:clamp(44px,6vw,88px) auto;padding:clamp(28px,4vw,54px) 0;border-top:1px solid var(--line,#ccc);border-bottom:1px solid var(--line,#ccc)}
+.editorial-glance .editorial-label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;margin:0 0 26px;color:var(--muted,#666)}
+.editorial-glance dl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(16px,2.5vw,36px);margin:0}
+.editorial-glance dt{font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;margin:0 0 10px;color:var(--muted,#666)}
+.editorial-glance dd{font-size:clamp(13px,1.05vw,16px);line-height:1.5;margin:0;max-width:31ch}
+.editorial-note{padding:clamp(30px,5vw,80px) 0 clamp(50px,7vw,110px);border-bottom:1px solid var(--line,#ccc)}
+.editorial-note h2{font-size:clamp(28px,3.2vw,48px);line-height:1.12;letter-spacing:-.035em;max-width:22ch;margin:16px 0 24px}
+.editorial-note h3{font-size:clamp(17px,1.5vw,22px);margin:26px 0 10px}
+.editorial-note p{max-width:76ch;font-size:clamp(15px,1.15vw,18px);line-height:1.65;margin:0 0 16px}
+.editorial-note .editorial-sequence{max-width:95ch;padding:22px 0;border-top:1px solid var(--line,#ccc);border-bottom:1px solid var(--line,#ccc)}
+.editorial-columns{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px)}
+@media(max-width:900px){.editorial-glance dl{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.editorial-columns{grid-template-columns:1fr}}
+@media(max-width:560px){.editorial-glance{width:calc(100% - 40px)}.editorial-glance dl{grid-template-columns:1fr;gap:18px}.editorial-glance dd{max-width:56ch}.editorial-note{width:calc(100% - 40px)}}
 </style>
 <link rel="stylesheet" href="../shared/navbar.css">
 <link rel="stylesheet" href="../shared/footer.css">
@@ -150,6 +165,8 @@ strong.pull{display:block}
 </div>
 </div>
 </section>
+<section class="editorial-glance" aria-label="Project at a glance"><p class="editorial-label">At a glance</p><dl><div><dt>Role</dt><dd>Self-initiated creative systems strategist and design lead.</dd></div><div><dt>Challenge</dt><dd>Scale branded production without sacrificing design judgement.</dd></div><div><dt>Scope</dt><dd>Machine-readable design rules, output-specific Skills, Figma reference and testing.</dd></div><div><dt>Team & stakeholders</dt><dd>Coordinated specialist input with human creative review.</dd></div><div><dt>Outcomes</dt><dd>Measured in testing: ~$5K → $800/month freelance spend; 15 → 3 cleanup hours/week.</dd></div></dl></section>
+<section class="editorial-note wrap"><p class="kicker">Strategic contribution</p><h2>Built and tested in real workflows.</h2><p><strong>Built and tested in real workflows; broader rollout was interrupted by VeUP’s closure.</strong> Machine-readable design documentation and output-specific Skills worked alongside Figma as a visual reference, with human review retained.</p><p>Testing showed freelance design spend fall from approximately $5,000 to $800 per month (84%) and weekly creative cleanup from approximately 15 to 3 hours (80%). These were achieved testing results, not evidence of a completed company-wide rollout.</p><h3>Projected next step, not achieved</h3><p>Based on testing, I projected that the remaining freelance spend could reach $0 within a further three months. The broader rollout was interrupted, so this projection was not realised or verified.</p></section>
 <section aria-label="One design system, two interfaces" class="hero-output">
 <div class="wrap">
 <div class="hero-system reveal">
@@ -360,7 +377,7 @@ strong.pull{display:block}
 </div>
 </div>
 <div class="outcomes reveal">
-<div class="outcome disclosure" tabindex="0" aria-expanded="false"><strong>$5K → $800/mo</strong><span class="outcome-label">Freelance spend</span><span>External freelance design spend cut to about $800 per month, on the way toward full removal.</span></div>
+<div class="outcome disclosure" tabindex="0" aria-expanded="false"><strong>$5K → $800/mo</strong><span class="outcome-label">Freelance spend</span><span>Measured during workflow testing; the $0 target remained a projection.</span></div>
 <div class="outcome disclosure" tabindex="0" aria-expanded="false"><strong>15 → 3 hrs/week</strong><span class="outcome-label">Creative cleanup</span><span>Weekly time spent finding, reviewing, correcting and rebuilding AI-assisted work.</span></div>
 <div class="outcome disclosure" tabindex="0" aria-expanded="false"><strong>Higher capacity</strong><span class="outcome-label">Same core team</span><span>More repeatable production handled without scaling designer hours linearly.</span></div>
 <div class="outcome disclosure" tabindex="0" aria-expanded="false"><strong>Stronger control</strong><span class="outcome-label">Governed self-service</span><span>The wider team could create inside approved constraints instead of generating new off-brand AI debt.</span></div>
