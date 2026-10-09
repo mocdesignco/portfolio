@@ -128,11 +128,11 @@
 .ds-gallery-shell{margin-top:32px;}
 .ds-gallery-tools{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:16px;}
 .ds-gallery-actions{display:flex;gap:8px;}
-.ds-gallery{display:flex;gap:24px;overflow-x:auto;padding-bottom:16px;scroll-snap-type:x proximity;overscroll-behavior-inline:contain;scrollbar-width:thin;touch-action:pan-x pan-y;cursor:grab;}
+.ds-gallery{display:flex;gap:24px;overflow-x:auto;padding-bottom:16px;scroll-snap-type:none;overscroll-behavior-inline:contain;scrollbar-width:thin;touch-action:pan-x pan-y;cursor:grab;}
 .ds-gallery[data-dragging]{cursor:grabbing;scroll-snap-type:none;}
-.ds-gallery figure{flex:0 0 min(72%,800px);min-width:0;margin:0;}
-.ds-gallery img{display:block;width:100%;height:clamp(260px,35vw,480px);object-fit:contain;background:var(--ds-paper);}
-.ds-gallery figcaption{margin-top:12px;}
+.ds-gallery figure{flex:0 0 auto;min-width:0;margin:0;scroll-snap-align:none;}
+.ds-gallery img{display:block;width:auto;max-width:none;height:clamp(260px,35vw,480px);object-fit:contain;}
+.ds-gallery figcaption{margin-top:16px;}
 .ds-gallery:focus-visible,.ds-doc-pages:focus-visible{outline:2px solid var(--ds-ink);outline-offset:4px;}
 .ds-doc{margin-top:32px;border:1px solid var(--ds-line);background:var(--ds-paper);}
 .ds-doc-head{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 24px;border-bottom:1px solid var(--ds-line);}
@@ -148,7 +148,7 @@
   .ds-cards,.ds-workflow,.ds-proof{grid-template-columns:1fr;}
   .ds-workflow>div+div{padding-left:0;border-left:0;border-top:1px solid var(--ds-line);}
   .ds-tablist{gap:16px;}
-  .ds-gallery figure{flex-basis:86%;}
+  .ds-gallery img{height:280px;}
   .ds-doc-head{flex-wrap:wrap;padding:16px;}
   .ds-doc-pages{max-height:420px;padding:16px;}
 }
@@ -168,3 +168,9 @@
 .ds-workflow>div:first-child{padding-right:32px;}
 .ds-label + .ds-h3{margin-top:16px;}
 @media(max-width:800px){.ds-workflow>div:first-child{padding-right:0;}}
+
+.ds-proof figcaption{margin-top:16px;}
+
+.ds-media-wide{margin:32px 0 0;}
+.ds-media img{transition:transform 300ms ease;transform-origin:center;}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.ds-media:hover img{transform:scale(1.012);}}

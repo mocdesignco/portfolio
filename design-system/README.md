@@ -241,17 +241,17 @@ Reference: Selected Visual Work’s wheel, trackpad, drag and arrow handling, wi
 - Continuous wheel/drag updates use animation frames, not a stack of queued smooth-scroll calls.
 - Smooth motion for deliberate arrow actions. Reduced-motion preference uses immediate movement.
 - Do not turn every vertical wheel over a page into a permanent scroll trap.
-- The reference gallery uses native horizontal scrolling and Shift+wheel; vertical wheel continues down the page.
+- The reference adopts Selected Visual Work’s looping controller: vertical wheel over the gallery, horizontal trackpad, mouse drag and arrows all move the image rail. Wheel deltas are batched per animation frame. Outside the gallery, page scrolling remains normal.
 - The existing Selected Visual Work looping controller remains untouched. During its own review, check interaction at edges, clone accessibility and click suppression after dragging.
 - Finite galleries disable navigation at boundaries. Looping galleries hide cloned items from assistive technology.
 - Show a glimpse of the next image to make the series discoverable.
-- Use contain for designs/screenshots requiring full visibility; intentional photographic crops must be reviewed individually.
+- Preserve each image’s intrinsic aspect ratio at a shared display height. Figures follow the actual image width, with captions aligned to the image’s left edge, not a wider minimum-width cell. Use a 16px gap above media captions. Intentional photographic crops must be reviewed individually.
 - Motion media loads/plays only when visible and pauses when offscreen, in a modal or in a hidden tab. Honour reduced motion and never autoplay audio.
 
 ### Fewer images within a narrative section
 Reference: Riley’s colour/typography pair and packaging composition.
 - If one to three visuals explain the point, show a hero image with one or two supporting views.
-- Use a simple two-column pair or a full-width image, with captions and no extra card chrome.
+- Use a simple two-column pair or a full-width image, with captions and no extra card chrome. Riley’s subtle image-only hover expansion is optional.
 - Stack on mobile; preserve the reading order.
 - Do not force a carousel or tabs onto two images that need comparison.
 - A rounded frame and shadow are reserved for the approved Kinvara video inset; other artwork stays unframed.
@@ -283,3 +283,11 @@ The design-system examples do not restyle the existing case studies. Only the mi
 
 ## Spacing refinement · 9 October 2026
 Cards expand in place for hover, focus and tap detail. Remove floating detail panels. Plus/minus controls have a 12px internal right inset, workflow content has a 32px gutter before the column divider, and evidence labels have 16px before the H3.
+
+Evidence-tab captions have a 16px image gap. The horizontal gallery uses intrinsic image widths and Selected Visual Work’s looping wheel/drag/arrow controller.
+
+## Riley narrative media patterns
+- Preserve three distinct options: a full content-width image, two images across the content width, and a near-full-width horizontal image. Captions sit beneath, aligned to their images, with 16px separation.
+- Fine-pointer hover may enlarge the image subtly by 1.012, matching Riley. Captions stay still. Disable this motion for reduced-motion preferences and do not rely on hover to reveal information.
+- The remembered scroll-over effect is a sticky layering pattern rather than necessarily parallax. Current Riley source retains media layers but overrides its sticky narrative heading to static. For a future page review, use an optional sticky heading behind advancing images, with appropriate opaque surfaces and stacking order; keep captions with their images. Do not restore it globally without reviewing the section.
+- Reserve sticky layering for image-led storytelling, with ordinary stacked flow on mobile and reduced-motion settings. Recruiter-facing narrative and outcomes remain readable in normal flow.
