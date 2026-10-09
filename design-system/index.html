@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Portfolio design system | Megan O’Connor</title>
+<link rel="stylesheet" href="../shared/navbar.css">
+<link rel="stylesheet" href="tokens.css"><link rel="stylesheet" href="specimen.css">
+<script src="../shared/navbar.js" defer></script><script src="specimen.js" defer></script>
+</head>
+<body class="ds-page">
+<a class="ds-skip" href="#main">Skip to content</a>
+<header class="portfolio-navbar">
+<a class="portfolio-navbar__name" href="../">Megan O’Connor</a>
+<nav class="portfolio-navbar__links" aria-label="Main navigation">
+<a class="portfolio-navbar__work" href="../#work">Work</a>
+<a class="portfolio-navbar__contact" href="mailto:mocdesignco@gmail.com">Contact <span aria-hidden="true">↗</span></a>
+</nav></header>
+<nav class="spec-nav" aria-label="Design system sections">
+<a href="#foundations" aria-label="01 Foundations" aria-current="location">01</a>
+<a href="#typography" aria-label="02 Typography">02</a>
+<a href="#layouts" aria-label="03 Section layouts">03</a>
+<a href="#summary" aria-label="04 At a glance">04</a>
+<a href="#components" aria-label="05 Components">05</a>
+</nav>
+<main id="main">
+<section class="ds-hero ds-anchor" id="foundations">
+<div class="ds-shell">
+<p class="ds-label">Portfolio design system / Version 1</p>
+<h1 class="ds-h1">Clear thinking.<br>Consistent design.</h1>
+<div class="ds-copy"><p>A shared reference for Megan O’Connor’s portfolio. One typography hierarchy, two reading layouts and a small family of surfaces. The system supports page-by-page revisions.</p></div>
+<p class="ds-caption spec-note">Reference page only. Existing case studies have not been migrated. All summary examples below are copy prompts, not project facts.</p>
+<div class="spec-swatches" aria-label="Surface palette">
+<div style="background:var(--ds-bg)"><b>Background</b><span>#f5f4f0</span></div>
+<div style="background:var(--ds-paper)"><b>Paper</b><span>#faf9f6</span></div>
+<div style="background:var(--ds-soft)"><b>Soft</b><span>#e9e8e4</span></div>
+<div style="background:var(--ds-warm)"><b>Warm</b><span>#eeeae3</span></div>
+<div class="spec-swatch-dark"><b>Dark</b><span>#151515</span></div>
+</div>
+</div></section>
+<section class="ds-section ds-surface-paper ds-anchor" id="typography"><div class="ds-shell">
+<div class="ds-stack"><p class="ds-label">01 / Typography</p><h2 class="ds-h2">Every style has a job.</h2>
+<div class="ds-copy"><p>Headings establish structure. Paragraphs explain the work. Labels identify the section. Opening paragraphs use exactly the same type treatment as the paragraphs that follow.</p></div></div>
+<div class="spec-type-list">
+<div><span class="ds-label">H1 / 40–96px</span><p class="ds-h1">Page title</p></div>
+<div><span class="ds-label">H2 / 30–60px</span><p class="ds-h2">Section heading</p></div>
+<div><span class="ds-label">H3 / 18px</span><p class="ds-h3">A genuine subsection</p></div>
+<div><span class="ds-label">Paragraph / 16px</span><div class="ds-copy"><p>Use regular paragraph text for the narrative. Emphasise <strong>a specific responsibility or result</strong> when it helps someone skim. A new paragraph does not need a new size, weight or colour.</p></div></div>
+<div><span class="ds-label">Caption / 14px</span><p class="ds-caption">Supporting context belongs close to its image or evidence.</p></div>
+<div><span class="ds-label">Label / 11px</span><p class="ds-label">My role</p></div>
+</div>
+</div></section>
+<section class="ds-section ds-anchor" id="layouts"><div class="ds-shell">
+<div class="ds-split"><p class="ds-label">02 / Split section</p><h2 class="ds-h2">A clear place to start.</h2>
+<div class="ds-copy"><p>This paragraph starts level with the heading, not the label. The two columns have enough space to remain distinct, while the shared top alignment makes their relationship clear.</p><p>The layout is for reading and scanning. The heading stays in the document flow. On smaller screens, the label, heading and body become a single column.</p></div></div>
+<div class="spec-layout-separator"></div>
+<div class="ds-stack"><p class="ds-label">02 / Stacked section</p><h2 class="ds-h2">Keep related ideas together.</h2>
+<div class="ds-copy"><p>The stacked pattern places the label, heading and narrative on one left alignment. Use it for a concise explanation before a visual, or when an opposing column would unnecessarily separate the content.</p><p>This paragraph uses the same 16px type and spacing as the split example. There is no intermediate display paragraph.</p></div></div>
+</div></section>
+<section class="ds-section ds-surface-warm ds-anchor" id="summary"><div class="ds-shell">
+<p class="ds-label">03 / At a glance</p><h2 class="ds-h2">Make the contribution visible.</h2>
+<div class="ds-copy spec-copy-gap"><p>The summary replaces the existing four-field band at the bottom of a case-study hero. It keeps the thin rule and compact labels, with more room for the challenge and outcomes.</p></div>
+<p class="ds-caption spec-note">Layout example. Replace these prompts with Megan’s approved project copy before using the band on a case study.</p>
+<dl class="ds-summary">
+<div class="ds-summary__item"><dt class="ds-label">My role</dt><dd>What I owned, led and decided.</dd></div>
+<div class="ds-summary__item"><dt class="ds-label">Scope</dt><dd>The disciplines, deliverables and parts of the business involved.</dd></div>
+<div class="ds-summary__item"><dt class="ds-label">Team and stakeholders</dt><dd>Who I collaborated with, directed or reported to.</dd></div>
+<div class="ds-summary__item ds-summary__item--wide"><dt class="ds-label">Challenge</dt><dd>The business problem, audience need or delivery constraint the project had to address.</dd></div>
+<div class="ds-summary__item ds-summary__item--wide"><dt class="ds-label">Key outcomes</dt><dd>What changed, supported by evidence. Include metrics only where they can be substantiated.</dd></div>
+</dl>
+</div></section>
+<section class="ds-section ds-surface-dark"><div class="ds-shell ds-split">
+<p class="ds-label">Surface example / Deliberate emphasis</p><h2 class="ds-h2">Colour gives sections purpose.</h2>
+<div class="ds-copy"><p>A dark surface can mark a substantial change in subject or highlight an important conclusion. It does not create a new text hierarchy. The same heading, paragraph and spacing rules still apply.</p><p>Project imagery and diagrams retain their own colours. Neutralising the portfolio interface does not mean removing the identity from the work.</p></div>
+</div></section>
+<section class="ds-section ds-anchor" id="components"><div class="ds-shell">
+<p class="ds-label">04 / Components</p><h2 class="ds-h2">Fewer treatments. Clearer choices.</h2>
+<div class="ds-copy spec-copy-gap"><p>Use the existing shared navbar and progress line. Use a slim numbered navigator for moving through sections, with a black active state and keyboard access. Keep artwork unframed unless the composition needs a frame.</p></div>
+<div class="spec-actions">
+<a class="ds-button" href="README.md">Read the design guide <span aria-hidden="true">↗</span></a>
+<a class="ds-link" href="../ashen-cloud/">Explore the creation of this brand <span aria-hidden="true">↗</span></a>
+</div>
+<div class="spec-frame-demo">
+<div class="spec-motion-frame" aria-label="Illustration of the rounded media frame"><span class="ds-label">Media frame / 16px radius</span><p class="ds-caption">Only where the composition requires it, such as the Kinvara motion inset.</p></div>
+</div>
+<div class="spec-footer-example">
+<div><p class="ds-label">Case-study footer / Structure example</p><h3 class="ds-h3">Explore other work</h3></div>
+<a class="ds-button" href="mailto:mocdesignco@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+<nav aria-label="Example case-study footer">
+<a class="ds-link" href="../riley./">Brand direction</a>
+<a class="ds-link" href="../veup-company-os/">Company operating system</a>
+<a class="ds-link" href="../selected-visual-work/">Visual design and craft</a>
+</nav>
+<p class="ds-caption">Actual case-study footers include the other projects and omit the current one. The homepage keeps its contact invitation.</p>
+</div>
+</div></section>
+</main>
+<footer class="spec-footer ds-shell"><a class="ds-link" href="../">Megan O’Connor</a><p class="ds-caption">Portfolio design system · Version 1 · October 2026</p></footer>
+</body></html>
