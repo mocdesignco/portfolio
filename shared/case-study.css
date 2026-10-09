@@ -4,6 +4,7 @@ body.portfolio-case{margin:0;background:var(--ds-bg);color:var(--ds-ink);font-fa
 .portfolio-case>main{overflow-wrap:break-word}
 .case-glance{margin-top:48px}
 .case-title-tail{white-space:nowrap}
+.case-legacy-anchor{display:block;height:0;scroll-margin-top:calc(var(--portfolio-header-height,73px) + 24px)}
 .case-glance .ds-summary{margin-top:16px}
 .case-wide{margin-top:48px}
 .case-wide>.ds-media{margin-top:0}
@@ -47,6 +48,7 @@ body.portfolio-case{margin:0;background:var(--ds-bg);color:var(--ds-ink);font-fa
 .ds-tabs .ds-tablist{flex-wrap:wrap}
 .case-social-pages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;min-width:0}
 .case-social-pages .ds-media{margin-top:0}
+.case-format-image .case-image-link{max-height:560px;overflow:auto;scrollbar-width:thin;overscroll-behavior:auto}
 .ds-gallery{position:relative;overflow-anchor:none;user-select:none;scroll-behavior:auto;scrollbar-width:thin;scroll-snap-type:none;padding-bottom:16px;align-items:start}
 .ds-gallery figure{flex:0 0 auto;width:var(--gallery-image-width,auto);min-width:0;margin:0}
 .ds-gallery .case-image-link img{width:100%;height:clamp(260px,35vw,480px);object-fit:contain;max-width:none;transform:none}

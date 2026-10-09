@@ -35,7 +35,7 @@
 .ds-label + :where(.ds-h1,.ds-h2){margin-top:24px;}
 .ds-copy{font-size:16px;font-weight:400;line-height:1.68;color:var(--ds-body);
   max-width:56ch;letter-spacing:normal;word-spacing:normal;
-  text-align:justify;text-align-last:left;hyphens:auto;overflow-wrap:break-word;text-wrap:wrap;}
+  text-align:justify;text-align-last:left;hyphens:auto;overflow-wrap:break-word;text-wrap:pretty;}
 .ds-copy p + p{margin-top:24px;}
 .ds-copy strong{font-weight:700;}
 .ds-hero .ds-copy{margin-top:32px;}
@@ -176,3 +176,5 @@
 @media(hover:hover) and (prefers-reduced-motion:no-preference){.ds-media:hover img{transform:scale(1.012);}}
 
 .spec-image-pair .ds-media figcaption{margin-top:16px;}
+
+@media(max-width:600px){.ds-h1{font-size:clamp(34px,9.5vw,40px);}}

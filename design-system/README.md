@@ -1,10 +1,10 @@
 # Megan O’Connor portfolio design system
-Version 2 · 9 October 2026 · Reference for page-by-page revisions
+Version 3 · 9 October 2026 · Shared portfolio standard
 
 ## Purpose and status
 Make Megan’s leadership, judgement and contribution easy for a hiring manager to find.
-This is a proposed shared standard derived from the approved homepage, Riley reading treatments and existing navigation. It is not an endorsement by Flux Academy.
-The CSS is opt-in. No existing page has been migrated or redesigned.
+This is the approved shared standard derived from the homepage, Riley reading treatments and existing navigation. It is not an endorsement by Flux Academy.
+The approved system is implemented across the homepage, Selected Visual Work and the five revised case studies. Existing navigation, reading progress and footers retain their approved components.
 The reference is at /portfolio/design-system/. The guide and components are in this directory.
 
 ## Design principles
@@ -43,7 +43,7 @@ Font: Arial, Helvetica, sans-serif. Existing navbar keeps its monospace utility 
 
 | Role | Desktop/mobile range | Weight | Line height | Use |
 | --- | --- | --- | --- | --- |
-| H1 | clamp(40px, 6vw, 96px) | 500 | 1.04 | One page title |
+| H1 | clamp(40px, 6vw, 96px); 34–40px on small mobile screens | 500 | 1.04 | One page title |
 | H2 | clamp(30px, 3.6vw, 60px) | 500 | 1.08 | Main sections |
 | H3 | 18px | 600 | 1.3 | Genuine subsections |
 | Paragraph | 16px | 400 | 1.68 | All narrative, including introduction |
@@ -270,16 +270,16 @@ Use the rendered-page approach for a predictable branded presentation; a native 
 - If a PDF needs visual consistency across devices, render its pages and keep the original file available.
 
 ## Version 2 reference demonstrations
-The reference contains the revised five-column band, colour sequence, lighter result disclosures, open workflow comparison, three evidence tabs, horizontal image gallery, two-image comparison, rendered guideline viewer and optional native PDF preview.
+The reference contains the revised five-column band, colour sequence, lighter result disclosures, open workflow comparison, three evidence tabs, horizontal image gallery, full-width and two-image layouts, rendered guideline viewer and optional native PDF preview.
 Figures and visuals are reused from current case studies and are labelled as existing evidence. Summary fields remain prompts until Megan supplies actual copy.
-The design-system examples do not restyle the existing case studies. Only the missing navigators are introduced as a separate component; navbar, progress and footers remain unchanged.
+The examples provide the shared standard now applied to the revised portfolio. Navbar, progress and footers remain unchanged.
 
 ## Approved constants and rollout
 - Keep the navbar, reading progress bar and both footer components exactly as currently approved.
 - The shared section navigator is added to the homepage, Ashen & Cloud and the three VeUP case studies. Each page’s number count follows its meaningful chapters; it is not decorative typography.
 - Keep the existing Riley and Selected Visual Work navigators intact until their page is specifically reviewed.
 - Introduce missing navigators as a narrow, separate change, preserving the page’s typography, media, header and footer.
-- Apply the revised cards, tab styling and background rhythm only during the relevant page-by-page review.
+- Shared cards, tabs and background rhythm are now applied across the revised portfolio. Further content changes can still be reviewed page by page.
 
 ## Spacing refinement · 9 October 2026
 Cards expand in place for hover, focus and tap detail. Remove floating detail panels. Plus/minus controls have a 12px internal right inset, workflow content has a 32px gutter before the column divider, and evidence labels have 16px before the H3.
@@ -291,3 +291,8 @@ Evidence-tab captions have a 16px image gap. The horizontal gallery uses intrins
 - Fine-pointer hover may enlarge the image subtly by 1.012, matching Riley. Captions stay still. Disable this motion for reduced-motion preferences and do not rely on hover to reveal information.
 - The remembered scroll-over effect is a sticky layering pattern rather than necessarily parallax. Current Riley source retains media layers but overrides its sticky narrative heading to static. For a future page review, use an optional sticky heading behind advancing images, with appropriate opaque surfaces and stacking order; keep captions with their images. Do not restore it globally without reviewing the section.
 - Reserve sticky layering for image-led storytelling, with ordinary stacked flow on mobile and reduced-motion settings. Recruiter-facing narrative and outcomes remain readable in normal flow.
+
+## Site-wide implementation · 9 October 2026
+The five case studies use Megan’s supplied revised sections and copy, with case-specific at-a-glance field labels retained. Shared case-study.css and case-study.js provide reading layouts, comparisons, evidence tabs, intrinsic-width looping galleries, disclosures, image dialogs and the rendered-page document viewer. site-migration.css applies the same heading, body, label, surface and media standards to the retained homepage and Selected Visual Work layouts. The existing header, progress and footer components remain separate and unchanged. All previously displayed images and linked document assets are retained. AI workflow estimates, tested outcomes, interrupted rollout and projections are distinct. Dark sections mark the measured creative-operations comparison and AI workflow testing results.
+
+Responsive refinement: small mobile H1 uses a shared 34–40px scale. A final two-word heading group prevents isolated closing words without adding tracking or shrinking paragraph text. Narrative uses browser pretty wrapping with justified alignment and normal spacing. Historical section hashes remain as aliases. Gallery clones are excluded from keyboard tab order.

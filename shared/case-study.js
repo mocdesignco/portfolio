@@ -19,7 +19,7 @@ document.querySelectorAll('[data-tabs]').forEach(group=>{
 function initReferenceGallery(gallery){
   const source=[...gallery.children];if(source.length<2)return;
   gallery.replaceChildren();
-  const sets=[0,1,2].map(set=>source.map((card,item)=>{const n=card.cloneNode(true);n.dataset.loopSet=set;n.dataset.loopItem=item;if(set!==1){n.setAttribute('aria-hidden','true');n.querySelectorAll('button,[tabindex]').forEach(el=>el.tabIndex=-1);if(n.hasAttribute('tabindex'))n.tabIndex=-1}gallery.appendChild(n);return n}));
+  const sets=[0,1,2].map(set=>source.map((card,item)=>{const n=card.cloneNode(true);n.dataset.loopSet=set;n.dataset.loopItem=item;if(set!==1){n.setAttribute('aria-hidden','true');n.querySelectorAll('a[href],button,[tabindex]').forEach(el=>el.tabIndex=-1);if(n.hasAttribute('tabindex'))n.tabIndex=-1}gallery.appendChild(n);return n}));
   let cycle=0,home=0,frame=0,wheelDelta=0,down=false,lastX=0,dragDistance=0,pointerId=null;
   const instant=left=>gallery.scrollTo({left,behavior:'instant'});
   function measure(){const oldCycle=cycle,relative=gallery.scrollLeft-home;cycle=sets[2][0].offsetLeft-sets[1][0].offsetLeft;home=sets[1][0].offsetLeft-(parseFloat(getComputedStyle(gallery).paddingLeft)||0);instant(home+(oldCycle?relative*cycle/oldCycle:0));gallery.dataset.ready='1';updateCount()}
