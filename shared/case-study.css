@@ -65,3 +65,21 @@ body.portfolio-case{margin:0;background:var(--ds-bg);color:var(--ds-ink);font-fa
 @media(max-width:800px){.case-image-pair,.case-route-pair{grid-template-columns:1fr;gap:32px}.case-wide,.case-image-pair,.case-route-pair{margin-top:32px}.case-document .ds-doc-pages{height:420px;padding:8px}.ds-gallery .case-image-link img{height:280px}.case-social-pages{grid-template-columns:1fr}.case-contributions>div{grid-template-columns:1fr;gap:8px}.case-lightbox{padding:16px}.case-lightbox-toolbar{align-items:flex-start}.case-table th,.case-table td{font-size:16px;min-width:140px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.case-image-link img{transition:none}}
 @media(max-width:600px){.case-mobile-group{white-space:nowrap}}
+
+/* Subsequent Riley business context, using the shared reading hierarchy. */
+.case-business-context{margin-top:48px}
+.case-business-context>.ds-caption{max-width:80ch}
+.case-client-toolbar{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:32px;margin-bottom:16px}
+.case-client-toolbar p{margin:0}
+.case-client-carousel{overflow:hidden;border-block:1px solid var(--ds-line);padding:32px 0}
+.case-client-carousel:focus-visible{outline:2px solid var(--ds-ink);outline-offset:4px}
+.case-client-track{display:flex;width:max-content;animation:caseClientLoop 32s linear infinite}
+.case-client-set{display:flex;align-items:center;gap:64px;padding-right:64px}
+.case-client-name{white-space:nowrap;font-size:18px;font-weight:500;color:var(--ds-ink)}
+.case-client-carousel:hover .case-client-track,.case-client-carousel:focus-within .case-client-track,.case-client-carousel[data-paused] .case-client-track{animation-play-state:paused}
+.case-outcomes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 48px;margin-top:48px}
+.case-outcome{padding-top:24px;border-top:1px solid var(--ds-line);min-width:0}
+.case-outcome .ds-h3{margin:0 0 16px}
+@keyframes caseClientLoop{to{transform:translateX(-50%)}}
+@media(max-width:800px){.case-outcomes{grid-template-columns:1fr;gap:24px;margin-top:32px}.case-client-set{gap:40px;padding-right:40px}.case-client-toolbar{align-items:flex-start}.case-client-toolbar .ds-button{flex-shrink:0}}
+@media(prefers-reduced-motion:reduce){.case-client-carousel{overflow-x:auto;scrollbar-width:thin}.case-client-track{animation:none}.case-client-set[aria-hidden]{display:none}.case-client-toolbar [data-client-pause]{display:none}}

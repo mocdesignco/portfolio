@@ -52,3 +52,14 @@ const imageDialog=document.querySelector('.case-lightbox');let imageReturnFocus=
 document.addEventListener('click',event=>{const link=event.target.closest('[data-image-viewer]');if(!link||!imageDialog)return;event.preventDefault();imageReturnFocus=link;const img=link.querySelector('img');const expanded=imageDialog.querySelector('img');expanded.src=img.currentSrc||img.src;expanded.alt=img.alt;imageDialog.querySelector('[data-image-caption]').textContent=link.closest('figure').querySelector('figcaption')?.textContent||img.alt;imageDialog.showModal();document.body.style.overflow='hidden';});
 imageDialog?.querySelector('[data-image-close]').addEventListener('click',()=>imageDialog.close());
 imageDialog?.addEventListener('close',()=>{document.body.style.overflow='';imageReturnFocus?.focus({preventScroll:true});});
+
+document.querySelectorAll('[data-client-pause]').forEach(button=>{
+  const carousel=button.closest('.case-business-context').querySelector('.case-client-carousel');
+  button.addEventListener('click',()=>{
+    const paused=!carousel.hasAttribute('data-paused');
+    carousel.toggleAttribute('data-paused',paused);
+    button.setAttribute('aria-pressed',String(paused));
+    button.setAttribute('aria-label',paused?'Resume client carousel':'Pause client carousel');
+    button.textContent=paused?'Resume carousel':'Pause carousel';
+  });
+});
