@@ -214,7 +214,10 @@ Hover/focus should have a visible affordance, such as a stronger border or under
 - Allow revealed content to take its natural height; do not crop it to an arbitrary 72px or 100px.
 - Whole sections are not hidden until an animation runs. Scroll entry can introduce a card once with a subtle surface/border cue.
 - Auto-revealing text on entry is optional only for short secondary content; no auto-collapse as it leaves view.
-- For hover previews in a dense grid, use an anchored overlay rather than pushing adjacent cards around. Click-to-expand may grow the row deliberately.
+- Hover, focus and pinned detail all stay inside the original card. The card grows vertically to show the complete text, with no extra box or overlay.
+- Neighbouring cards remain at their own natural height. Keep short closed-card descriptions aligned, but do not stretch every card to the expanded card’s height.
+- Disclosure icons have 12px of extra internal space to their right. Workflow columns additionally retain a 32px gutter before the divider.
+- Label-to-H3 gap: 16px, including the evidence tab’s label and heading.
 - No-JS fallback: native details remains usable; tab content is visible sequentially.
 
 ### Evidence tabs
@@ -277,3 +280,6 @@ The design-system examples do not restyle the existing case studies. Only the mi
 - Keep the existing Riley and Selected Visual Work navigators intact until their page is specifically reviewed.
 - Introduce missing navigators as a narrow, separate change, preserving the page’s typography, media, header and footer.
 - Apply the revised cards, tab styling and background rhythm only during the relevant page-by-page review.
+
+## Spacing refinement · 9 October 2026
+Cards expand in place for hover, focus and tap detail. Remove floating detail panels. Plus/minus controls have a 12px internal right inset, workflow content has a 32px gutter before the column divider, and evidence labels have 16px before the H3.
