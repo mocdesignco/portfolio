@@ -83,3 +83,5 @@ body.portfolio-case{margin:0;background:var(--ds-bg);color:var(--ds-ink);font-fa
 @keyframes caseClientLoop{to{transform:translateX(-50%)}}
 @media(max-width:800px){.case-outcomes{grid-template-columns:1fr;gap:24px;margin-top:32px}.case-client-set{gap:40px;padding-right:40px}.case-client-toolbar{align-items:flex-start}.case-client-toolbar .ds-button{flex-shrink:0}}
 @media(prefers-reduced-motion:reduce){.case-client-carousel{overflow-x:auto;scrollbar-width:thin}.case-client-track{animation:none}.case-client-set[aria-hidden]{display:none}.case-client-toolbar [data-client-pause]{display:none}}
+
+.case-video video{display:block;width:100%;height:auto;background:var(--ds-ink)}
