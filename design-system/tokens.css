@@ -157,3 +157,9 @@
 .ds-card .ds-disclosure[data-previewing] .ds-copy{position:absolute;inset-inline:24px;top:calc(100% - 24px);z-index:4;margin:0;padding:20px;background:var(--ds-paper);border:1px solid var(--ds-muted);}
 .ds-button:disabled{opacity:.4;cursor:default;}
 .ds-button:disabled:hover{background:transparent;color:var(--ds-ink);}
+
+/* Keep closed card controls aligned even when summaries have different lengths. */
+.ds-cards{align-items:stretch;}
+.ds-card{display:flex;flex-direction:column;}
+.ds-card>.ds-caption{margin-bottom:20px;}
+.ds-card>.ds-disclosure{margin-top:auto;}
