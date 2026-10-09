@@ -6,6 +6,7 @@
 .portfolio-home main h2,.portfolio-visual .section-head h2{font-size:clamp(30px,3.6vw,60px);font-weight:500;line-height:1.08;letter-spacing:-.04em;text-wrap:balance}
 .portfolio-home main :is(.hero-subtext,.pov-copy,.work-heading>p,.project-description),.portfolio-visual :is(.hero-copy,.meta,.meta p){font-size:16px;font-weight:400;line-height:1.68;letter-spacing:normal;word-spacing:normal;color:var(--ds-body);text-align:justify;text-align-last:left;hyphens:auto;max-width:56ch}
 .portfolio-home .hero-subtext{margin-top:32px}
+.case-title-tail{white-space:nowrap}
 .portfolio-home main .eyebrow,.portfolio-visual .section-head .eyebrow{font:400 11px/1.5 var(--ds-font);letter-spacing:.1em;color:var(--ds-muted);text-transform:uppercase}
 .portfolio-home .point-of-view{background:var(--ds-paper);grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:24px var(--ds-column-gap)}
 .portfolio-home .point-of-view>.eyebrow{grid-column:1/-1;margin-bottom:0}
@@ -47,3 +48,4 @@
 .portfolio-visual .project-nav a{width:28px;height:32px;font:400 10px/1.4 var(--ds-mono)}
 @media(min-width:801px){.portfolio-home main .section-shell,.portfolio-visual .hero,.portfolio-visual .section-head{padding-right:max(var(--ds-gutter),90px)}}
 @media(max-width:800px){.portfolio-home .point-of-view,.portfolio-home .work-heading,.portfolio-visual .section-head{grid-template-columns:1fr}.portfolio-home .pov-copy{grid-column:1;grid-row:3}.portfolio-home .work-heading>p{margin-top:0}.portfolio-visual .section-head .meta{grid-column:1;grid-row:3}.portfolio-visual .project-nav{position:sticky;top:var(--portfolio-header-height,73px);transform:none;flex-direction:row;right:auto;border-inline:0;border-top:0;padding:4px var(--ds-gutter);z-index:70;gap:4px}.portfolio-visual .project-nav a{width:40px;height:40px;flex-shrink:0}}
+@media(max-width:600px){.portfolio-home main h1,.portfolio-visual .hero h1{font-size:clamp(34px,9.5vw,40px)}}

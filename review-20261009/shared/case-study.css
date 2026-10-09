@@ -3,6 +3,7 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(var(--portfolio-header-heigh
 body.portfolio-case{margin:0;background:var(--ds-bg);color:var(--ds-ink);font-family:Arial,Helvetica,sans-serif;line-height:1.45;-webkit-font-smoothing:antialiased}
 .portfolio-case>main{overflow-wrap:break-word}
 .case-glance{margin-top:48px}
+.case-title-tail{white-space:nowrap}
 .case-glance .ds-summary{margin-top:16px}
 .case-wide{margin-top:48px}
 .case-wide>.ds-media{margin-top:0}
@@ -16,6 +17,7 @@ body.portfolio-case{margin:0;background:var(--ds-bg);color:var(--ds-ink);font-fa
 .case-route-pair .ds-card{display:flex;flex-direction:column}
 .case-route-pair .ds-disclosure{margin-top:24px}
 .case-rich{max-width:none;width:100%}
+.ds-stack>.ds-h2{max-width:28ch}
 .case-rich>p,.case-rich>.case-quote{max-width:64ch}
 .case-rich .case-table-wrap{margin:32px 0}
 .case-table-wrap{overflow-x:auto;max-width:100%;scrollbar-width:thin}
