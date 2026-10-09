@@ -90,3 +90,7 @@ body.portfolio-case{margin:0;background:var(--ds-bg);color:var(--ds-ink);font-fa
 
 /* Keep low-resolution document evidence at its source dimensions. */
 .case-evidence-native{max-width:516px;margin-inline:auto}
+
+/* Pair narrow intake evidence with the wider AI setup. */
+.case-intake-pair{grid-template-columns:minmax(0,352px) minmax(0,1fr)}
+@media(max-width:800px){.case-intake-pair{grid-template-columns:minmax(0,1fr)}.case-intake-pair .case-format-image{max-width:352px;width:100%;margin-inline:auto}}
