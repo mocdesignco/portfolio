@@ -87,3 +87,6 @@ body.portfolio-case{margin:0;background:var(--ds-bg);color:var(--ds-ink);font-fa
 .case-video video{display:block;width:100%;height:auto;background:var(--ds-ink)}
 
 .case-quote-attribution{margin-top:24px;font-style:normal;text-align:left;line-height:1.6}
+
+/* Keep low-resolution document evidence at its source dimensions. */
+.case-evidence-native{max-width:516px;margin-inline:auto}
