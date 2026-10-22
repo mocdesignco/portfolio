@@ -11,7 +11,7 @@
     img.src = img.dataset.src;
   }
   function updatePreview() {
-    const next = inlineMode.matches ? null : (hovered || focused);
+    const next = inlineMode.matches ? null : (hovered || focused || active || items[0]?.dataset.project);
     if (active === next) return;
     active = next;
     items.forEach(item => item.classList.toggle('is-active', item.dataset.project === active));

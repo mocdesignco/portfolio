@@ -1,6 +1,16 @@
 /* Reading progress shared by the homepage and case-study navbar. */
 (() => {
-  if (!document.querySelector('.portfolio-navbar') || document.querySelector('[data-portfolio-progress]')) return;
+  const navbar = document.querySelector('.portfolio-navbar');
+  if (!navbar) return;
+  const links = navbar.querySelector('.portfolio-navbar__links');
+  if (links && !links.querySelector('.portfolio-navbar__about')) {
+    const about = document.createElement('a');
+    about.className = 'portfolio-navbar__about';
+    about.href = document.body.classList.contains('portfolio-home') ? '#about' : 'https://mocdesignco.github.io/portfolio/#about';
+    about.textContent = 'About';
+    links.insertBefore(about, links.querySelector('.portfolio-navbar__contact'));
+  }
+  if (document.querySelector('[data-portfolio-progress]')) return;
   const progress = document.createElement('div');
   progress.className = 'portfolio-navbar-progress';
   progress.setAttribute('data-portfolio-progress', '');

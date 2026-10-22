@@ -20,3 +20,8 @@
 
 .portfolio-navbar{z-index:80}
 section[id]{scroll-margin-top:calc(var(--portfolio-header-height,73px) + 24px)}
+
+.portfolio-navbar__about{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline!important;text-decoration-color:transparent!important;text-underline-offset:5px}
+.portfolio-navbar__about:hover{text-decoration-color:var(--pn-ink)!important}
+@media(max-width:600px){.portfolio-navbar__links{gap:12px}}
+@media(max-width:360px){.portfolio-navbar__links{gap:8px}}

@@ -51,11 +51,11 @@ button{font:inherit} img{display:block;max-width:100%} figure{margin:0}
 .case-study-link:hover{text-decoration-color:var(--ink)}
 .case-study-link:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
 </style>
-<link rel="stylesheet" href="../shared/navbar.css">
+<link rel="stylesheet" href="../shared/navbar.css?v=portfolio-review-20261022">
 <link rel="stylesheet" href="../shared/footer.css">
-<script src="../shared/navbar.js" defer=""></script>
+<script src="../shared/navbar.js?v=portfolio-review-20261022" defer=""></script>
 <script src="../shared/footer.js" defer=""></script>
-<link rel="stylesheet" href="../design-system/tokens.css?v=site-4"><link rel="stylesheet" href="../shared/site-migration.css?v=site-4"><script src="../shared/visual-media.js?v=site-4" defer=""></script></head>
+<link rel="stylesheet" href="../design-system/tokens.css?v=portfolio-review-20261022"><link rel="stylesheet" href="../shared/site-migration.css?v=portfolio-review-20261022"><script src="../shared/visual-media.js?v=site-4" defer=""></script></head>
 <body class="portfolio-visual">
 <header class="portfolio-navbar">
   <a class="portfolio-navbar__name" href="../" aria-label="Megan O’Connor, homepage">Megan O’Connor</a>
@@ -88,7 +88,7 @@ button{font:inherit} img{display:block;max-width:100%} figure{margin:0}
 </section>
 
 <section class="project-section" id="david-ho">
-<header class="section-head"><p class="eyebrow">Selected visual work / David Ho</p><div><h2>David Ho</h2></div><div class="meta"><strong>Brand identity refresh, website design, UX/UI, information architecture, design systems, print collateral and presentation design.</strong><p>A substantial visual update that retained the existing logo and core navy while rebuilding the wider identity, digital system and collateral.</p></div></header>
+<header class="section-head"><p class="eyebrow">Selected visual work / David Ho</p><div><h2>David Ho</h2></div><div class="meta"><strong>Brand identity refresh, website design, UX/UI, information architecture, design systems, print collateral and presentation design.</strong><p>A substantial visual update that retained the existing logo and core navy while rebuilding the wider identity, digital system and collateral.</p><button type="button" class="case-study-link" data-modal="davidWebsite">View website UX, navigation and information architecture ↗</button></div></header>
 <div class="gallery-wrap"><div class="gallery" data-gallery="" aria-label="David Ho project gallery">
   <figure class="card wide clickable" data-modal="davidWebsite" tabindex="0"><img src="assets/david/website-mockup.png" alt="David Ho website on laptop" width="1536" height="1024" loading="lazy" decoding="async"><span class="open-badge">View process</span><figcaption class="card-label">Website design / UX &amp; UI</figcaption></figure>
   <figure class="card document clickable" data-modal="davidBrand" tabindex="0"><img src="assets/david/brand-guide/01.webp" alt="David Ho brand style guide" width="2277" height="1280" loading="lazy" decoding="async"><span class="open-badge">16 pages</span><figcaption class="card-label">Brand identity / Style guide</figcaption></figure>
@@ -189,7 +189,7 @@ const pageSpecs={kinvaraDeckPages:[22,'assets/kinvara/deck/slide-{n}.jpg'],david
 function fillPages(el){if(el.childElementCount)return;const spec=pageSpecs[el.id];if(!spec)return;for(let i=1;i<=spec[0];i++){const img=new Image();img.loading='lazy';img.decoding='async';img.src=spec[1].replace('{n}',String(i).padStart(2,'0'));img.alt=`Page ${i}`;el.appendChild(img)}}
 // Hidden modal assets are only requested when their modal is opened.
 document.querySelectorAll('.modal img[src]').forEach(img=>{img.dataset.src=img.getAttribute('src');img.removeAttribute('src')});
-document.querySelectorAll('[data-modal]').forEach(el=>{el.setAttribute('role','button');el.setAttribute('aria-haspopup','dialog');el.setAttribute('aria-controls',el.dataset.modal);el.setAttribute('aria-label',el.querySelector('img')?.alt||'Explore project')});
+document.querySelectorAll('[data-modal]').forEach(el=>{el.setAttribute('role','button');el.setAttribute('aria-haspopup','dialog');el.setAttribute('aria-controls',el.dataset.modal);el.setAttribute('aria-label',el.querySelector('img')?.alt||el.textContent.trim()||'Explore project')});
 document.querySelectorAll('.card.clickable').forEach(card=>{const hint=document.createElement('span');hint.className='explore-hint';hint.textContent='Click to explore';card.appendChild(hint);if(card.querySelector('.deck-choice'))card.removeAttribute('tabindex')});
 let suppressClickUntil=0;
 function initLoopingGallery(gallery){

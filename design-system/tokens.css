@@ -35,7 +35,7 @@
 .ds-label + :where(.ds-h1,.ds-h2){margin-top:24px;}
 .ds-copy{font-size:16px;font-weight:400;line-height:1.68;color:var(--ds-body);
   max-width:56ch;letter-spacing:normal;word-spacing:normal;
-  text-align:justify;text-align-last:left;hyphens:auto;overflow-wrap:break-word;text-wrap:pretty;}
+  text-align:left;text-align-last:left;hyphens:none;overflow-wrap:break-word;text-wrap:pretty;}
 .ds-copy p + p{margin-top:24px;}
 .ds-copy strong{font-weight:700;}
 .ds-hero .ds-copy{margin-top:32px;}

@@ -89,3 +89,17 @@ p,h1,h2,h3,figure{margin:0}
 @media(max-width:700px){.contact-layout{grid-template-columns:1fr;gap:28px}.contact-layout h2{font-size:clamp(34px,7.5vw,47px)}.contact-copy{font-size:17px}.email-link{font-size:25px;margin-top:24px}.footer-bottom{grid-template-columns:1fr auto;gap:24px;margin-top:60px;font-size:9px}.footer-bottom nav{grid-column:1;grid-row:2;gap:24px}.copyright{grid-column:2;grid-row:2;align-self:center}}
 
 .contact-availability{margin-top:24px;font-size:14px;line-height:1.6;color:#65615b;text-wrap:pretty}
+
+/* Give the work a direct route and keep career context close to the portfolio. */
+.hero-work-link{display:inline-flex;align-items:center;gap:16px;min-height:44px;margin-top:24px;font-size:14px;text-decoration:underline;text-underline-offset:5px}
+.hero-work-link span{font-size:20px}
+.about-section{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:24px var(--ds-column-gap,64px);border-top:1px solid var(--line)}
+.about-section>.eyebrow{grid-column:1/-1;margin-bottom:0}
+.about-section>h2{grid-column:1;grid-row:2}
+.about-copy{grid-column:2;grid-row:2;max-width:56ch;font-size:16px;line-height:1.68;color:var(--ds-body,#45423d)}
+.about-copy p+p{margin-top:24px}
+.project-related{margin:0 0 28px 46px;font-size:14px;line-height:1.6;max-width:48ch}
+.project-related a{text-decoration:underline;text-underline-offset:4px}
+.project-related a:hover{text-decoration-thickness:2px}
+@media(max-width:800px){.about-section{grid-template-columns:1fr}.about-copy{grid-column:1;grid-row:3}}
+@media(max-width:700px){.project-related{margin-left:36px}}
