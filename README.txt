@@ -2,7 +2,7 @@ Megan O’Connor | Portfolio
 
 Static portfolio hosted with GitHub Pages. No build step or external dependencies.
 
-Homepage order: introduction, selected work, point of view, About, contact.
+Homepage order: introduction, selected work, About, contact.
 Selected work leads with Riley, VeUP Creative Operations and the AI Design System, followed by Company OS, Ashen & Cloud and the wider visual gallery.
 Each preview names the client and describes the work or a scoped result.
 The About section contains the verified career outline and location. Add CV and LinkedIn links when current destinations are available.
